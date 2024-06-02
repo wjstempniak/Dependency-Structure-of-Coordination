@@ -1,0 +1,133 @@
+\chapter{Struktura zależnościowa koordynacji} \label{ch3}
+
+\section{Języki inicjalne \citep{przepiorkowski2023conjunct}}
+
+\subsection{Metody}
+
+\cite{przepiorkowski2023conjunct} pokazują, że przyjęcie konkretnego modelu struktury zależnościowej koordynacji pozwala na predykcję częstości występowania konkretnych rodzajów zdań w~języku naturalnym. Rozpatrują oni sześć typów konstrukcji współrzędnie złożonych ze~względu na pozycję nadrzędnika koordynacji oraz pozycję krótszego członu\footnote{
+W niniejszej pracy przy nazywaniu typów koordynacji przyjęto następującą konwencję: Pierwsza litera oznacza pozycję nadrzędnika (L, 0 lub R), zaś druga -- pozycję krótszego członu (L lub R).}:
+
+\input{predictions/cases}
+
+Analiza dotyczy wyłącznie koordynacji binarnych, tj. posiadających dwa człony.
+
+Przy założonej pozycji nadrzędnika, w~języku naturalnym wraz ze~wzrostem różnicy długości członów koordynacji coraz częściej pojawiają się zdania tego typu, dla którego suma długości relacji zależnościowych jest mniejsza. W~związku z~tym, każdy z~modeli przewiduje, czy wraz ze~wzrostem różnicy długości członów koordynacji:
+\begin{itemize}
+\item odsetek koordynacji (L-L) względem wszystkich koordynacji (L)\footnote{
+Tj. procent koordynacji o krótszym pierwszym (lewym) członie wśród koordynacji z nadrzędnikiem po lewej stronie.}
+rośnie, czy spada;
+\item odsetek koordynacji (0-L) względem wszystkich koordynacji (0) rośnie, czy spada;
+\item odsetek koordynacji (R-L) względem wszystkich koordynacji (R) rośnie, czy spada.
+\end{itemize}
+
+\subsection{Podejścia} \label{podejścia}
+
+\input{predictions/head-initial/prague}
+
+\input{predictions/head-initial/london}
+
+\input{predictions/head-initial/stanford+moscow}
+
+\subsection{Wyniki i~interpretacja}
+
+\cite{przepiorkowski2023conjunct} przeprowadzili analizę 21~825 koordynacji binarnych występujących w~korpusie Penn Treebank (PTB) języka angielskiego.
+
+Analiza wykazała, że wraz~ze wzrostem różnicy długości członów:
+\begin{itemize}
+\item odsetek koordynacji (L-L) względem wszystkich koordynacji (L) \textbf{rośnie};
+\item odsetek koordynacji (0-L) względem wszystkich koordynacji (0) \textbf{rośnie};
+\item \textbf{nie ma istotnej statystycznie tendencji} dotyczącej zmiany odsetka koordynacji (R) względem wszystkich koordynacji (R).
+\end{itemize}
+
+Pierwsze dwie z opisywanych tendencji uzyskały wysoką istotność statystyczną ($p<0.001$). Nieznacznie malejąca prawidłowość opisująca koordynacje (R) nie była istotna statystycznie ($p = 0.921$). Niemniej jednak \cite{przepiorkowski2023conjunct} wskazują, że tendencja dotycząca koordynacji z nadrzędnikiem po prawej stronie jest istotnie inna od pozostałych dwóch zależności. 
+
+Wykres przedstawiający modele regresji logistycznych opisujących wyżej omówione zależności stanowi dodatek \ref{dod:PW23} do niniejszej pracy.
+
+Jak zauważają \cite{przepiorkowski2023conjunct}, taki stan rzeczy pokrywa się z~przewidywaniami modelu praskiego. Niemniej jednak zauważają również możliwy wpływ innej tendencji na te zjawiska. Stawiają tezę, że ponieważ w~języku angielskim zdania z~krótszym lewym członem występują częściej, to umieszczanie krótszego członu po lewej stronie mogło ulec gramatykalizacji. Siła tej tendencji jest nieznana, jednak można przypuszczać, że jest ona na tyle duża, żeby zrównoważyć tendencję do tworzenia zdań typu (R-R) częściej niż (R-L) oraz wpłynąć na częstość stawiania krótszego członu po lewej stronie, gdy nie ma nadrzędnika. W~takiej sytuacji należałoby również dopuścić interpretację londyńską.
+
+Wykorzystując powyższe rozumowanie, \cite{przepiorkowski2023conjunct} argumentują, że podejścia stanfordzkie i~moskiewskie nie mogą poprawnie opisywać struktury zależnościowej koordynacji w~języku angielskim.
+
+\section{Języki finalne}
+
+\subsection{Różnice względem języków inicjalnych}
+
+Analizując strukturę zależnościową koordynacji w~językach finalnych należy wziąć pod uwagę dwa dodatkowe fakty.
+
+Po pierwsze, głowy członów zwykle znajdują się bliżej ich końców (wynika to w~trywialny sposób z~natury tych języków).
+
+Po drugie, szeroko uznawane podejścia dotyczące struktury koordynacji zostały utworzone głównie na podstawie analizy języków inicjalnych. %źródło
+\cite{kanayama2018coordinate} zauważają, że wyżej omawiane modele, w~szczególności podejścia asymetryczne, nie nadają się do opisu języków finalnych. Podają przykłady struktur występujących w~języku japońskim oraz koreańskim, które interpretowane zgodnie z~narzucanym przez UD podejściem stanfordzkim tworzą drzewa niezgodne z~teorią lingwistyczną. Podkreślają, że z~tego powodu z~japońskich korpusów Universal Dependencies zostały usunięte wszystkie koordynacje, a w~korpusach koreańskich występują równolegle dwa różne standardy opisu struktur. Postulują, żeby w~analizie języków finalnych dopuścić odwrócone podejście, według którego głowa prawego członu jest nadrzędnikiem pozostałych \citep{kanayama2018coordinate}.
+
+Nie jest to jednak jedyne podejście do tematu struktury zależnościowej koordynacji w~językach finalnych. \cite{choi2011statistical} proponują, żeby ,,każdy człon był podrzędnikiem następnego'', tworząc podejście odwrócone względem podejścia moskiewskiego.
+
+Niemniej jednak analizowanie języków finalnych według modeli zaproponowanych w~pracach \cite{kanayama2018coordinate} oraz \cite{choi2011statistical} nie jest idealnym rozwiązaniem. Podejścia te nie określają miejsca spójnika w~strukturze zależnościowej. Ponadto, \cite{kanayama2018coordinate} postulują inne modele struktury zależnościowej dla języków inicjalnych i~finalnych. Może być to dobre rozwiązanie ad hoc w~celu inkorporacji koordynacji do japońskich korpusów UD, jednak stoi ono w~sprzeczności z~podstawowym celem Universal Dependencies. Podział języków na inicjalne i~finalne nie jest podziałem sztywnym, lecz raczej wskazaniem tendencji występujących w~danym języku, więc nie ma podstaw, żeby sądzić, że struktury gramatyczne w~językach inicjalnych i~finalnych są różne. Struktury gramatyczne powinne być opisywane przez uniwersalne standardy.
+
+W~związku z~powyższymi argumentami, w~niniejszej pracy analizuję nie tylko predykcje ,,klasycznych'' podejść opisanych w~punkcie \ref{podejścia} oraz postulowanych w~badaniach \cite{kanayama2018coordinate} oraz~\cite{choi2011statistical}, lecz także przewidywania wszystkich możliwych modeli struktury zależnościowej koordynacji.
+
+\subsection{Podejścia} \label{wszystkie-podejścia}
+
+Dla analizy struktury zależnościowej koordynacji binarnej (zarówno w~językach finalnych, jak w~inicjalnych) istotne są jej cztery elementy: 
+\begin{itemize}
+\item[$\odot$] nadrzędnik, 
+\item[$\square$] głowa pierwszego członu,
+\item[$\boxdot$] spójnik, 
+\item[$\square$] głowa ostatniego członu. 
+\end{itemize}
+W~celu uproszczenia na poniższych schematach posługuję się tymi symbolami. W analizie uwzględniam koordynacje wieloczłonowe, jednak uwzględniam tylko ich pierwszy (lewy) i ostatni (prawy) człon.
+
+Istnieje 16 sposobów narysowania drzewa dla linearnie uporządkowanego ciągu czterech wierzchołków z~wyróżnionym korzeniem:
+
+\input{predictions/head-final/16models}
+
+Powyższe modele należy interpretować w~następujący sposób:
+\begin{enumerate}
+\item[(A)] podejście praskie;
+\item[(B)] podejście londyńskie;
+\item[(C)] odwrócone podejście londyńskie -- spójnik jest podpięty pod lewy człon;
+\item[(D)] podejście moskiewskie;
+\item[(E)] odwrócone podejście moskiewskie (postulowane w~pracy \citealp{choi2011statistical});
+\item[(F)] podejście stanfordzkie (stosowane w~UD);
+\item[(G)] odwrócone podejście stanfordzkie (postulowane w~pracy \citealp{kanayama2018coordinate});
+\item[(H)--(I)] pozostałe warianty podejścia stanfordzkiego;
+\item[(J)] podejście ,,nadrzędnikowe'' (według którego głowy wszystkich członów oraz spójnik są podrzędnikami nadrzędnika koordynacji);
+\item[(K)--(L)] podejścia zakładające, że jedna z~głów jest bezpośrednim podrzędnikiem nadrzędnika koordynacji, zaś druga podrzędnikiem spójnika;
+\item[(M)--(P)]  Podejścia zakładające występowanie krawędzi nieprojektywnych w~strukturze koordynacji.
+\end{enumerate}
+
+Podejścia (M)--(P) zakładają, że w strukturze zależnościowej koordynacji znajdują się krawędzie nieprojektywne, tj. przecinające się. W języku naturalnym występuje generalna tendencja do unikania krawędzi nieprojektywnych. %źródło
+Przecinające się krawędzie występują czasami w drzewach zależnościowych, jednak nie należy zakładać, że ich występowanie jest regułą. Wobec tego w~niniejszej pracy odrzucam podejścia (M)--(P) i zajmuję się predykcjami modeli (A)--(L).
+
+\subsection{Metody}
+
+Dla każdego z~12 podejść rozważam sześć sytuacji na wzór analizy z~pracy \cite{przepiorkowski2023conjunct}. Ponieważ analizuję korpusy języków finalnych, zakładam, że głowa członu (oznaczona tutaj $\blacksquare$) znajduje się na jego końcu\footnote{
+Jest to pewnego rodzaju uproszczenie, ponieważ w językach finalnych głowa nie zawsze znajduje się na samym końcu frazy. Niemniej jednak dla opisywanych przeze mnie tendencji istotne jest to, z której strony głowy członu częściej pojawiają się dodatkowe podrzędniki głowy. W przypadku języków finalnych zakładam, że człon częściej ,,rośnie'' w lewą stronę od głowy.}:
+
+\input{predictions/head-final/template-long}
+
+Wszystkie poniższe obliczenia dotyczą liczby tokenów w koordynacji. Przez $a$ rozumiem długość krótszego członu, przez $b$ -- różnicę długości członów, zaś przez $S$ -- sumę długości relacji w obrębie koordynacji\footnote{Dokładniej jest to suma długości relacji, na które ma wpływ długość członów koordynacji.}. Na potrzeby obliczeń w~schematach tokeny wchodzące w~skład członu zamieniam na długość członu:
+
+\input{predictions/head-final/template}
+
+\subsection{Predykcje}
+
+\input{predictions/head-final/A}
+\input{predictions/head-final/B}
+\input{predictions/head-final/C}
+\input{predictions/head-final/D}
+\input{predictions/head-final/E}
+\input{predictions/head-final/F}
+\input{predictions/head-final/G}
+\input{predictions/head-final/H}
+\input{predictions/head-final/I}
+\input{predictions/head-final/J}
+\input{predictions/head-final/K}
+\input{predictions/head-final/L}
+
+
+W~dalszej części pracy przedstawiam analizę danych w~poszukiwaniu wyżej opisanych tendencji. Pokazuję które z~powyższych podejść daje poprawne przewidywania.
+
+\section{Języki mieszane}
+
+Językami mieszanymi nazywam te, w przypadku których nie ma wyraźniej tendencji do umieszczania głowy na początku lub na końcu fraz. Należą do nich m.in. niemiecczyzna i łacina \citep{polinsky2020headedness}.
+
+W~niniejszej pracy obliczam opisywane powyżej tendencje w języku niemieckim i łacińskim. Ponieważ jednak w językach mieszanych nie sposób ustalić, z której strony członu znajduje się zwykle głowa i z której strony głowy zwykle pojawiają się jej podrzędniki, nie przedstawiam przewidywań modeli struktury zależnościowej koordynacji co do tych tendencji. 

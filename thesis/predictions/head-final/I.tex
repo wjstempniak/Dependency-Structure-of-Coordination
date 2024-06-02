@@ -1,0 +1,104 @@
+\paragraph{Podejście (I)}
+
+Model przewiduje następujące długości relacji:
+
+\begin{table}[H]
+\begin{tabular}{lcllcl}
+
+(L-L) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\odot$\&a\&$\square$\&$\boxdot$\&a+b\&$\square$\\
+        \end{deptext}
+		\depedge{1}{6}{}
+		\depedge{6}{3}{}
+		\depedge{3}{4}{}
+        \wordgroup{1}{2}{3}{L}
+        \wordgroup{1}{5}{6}{R}
+        \end{dependency}
+
+& $S=3a+2b$ & 
+
+(L-R) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\odot$\&a+b\&$\square$\&$\boxdot$\&a\&$\square$\\
+        \end{deptext}
+		\depedge{1}{6}{}
+		\depedge{6}{3}{}
+		\depedge{3}{4}{}
+		\wordgroup{1}{2}{3}{L}
+		\wordgroup{1}{5}{6}{R}
+        \end{dependency}
+        
+& $S=3a+b$ \\ 
+
+(0-L) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        a\&$\square$\&$\boxdot$\&a+b\&$\square$\\
+        \end{deptext}
+		\depedge{5}{2}{}
+		\depedge{2}{3}{}
+        \wordgroup{1}{1}{2}{L}
+        \wordgroup{1}{4}{5}{R}
+        \end{dependency}
+
+& $S=a+b$ & 
+
+(0-R) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        a+b\&$\square$\&$\boxdot$\&a\&$\square$\\
+        \end{deptext}
+		\depedge{5}{2}{}
+		\depedge{2}{3}{}
+        \wordgroup{1}{1}{2}{L}
+        \wordgroup{1}{4}{5}{R}
+        \end{dependency}
+        
+& $S=a$ \\
+
+(R-L) &
+
+\begin{dependency}[hide label,edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        a\&$\square$\&$\boxdot$\&a+b\&$\square$\&$\odot$\\
+        \end{deptext}
+		\depedge{6}{5}{}
+		\depedge{5}{2}{}
+		\depedge{2}{3}{}
+		\wordgroup{1}{1}{2}{L}
+		\wordgroup{1}{4}{5}{R}
+        \end{dependency}
+        
+& $S=a+b$ &
+
+(R-R) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+           a+b\&$\square$\&$\boxdot$\&a\&$\square$\&$\odot$\\
+        \end{deptext}
+		\depedge{6}{5}{}
+		\depedge{5}{2}{}
+		\depedge{2}{3}{}
+        \wordgroup{1}{1}{2}{L}
+        \wordgroup{1}{4}{5}{R}
+        \end{dependency}
+
+& $S=a$ \\
+
+\end{tabular}
+\end{table}
+
+Wraz~ze wzrostem różnicy długości członów (\emph{b}):
+\begin{itemize}
+\item odsetek koordynacji (L-L) względem wszystkich koordynacji (L) \textbf{spada};
+\item odsetek koordynacji (0-L) względem wszystkich koordynacji (0) \textbf{spada};
+\item odsetek koordynacji (R-L) względem wszystkich koordynacji (R) \textbf{spada}.
+\end{itemize}

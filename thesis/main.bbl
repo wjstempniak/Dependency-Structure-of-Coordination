@@ -1,0 +1,50 @@
+\begin{thebibliography}{}
+
+\bibitem[De~Marneffe i~in., 2021]{de2021universal}
+De~Marneffe, M.-C., Manning, C.~D., Nivre, J., i Zeman, D. (2021).
+\newblock Universal {D}ependencies.
+\newblock {\em Computational linguistics}, 47(2):255--308.
+
+\bibitem[Kanayama i~in., 2018]{kanayama2018coordinate}
+Kanayama, H., Han, N.-R., Asahara, M., Hwang, J.~D., Miyao, Y., Choi, J.~D., i
+  Matsumoto, Y. (2018).
+\newblock Coordinate structures in {U}niversal {D}ependencies for head-final
+  languages.
+\newblock In {\em Proceedings of the Second Workshop on {U}niversal
+  {D}ependencies (UDW 2018)}, strony 75--84.
+
+\bibitem[Przepi{\'o}rkowski i Patejuk, 2018]{przepiorkowski2018lexical}
+Przepi{\'o}rkowski, A. i Patejuk, A. (2018).
+\newblock From lexical functional grammar to enhanced universal dependencies.
+\newblock In {\em Proceedings of the Joint Workshop on Linguistic Annotation,
+  Multiword Expressions and Constructions (LAW-MWE-CxG-2018)}, strony 2--4.
+
+\bibitem[Przepi{\'o}rkowski i Wo{\'z}niak, 2023]{przepiorkowski2023conjunct}
+Przepi{\'o}rkowski, A. i Wo{\'z}niak, M. (2023).
+\newblock Conjunct lengths in {E}nglish, dependency length minimization, and
+  dependency structure of coordination.
+\newblock In {\em Proceedings of the 61st Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, strony 15494--15512.
+
+\bibitem[Przepiórkowski i~in., 2024]{przepiorkowski2024argument}
+Przepiórkowski, A., Borysiak, M., i Głowacki, A. (2024).
+\newblock An argument for symmetric coordination from {D}ependency {L}ength
+  {M}inimization: {A}~replication study.
+\newblock To appear in the proceedings of \emph{LREC-COLING 2024}.
+
+\bibitem[Riedl i Biemann, 2018]{riedl2018using}
+Riedl, M. i Biemann, C. (2018).
+\newblock Using semantics for granularities of tokenization.
+\newblock {\em Computational Linguistics}, 44(3):483--524.
+
+\bibitem[Simpson i Kang, 2004]{simpson2004syllable}
+Simpson, G.~B. i Kang, H. (2004).
+\newblock Syllable processing in alphabetic {K}orean.
+\newblock {\em Reading and Writing}, 17:137--151.
+
+\bibitem[Temperley, 2007]{temperley2007minimization}
+Temperley, D. (2007).
+\newblock Minimization of dependency length in written {E}nglish.
+\newblock {\em Cognition}, 105(2):300--333.
+
+\end{thebibliography}

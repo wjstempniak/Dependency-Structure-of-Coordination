@@ -1,0 +1,93 @@
+\subsubsection{Podejścia stanfordzkie i~moskiewskie}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lclc}
+
+(L-L) & 
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\odot$\&$\square$\&$\square$\&$\square$\&$\boxdot$\&$\square$\&$\square$\&$\square$\&$\square$\&$\square$\&$\square$\\
+            \end{deptext}
+	  \depedge{1}{2}{}
+	  \depedge{2}{6}{}
+	  \depedge{6}{5}{}
+            \wordgroup{1}{2}{4}{L}
+            \wordgroup{1}{6}{11}{R}
+        \end{dependency}
+
+& (L-R) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\odot$\&$\square$\&$\square$\&$\square$\&$\square$\&$\square$\&$\square$\&$\boxdot$\&$\square$\&$\square$\&$\square$\\
+            \end{deptext}
+	  \depedge{1}{2}{}
+	  \depedge{2}{9}{}
+	  \depedge{9}{8}{}
+            \wordgroup{1}{2}{7}{L}
+            \wordgroup{1}{9}{11}{R}
+        \end{dependency}
+        
+\\ (0-L) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\square$\&$\square$\&$\square$\&$\boxdot$\&$\square$\&$\square$\&$\square$\&$\square$\&$\square$\&$\square$\\
+            \end{deptext}
+	  \depedge{5}{4}{}
+	  \depedge{1}{5}{}
+            \wordgroup{1}{1}{3}{L}
+            \wordgroup{1}{5}{10}{R}
+        \end{dependency}
+        
+& (0-R) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\square$\&$\square$\&$\square$\&$\square$\&$\square$\&$\square$\&$\boxdot$\&$\square$\&$\square$\&$\square$\\
+            \end{deptext}
+	  \depedge{8}{7}{}
+	  \depedge{1}{8}{}
+            \wordgroup{1}{1}{6}{L}
+            \wordgroup{1}{8}{10}{R}
+        \end{dependency}
+
+\\ (R-L) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\square$\&$\square$\&$\square$\&$\boxdot$\&$\square$\&$\square$\&$\square$\&$\square$\&$\square$\&$\square$\&$\odot$\\
+            \end{deptext}
+	  \depedge{11}{1}{}
+	  \depedge{1}{5}{}
+	  \depedge{5}{4}{}
+            \wordgroup{1}{1}{3}{L}
+            \wordgroup{1}{5}{10}{R}
+        \end{dependency}
+        
+& (R-R) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex,  baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\square$\&$\square$\&$\square$\&$\square$\&$\square$\&$\square$\&$\boxdot$\&$\square$\&$\square$\&$\square$\&$\odot$\\
+            \end{deptext}
+	  \depedge{11}{1}{}
+	  \depedge{1}{8}{}
+	  \depedge{8}{7}{}
+            \wordgroup{1}{1}{6}{L}
+            \wordgroup{1}{8}{10}{R}
+        \end{dependency}
+        
+\\
+\end{tabular}
+\end{table}
+
+Model stanfordzki przewiduje, że wraz~ze wzrostem różnicy długości członów:
+\begin{itemize}
+\item odsetek koordynacji (L-L) względem wszystkich koordynacji (L) \textbf{rośnie};
+\item odsetek koordynacji (0-L) względem wszystkich koordynacji (0) \textbf{rośnie};
+\item odsetek koordynacji (R-L) względem wszystkich koordynacji (R) \textbf{rośnie}.
+\end{itemize}
+
+W~przypadku koordynacji dwuczłonowych podejście moskiewskie przewiduje bardzo podobną strukturę koordynacji, co podejście stanfordzkie. Modele te różnią się jedynie dwiema krawędziami -- jedną, łączącą głowę lewego członu z~głową prawego członu oraz drugą, łączącą głowę prawego członu ze~spójnikiem koordynacji. Różnice te nie mają istotnego wpływu na sumę długości relacji. Z~tego powodu przewidywania modelu moskiewskiego co do występowania częstości zmian są identyczne, jak w przypadku modelu stanfordzkiego.

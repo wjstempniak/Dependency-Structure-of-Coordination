@@ -1,0 +1,846 @@
+\chapter{Przetwarzanie danych} \label{ch4}
+\section{Dane wejściowe}
+\subsection{Korpusy zależnościowe}
+
+Analizie zostały poddane 72 korpusy zależnościowe 13 języków, spośród korpusów dostępnych na stronie internetowej Universal Dependencies (\url{https://universaldependencies.org/}).
+
+Za główne kryterium doboru języka uznano istnienie korpusu zależnościowego opisanego w~standardzie UD o objętości co najmniej 700 tysięcy tokenów.  
+
+Język arabski został wykluczony z~analizy, ponieważ znaczna część jego korpusów zawierała wyłącznie relacje zależnościowe między tokenami. W takich korpusach treść zdań została zamieniona podkreślnikami, w związku z czym policzenie długości członów w~słowach, sylabach i znakach nie była możliwa.  Korpusy języka arabskiego zawierające słowa nie przekroczyły łącznej objętości 700 tys. tokenów.
+
+Ze względu na fakt, że w~korpusach UD dla języka japońskiego nie występują koordynacje \citep[s. 79]{kanayama2018coordinate}, język ten również został wykluczony z~analizy.
+
+Ponadto do analizy przyjęto korpusy dwóch języków finalnych z~największymi korpusami, nie licząc wykluczonych japońskiego i~arabskiego, tj. koreańskiego i~tureckiego.
+
+Dodatkowo uwzględniono korpusy języka polskiego jako języka ojczystego autora pracy. 
+
+Tabela \ref{korpusy} przedstawia informacje na temat korpusów użytych w~badaniu.
+
+\newpage
+
+\begin{table}[!h]
+    \centering
+    \small
+    \begin{tabular}{llrl}
+    \toprule
+        Język & Korpus & Rozmiar & Sposób anotacji relacji zależnościowych \\ 
+    \midrule
+    		\multicolumn{4}{c}{\textbf{Języki inicjalne}} \\
+    \midrule
+    
+        \multirow{11}{*}{angielski} & GUM & 184 478 & ręcznie w~formacie UD \\
+        ~ & EWT & 251 534 & ręcznie w~formacie UD \\
+        ~ & Atis & 61 879 & ręcznie w~formacie UD \\
+        ~ & ParTUT & 49 602 & ręcznie w~innym formacie, konwersja z~poprawkami \\
+        ~ & GENTLE & 17 617 & ręcznie w~formacie UD \\
+        ~ & PUD & 21 058 & ręcznie w~formacie UD \\
+        ~ & LinES & 93 200 & ręcznie w~innym formacie, konwersja z~poprawkami \\
+        ~ & Pronouns & 1 640 & ręcznie w~formacie UD \\
+        ~ & ESLSpok & 21 312 & ręcznie w~formacie UD \\
+        ~ & GUMReddit & 15 960 & ręcznie w~formacie UD \\ 
+        ~ & \textbf{Razem} & \textbf{718 280} \\ \midrule
+        
+       	\multirow{7}{*}{czeski} & CAC & 494 420 & ręcznie w~innym formacie, automatyczna konwersja \\ 
+        ~ & PDT & 1 527 257 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & FicTree & 166 747 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & CLTT & 36 011 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & PUD & 18 578 & ręcznie w~formacie UD \\
+        ~ & Poetry & 6 273 & ręcznie w~formacie UD \\ 
+        ~ & \textbf{Razem} & \textbf{2 249 286} \\ \midrule
+        
+        \multirow{4}{*}{hiszpański} & AnCora & 555 670 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & GSD & 423 345 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & PUD & 22 822 & ręcznie w~innym formacie, automatyczna konwersja \\ 
+        ~ & \textbf{Razem} & \textbf{1 001 837} \\ \midrule
+
+        \multirow{5}{*}{islandzki} & Modern & 80 392 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & IcePaHC & 983 671 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & PUD & 18 831 & automatycznie z~poprawkami \\
+        ~ & GC & 99 611 & ręcznie w~innym formacie, automatyczna konwersja \\ 
+        ~ & \textbf{Razem} & \textbf{1 182 505} \\ \midrule
+        
+        \multirow{4}{*}{polski} & PDB & 347 319 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & LFG & 130 967 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & PUD & 18 333 & ręcznie w~innym formacie, automatyczna konwersja \\ 
+        ~ & \textbf{Razem} & \textbf{496 619} \\ \midrule
+        
+        \multirow{8}{*}{portugalski} & PetroGold & 232 333 & ręcznie w~formacie UD \\
+        ~ & Porttinari & 157 490 & ręcznie w~formacie UD \\
+        ~ & Bosque & 210 958 & ręcznie w~innym formacie, konwersja z~poprawkami \\
+        ~ & CINTIL & 441 991 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & GSD & 296 169 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & PUD & 21 917 & ręcznie w~innym formacie, automatyczna konwersja \\ 
+        ~ & \textbf{Razem} & \textbf{1 360 858} \\ \midrule
+        
+        \multirow{6}{*}{rosyjski} & Taiga & 197 001 & ręcznie w~formacie UD \\
+        ~ & Poetry & 64 112 & ręcznie w~formacie UD \\
+        ~ & SynTagRus & 1 517 881 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & GSD & 97 994 & ręcznie w~formacie UD \\
+        ~ & PUD & 19 355 & ręcznie w~formacie UD \\ 
+        ~ & \textbf{Razem} & \textbf{1 896 343} \\ 
+        
+        \bottomrule
+    \end{tabular}
+  \end{table}
+        
+\begin{table}[!h]
+  \centering
+  \small
+    \begin{tabular}{llrl}
+    \toprule
+        Język & Korpus & Rozmiar & Sposób anotacji relacji zależnościowych \\ 
+    \midrule
+    		\multicolumn{4}{c}{\textbf{Języki inicjalne}} \\
+    \midrule
+        
+        \multirow{5}{*}{rumuński} & RRT & 218 522 & ręcznie w~formacie UD \\
+        ~ & SiMoNERo & 146 020 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & ArT & 573 & ręcznie w~formacie UD \\
+        ~ & Nonstandard & 572 436 & ręcznie w~innym formacie, automatyczna konwersja \\ 
+        ~ & \textbf{Razem} & \textbf{937 551} \\ \midrule
+        
+        \multirow{11}{*}{włoski} & ISDT & 278 460 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & VIT & 259 625 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & Old & 40 386 & ręcznie w~formacie UD \\
+        ~ & ParTUT & 51 614 & ręcznie w~innym formacie, konwersja z~poprawkami \\
+        ~ & ParlaMint & 19 141 & ręcznie w~formacie UD \\
+        ~ & TWITTIRO & 28 384 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & Valico & 6 508 & ręcznie w~formacie UD \\
+        ~ & PoSTWITA & 119 334 & automatycznie z~poprawkami \\
+        ~ & MarkIT & 38 237 & ręcznie w~formacie UD \\
+        ~ & PUD & 22 182 & ręcznie w~innym formacie, automatyczna konwersja \\ 
+        ~ & \textbf{Razem} & \textbf{863 871} \\
+
+    \midrule   		
+    		\multicolumn{4}{c}{\textbf{Języki mieszane}} \\
+    \midrule
+        \multirow{6}{*}{łacina} & ITTB & 450 480 & ręcznie w~innym formacie, konwersja z~poprawkami \\
+        ~ & LLCT & 242 391 & ręcznie w~innym formacie, konwersja z~poprawkami \\
+        ~ & UDante & 55 286 & ręcznie w~formacie UD \\
+        ~ & Perseus & 28 868 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & PROIEL & 205 566 & ręcznie w~innym formacie, automatyczna konwersja \\ 
+        ~ & \textbf{Razem} & \textbf{982 591} \\ \midrule
+        \multirow{5}{*}{niemiecki} & GSD & 287721 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & PUD & 21 001 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & LIT & 40 340 & ręcznie w~formacie UD \\
+        ~ & HDT & 3 399 390 & ręcznie w~innym formacie, konwersja z~poprawkami \\ 
+        ~ & \textbf{Razem} & \textbf{3 748 452} \\
+    \midrule
+    		\multicolumn{4}{c}{\textbf{Języki finalne}} \\
+    \midrule
+        \multirow{4}{*}{koreański} & Kaist & 350 090 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & GSD & 80 322 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & PUD & 16 584 & ręcznie w~innym formacie, automatyczna konwersja \\ 
+        ~ & \textbf{Razem} & \textbf{446 996} \\ \midrule
+        \multirow{9}{*}{turecki} & Kenet & 178 658 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & Penn & 183 555 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & Tourism & 91 152 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & Atis & 45 907 & ręcznie w~formacie UD \\
+        ~ & GB & 16 803 & ręcznie w~formacie UD \\
+        ~ & FrameNet & 19 223 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & BOUN & 121 835 & ręcznie w~formacie UD \\
+        ~ & IMST & 56 422 & ręcznie w~innym formacie, automatyczna konwersja \\
+        ~ & PUD & 16 535 & ręcznie w~formacie UD \\ 
+        ~ & \textbf{Razem} & \textbf{730 090} \\ 
+    \bottomrule
+    \end{tabular}
+    \caption{Języki i~korpusy analizowane w~badaniu. Rozmiar korpusów podany jest w~liczbie tokenów.}
+   	\label{korpusy}
+\end{table}
+
+\FloatBarrier
+\newpage
+\subsection{Format danych}
+
+Korpusy składają się ze~zdań opisanych w~formacie CONLL-U\footnote{Dokładny opis formatu znajduje się na stronie \url{https://universaldependencies.org/format.html}.}, zawierającym wszystkie informacje potrzebne to utworzenia drzewa zależnościowego. Poniższe schematy przedstawiają przykładowe zdanie \eqref{zdanie}, jego opis w~formacie CONLL-U \eqref{conllu} oraz drzewo zależnościowe \eqref{drzewo}.
+
+\begin{exe}
+\ex \label{zdanie} Zacierałem ręce.
+
+\vspace{0.5cm}
+
+\ex  \label{conllu}
+\begin{scriptsize}
+\begin{verbatim}
+# sent_id = dev-1646 
+# text = Zacierałem ręce.
+# converted_from_file = NKJP1M_1102000008_morph_6-p_morph_6.61-s-dis@1.xml
+# genre = news
+1	Zacierał zacierać VERB praet:sg:m1:imperf	Aspect=Imp|Gender=Masc|Mood=Ind|Number=Sing|
+SubGender=Masc1|Tense=Past|VerbForm=Fin|Voice=Act	0 root 0:root SpaceAfter=No
+2	em	 być	 AUX	 glt:sg:pri:imperf:wok	Aspect=Imp|Number=Sing|Person=1| Variant=Long	1aux:clitic
+1:aux:clitic	_
+3	ręce ręka NOUN	subst:pl:acc:f	Case=Acc|Gender=Fem|Number=Plur	1obj	1:obj	SpaceAfter=No
+4	.    .    PUNCT	interp	PunctType=Peri	1	punct	1:punct	_
+\end{verbatim}
+\end{scriptsize}
+
+\vspace{0.5cm}
+
+\ex \label{drzewo}
+\begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+\begin{deptext}[column sep=1em]
+Zacierał \& em \& ręce \& .  \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge{1}{2}{aux:clitic}
+\depedge{1}{3}{obj}
+\depedge{1}{4}{punct}
+\end{dependency}
+\citep{przepiorkowski2018lexical}
+\end{exe} 
+
+\section{Wyciąganie koordynacji}
+
+W~niniejszym punkcie omawiam proces wyciągania koordynacji, czyli zautomatyzowanego znajdowania i~opisu konstrukcji współrzędnie złożonych w~korpusach zależnościowych. Omawiana procedura zakłada, że zdania są anotowane w formacie UD, który przyjmuje stanfordzki model struktury koordynacji.
+
+\subsection{Relacja \texttt{conj}}
+
+W~standardzie Universal Dependencies zależność łącząca dwa człony koordynacji opisana jest zawsze etykietą \texttt{conj}. Taka etykieta sygnalizuje obecność konstrukcji współrzędnie złożonej, co pokazuje przykład \eqref{chleb+jajka}. Ponieważ UD opisuje koordynacje według podejścia stanfordzkiego, to wiadomo, że każda krawędź drzewa podpisana etykietą \texttt{conj} łączy lewy człon koordynacji z~jednym z~pozostałych jej członów.  
+ 
+\begin{exe}
+\ex \label{chleb+jajka}
+\begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+\begin{deptext}[column sep=1em]
+Kupił \& chleb \& i~\& tuzin \& jajek \& .  \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge{1}{2}{obj}
+\depedge{5}{3}{cc}
+\depedge{5}{4}{amod}
+\depedge[edge style = {thick}, label style = {thick}]{2}{5}{\textbf{conj}}
+\depedge{1}{6}{punct}
+\end{dependency}
+\end{exe}
+
+\subsection{Wyznaczanie głów członów, nadrzędnika i~spójnika koordynacji}
+
+\paragraph{Głowa lewego członu}
+
+Jeśli token jest nadrzędnikiem w~relacji \textit{conj}, to jest on głową lewego członu. W przykładzie \eqref{L} głową lewego członu jest token \textit{chleb}.
+
+\begin{exe}
+\ex \label{L}
+\begin{dependency}[baseline=0.9ex]
+\begin{deptext}[column sep=1em, row sep=.1ex]
+Kupił \& \textbf{chleb} \& i~\& tuzin \& jajek \& .  \\ 
+ \& \textbf{$\square$} \&  \&  \& \&  \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge{1}{2}{obj}
+\depedge{5}{3}{cc}
+\depedge{5}{4}{amod}
+\depedge[edge style = {thick}, label style = {thick}]{2}{5}{\textbf{conj}}
+\depedge{1}{6}{punct}
+\end{dependency}
+\end{exe}
+
+\paragraph{Głowa prawego członu}
+
+Jeśli z~głowy lewego członu wychodzi tylko jedna relacja \texttt{conj}, to jej podrzędnik jest głową prawego członu. W \eqref{R} głową prawego członu jest token \textit{jajek}.
+
+\begin{exe}
+\ex \label{R}
+\begin{dependency}[baseline=0.9ex]
+\begin{deptext}[column sep=1em, row sep=.1ex]
+Kupił \& \textbf{chleb} \& i~\& tuzin \& \textbf{jajek} \& .  \\ 
+ \& \textbf{$\square$} \&  \&  \& \textbf{$\square$} \&  \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge{1}{2}{obj}
+\depedge{5}{3}{cc}
+\depedge{5}{4}{amod}
+\depedge[edge style = {thick}, label style = {thick}]{2}{5}{\textbf{conj}}
+\depedge{1}{6}{punct}
+\end{dependency}
+\end{exe}
+
+Jeśli natomiast głowa lewego członu ma kilka podrzędników z~relacjami \texttt{conj}, jest to koordynacja wieloczłonowa. Podrzędniki tych relacji to głowy pozostałych członów. Głowa, która występuje w~zdaniu jako ostatnia, jest głową prawego członu. W zdaniu \eqref{wieloczłonowa} \textit{chleb}, \textit{mleko} i~\textit{jajek} są głowami członów jednej konstrukcji współrzędnie złożonej. \textit{Chleb} jest głową lewego, zaś \textit{jajek} prawego członu koordynacji.
+
+\begin{exe}
+\ex \label{wieloczłonowa}
+\begin{dependency}[baseline=0.9ex]
+\begin{deptext}[column sep=1em,  row sep=.1ex]
+Kupił \& \textbf{chleb} \& , \& \textbf{mleko} \& i~\& tuzin \& \textbf{jajek} \& .  \\ 
+ \& \textbf{$\square$} \& \& \textbf{$\square$} \& \& \& \textbf{$\square$} \& \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge{1}{2}{obj}
+\depedge{4}{3}{punct}
+\depedge[edge style = {thick}, label style = {thick}]{2}{4}{\textbf{conj}}
+\depedge{7}{5}{cc}
+\depedge{7}{6}{amod}
+\depedge{2}{7}[edge style = {red, thick}, label style = {thick, draw=red, text=red}]{\textbf{conj}}
+\depedge{1}{8}{punct}
+\end{dependency}
+\end{exe}
+
+Ponieważ w analizie każda koordynacja traktowana jest jako binarna, środkowe człony (\textit{mleko} w przykładzie \eqref{wieloczłonowa}) są ignorowane.
+
+
+\paragraph{Nadrzędnik}
+
+Nadrzędnikiem koordynacji jest zawsze nadrzędnik głowy lewego członu. W przykładzie \eqref{G} jest to \textit{Kupił}.
+
+\begin{exe}
+\ex \label{G}
+\begin{dependency}[baseline=0.9ex]
+\begin{deptext}[column sep=1em, row sep=.1ex]
+\textbf{Kupił} \& \textbf{chleb} \& i~\& tuzin \& jajek \& .  \\ 
+\textbf{$\odot$} \& $\square$ \& \& \& $\square$ \& \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge[edge style = {thick}, label style = {thick}]{1}{2}{\textbf{obj}}
+\depedge{5}{3}{cc}
+\depedge{5}{4}{amod}
+\depedge{2}{5}{conj}
+\depedge{1}{6}{punct}
+\end{dependency}
+\end{exe}
+
+\paragraph{Spójnik}
+
+Jeśli z~głowy prawego członu  wychodzi relacja \texttt{cc}, podrzędnik tej relacji jest spójnikiem koordynacji. W zdaniu \eqref{C} spójnikiem koordynacji \textit{i}.
+
+\begin{exe}
+\ex \label{C}
+\begin{dependency}[baseline=0.9ex]
+\begin{deptext}[column sep=1em, row sep=.1ex]
+Kupił \& chleb \& \textbf{i} \& tuzin \& \textbf{jajek} \& .  \\ 
+$\odot$ \& $\square$ \& \textbf{$\boxdot$} \& \& $\square$ \& \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge{1}{2}{obj}
+\depedge[edge style = {thick}, label style = {thick}]{5}{3}{\textbf{cc}}
+\depedge{5}{4}{amod}
+\depedge{2}{5}{conj}
+\depedge{1}{6}{punct}
+\end{dependency}
+\end{exe}
+
+Podsumowując, procedura wyznaczania kluczowych elementów koordynacji wygląda następująco:
+
+\begin{exe}
+\ex 	\label{procedura}
+Dla każdego tokenu $L$:
+
+Jeśli $L$ ma $n>0$ podrzędników z~relacją \texttt{conj} oraz:
+
+\begin{itemize}
+\item nadrzędnik $L$ to $G$,
+\item podrzędniki $L$ z~relacją \texttt{conj} to $H_{1}, \ldots , H_{n}$,
+\item opcjonalne podrzędniki $H_{1}, \ldots , H_{n}$ z~relacją \texttt{cc} to spójniki -- oznaczane odpowiednio $C_{1}, \ldots , C_{n}$,
+\end{itemize}
+
+to należy rozpatrzeć taką koordynację, w~której nadrzędnikiem jest $G$, głową lewego członu jest $L$, głową prawego członu $H_{n}$, a spójnikiem $C_{n}$.
+\end{exe}
+
+$H_{i}$ i $C_{i}$ dla $i<n$ to odpowiednio pozostałe głowy i spójniki. Są one co do zasady pomijane w analizie\footnote{
+Niektóre z heurystyk opisywanych w punktach \ref{heurystyki} oraz \ref{zagnieżdżone} mogą brać pod uwagę istnienie lub treść środkowych członów i pozostałych spójników. Odnoszę się do tego faktu przy omawianiu tych heurystyk.}.
+
+
+\subsection{Wyznaczanie granic członów} \label{heurystyki}
+
+W~celu automatycznego określenia granicy członu należy wziąć pod uwagę wszystkich potomków jego głowy:
+
+\begin{exe}
+\ex \label{potomkowie}
+\begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+\begin{deptext}[column sep=1em, row sep=.1ex]
+\emph{Kupił} \& \textbf{\textcolor{blue}{chleb}} \& i~\& tuzin \& \textbf{\textcolor{red}{jajek}} \& .  \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge{1}{2}{obj}
+\depedge{5}{3}{cc}
+\depedge{5}{4}{amod}
+\depedge{2}{5}{conj}
+\depedge{1}{6}{punct}
+\wordgroup[group style={draw=blue, fill=blue!20}]{1}{2}{5}{}
+\wordgroup[group style={draw=red, fill=red!20, inner sep=-.2ex}]{1}{3}{5}{}
+\end{dependency}
+\end{exe}
+
+W zdaniu \eqref{potomkowie} potomkami głowy lewego członu \textit{chleb} są \textit{i}, \textit{tuzin} i~\textit{jajek}, zaś potomkami głowy prawego członu \textit{i} oraz \textit{tuzin}.
+
+Spośród podrzędników głowy lewego członu należy wykluczyć głowy pozostałych członów oraz wraz z~ich podrzędnikami.
+
+W ten sposób otrzymujemy wstępnie określone granice członów, co pokazuje przykład \eqref{granice}:
+
+\begin{exe}
+\ex \label{granice}
+\begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+\begin{deptext}[column sep=1em, row sep=.1ex]
+\emph{Kupił} \& \textbf{chleb} \& i \& tuzin \& \textbf{jajek} \& .  \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge{1}{2}{obj}
+\depedge{5}{3}{cc}
+\depedge{5}{4}{amod}
+\depedge{2}{5}{conj}
+\depedge{1}{6}{punct}
+\wordgroup{1}{2}{2}{}
+\wordgroup{1}{3}{5}{}
+\end{dependency}
+\end{exe}
+
+Następnie należy zastosować zestaw reguł w~celu wykluczenia tokenów, które nie są elementami członów. W~niniejszej pracy posługuję się następującymi heurystykami:
+
+\begin{enumerate}
+\item[(H1)] Człon nie może zaczynać się od spójnika (słowa, które jest połączone z~głową członu relacją \texttt{cc}).
+\end{enumerate}
+
+\begin{exe}
+\ex  \label{H1-przykład}
+\begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+\begin{deptext}[column sep=1em, row sep=.1ex]
+\emph{Kupił} \& \textbf{chleb} \& \textcolor{red}{i} \& tuzin \&\textbf{jajek} \& .  \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge{1}{2}{obj}
+\depedge[edge style = {red, thick}, label style = {thick, draw=red, text=red}]{5}{3}{cc}
+\depedge{5}{4}{amod}
+\depedge{2}{5}{conj}
+\depedge{1}{6}{punct}
+\wordgroup{1}{2}{2}{}
+\wordgroup{1}{4}{5}{}
+\end{dependency}
+\end{exe}
+
+\begin{enumerate}
+\item[(H2)] Człon nie może zaczynać się od znaku interpunkcyjnego (dokładniej rzecz ujmując, od przecinka, średnika, dwukropka, ani myślnika).
+\end{enumerate}
+
+\begin{exe}
+\ex  \label{H2-przykład}
+\begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+\begin{deptext}[column sep=1em]
+\emph{Kupił} \& \textbf{chleb} \& \textcolor{red}{,} \& \textbf{mleko} \& .  \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge{1}{2}{obj}
+\depedge{4}{3}{punct}
+\depedge{2}{4}{conj}
+\depedge{1}{5}{punct}
+\wordgroup{1}{2}{2}{}
+\wordgroup{1}{4}{4}{}
+\end{dependency}
+\end{exe}
+
+\begin{enumerate}
+\item[(H3)] Potomkowie głowy lewego członu znajdujący się na prawo od prawego członu nie wchodzą w~skład lewego członu.
+\end{enumerate}
+
+W rzeczywistości tokeny, o których mowa w~(H3) są współdzielone przez oba człony, czyli należą do ich obu. Ponieważ interesuje mnie różnica długości członów, dla przejrzystości wykluczam ich wspólną część.
+
+\begin{exe}
+\ex \label{H3-przykład}
+\begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+\begin{deptext}[column sep=1em]
+To \& czas \& \textbf{podsumować} \& i~\& \textbf{zakończyć} \& \textcolor{red}{moją} \& \textcolor{red}{opowieść} \& .  \\ 
+\end{deptext}
+\depedge{2}{1}{cop}
+\deproot{2}{root}
+\depedge{2}{3}{xcomp}
+\depedge{5}{4}{cc}
+\depedge{3}{5}{conj}
+\depedge{7}{6}{det:poss}
+\depedge{3}{7}{obj}
+\depedge{2}{8}{punct}
+\wordgroup{1}{3}{3}{}
+\wordgroup{1}{5}{5}{}
+\end{dependency}
+\end{exe}
+
+\begin{enumerate}
+\item[(H4)] Podrzędnik głowy lewego członu po jego lewej stronie nie jest częścią lewego członu, jeśli z~tą głową łączy go relacja o \emph{unikalnej} etykiecie. Przez unikalną etykietę rozumiem taką, która nie występuje na żadnej relacji między głowami innych członów tej koordynacji i~ich podrzędnikami. 
+
+Na potrzeby tej heurystyki etykiety \texttt{subj} i~\texttt{subj:pass} oraz \texttt{nummod} i~\texttt{nummod:gov} uznaję za identyczne.
+\end{enumerate}
+
+W przykładzie \eqref{H4-przykład} tokeny \textcolor{blue}{\textit{szybko}} i~\textcolor{blue}{\textit{radośnie}} są połączone z~głowami członów identycznymi etykietami \textcolor{blue}{\texttt{advmod}}. Z~tego powodu są potraktowane jako prywatne modyfikatory swoich nadrzędników. Token \textcolor{red}{\textit{Jan}} jest podrzędnikiem relacji o unikalnej etykiecie \textcolor{red}{\texttt{nsubj}}, więc jest uznany za element obu członów.
+
+\begin{exe}
+\ex \label{H4-przykład}
+\resizebox{\linewidth}{!}{
+\begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+\begin{deptext}[column sep=1em]
+\textcolor{red}{Jan} \& \textcolor{blue}{radośnie} \& \textbf{wrócił} \& do \& domu \& i~\& \textcolor{blue}{szybko} \& \textbf{położył} \& się \& spać \& .  \\
+\end{deptext}
+\depedge[edge style = {red, thick}, label style = {thick, draw=red, text=red}]{3}{1}{\textcolor{red}{nsubj}}
+\depedge[edge style = {blue, thick}, label style = {thick, draw=blue, text=blue}]{3}{2}{advmod}
+\deproot{3}{root}
+\depedge{5}{4}{case}
+\depedge{3}{5}{obl}
+\depedge{8}{6}{cc}
+\depedge[edge style = {blue, thick}, label style = {thick, draw=blue, text=blue}]{8}{7}{advmod}
+\depedge{3}{8}{conj}
+\depedge{8}{9}{expl:pv}
+\depedge{8}{10}{xcomp}
+\depedge{3}{11}{punct}
+\wordgroup{1}{2}{5}{}
+\wordgroup{1}{7}{10}{}
+\end{dependency}
+}
+\end{exe}
+
+Chociaż reguły (H1) i~(H2) niemalże zawsze działają prawidłowo, heurystyki (H3) i~(H4) są bardziej zawodne. Ich celem jest rozróżnienie elementów ,,prywatnych'' dla danego członu, takich jak okoliczniki \emph{radośnie} i~\emph{szybko} w~\eqref{H4-przykład}, od elementów ,,wspólnych'' dla obu członów, takich jak podmiot \emph{Jan} w~\eqref{H4-przykład} czy dopełnienie \emph{moją opowieść} w~\eqref{H3-przykład}. 
+
+Niemniej jednak rozróżnienie to nie zawsze działa prawidłowo. Przykładowo, zastosowanie (H4) do powtórzonego poniżej zdania \eqref{uczniowie+nauczyciele} powoduje, że \emph{Niesforni} zostaje uznane za element wspólny i~prowadzi do interpretacji innej od tej, która wynika z~semantyki.
+
+\begin{exe}
+\setcounter{xnumi}{7}
+\ex Niesforni uczniowie i~nauczyciele pojechali na wycieczkę.
+
+\setcounter{xnumi}{33}
+\ex \label{H4-uczniowie+nauczyciele}
+\resizebox{\linewidth}{!}{
+\begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+\begin{deptext}[column sep=.5cm]
+\textcolor{red}{Niesforni}  \& \textbf{uczniowie} \& i~\& \textbf{nauczyciele} \& \emph{pojechali} \& na \& wycieczkę \& .\\
+\end{deptext}
+\deproot{5}{root}
+\depedge[edge style = {red, thick}, label style = {thick, draw=red, text=red}]{2}{1}{amod}
+\depedge{5}{2}{nsubj}
+\depedge{2}{4}{conj}
+\depedge{4}{3}{cc}
+\depedge{5}{8}{punct}
+\depedge{5}{7}{obl}
+\depedge{7}{6}{case}
+\wordgroup{1}{2}{2}{L}
+\wordgroup{1}{4}{4}{R}
+\end{dependency}
+}
+\end{exe}
+
+\subsection{Określanie pozycji nadrzędnika}
+
+Na potrzeby przetwarzania korpusów UD (korzystających z podejścia stanfordzkiego) pozycja nadrzędnika koordynacji określana jest w następujący sposób:
+
+\begin{table}[!h]
+\resizebox{\linewidth}{!}{
+\begin{tabular}{l l l l}
+\toprule
+ozn. & pozycja nadrzędnika	& definicja (zakładająca opis w stylu UD)	& przykład koordynacji							\\
+\midrule
+(L) & po lewej stronie	& przed początkiem pierwszego członu			& Drzewo \textit{sadzą} [[Pat] i [Mat]].			\\
+(0) & brak nadrzędnika	& głowa lewego członu jest korzeniem zdania	& [[Posadzili] i [podlali]] drzewo.				\\
+(R) & po prawej stronie	& po końcu ostatniego członu					& [[Pat] i [Mat]] \textit{posadzili} drzewo.		\\
+(M) & po środku			& pozostałe przypadki						& [[Pat] -- \textit{powtórzyłem} -- oraz [Mat]].	\\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+Ze względu na małą liczbę koordynacji (M) oraz częste błędy w drzewach zdań zawierających koordynacje z nadrzędnikiem po środku w badaniu nie przeprowadzam osobnych analiz dla koordynacji (M).
+
+\subsection{Obliczanie długości członu}
+
+Drugą ważną z~perspektywy analizy statystycznej cechą konstrukcji współrzędnie złożonej jest różnica długości jej członów.
+
+Długość członu określana jest na cztery sposoby: jako liczba \textbf{słów}, \textbf{tokenów}, \textbf{sylab} i~\textbf{znaków}.
+
+\paragraph{Słowa}
+Właściwym podejściem jest traktowanie słów jako podciągów tekstu rozdzielonych spacjami. Przyjęcie takiego rozwiązania skutkuje brakiem możliwości obliczenia długości członu, gdy jedynie część danego słowa należy do tego członu.
+
+\begin{exe}
+\ex  \label{que}
+Arma virumque canō.\footnote{Publiusz Wergiliusz Maro, \textit{Eneida},
+\url{https://www.thelatinlibrary.com/vergil/aen1.shtml}. W analizie morfologicznej użyto narzędzia Collatinus web (\url{https://outils.biblissima.fr/en/collatinus-web/}).}
+\gll Arma vir-um que canō . \\
+broń\textsc{.acc.pl} mąż\textsc{-acc.sg} i śpiewać\textsc{.prs.ind.act.1sg} \\
+\glt ,,Śpiewam o broni i~mężu.''
+\end{exe}
+
+W zdaniu \eqref{que} znajduje się koordynacja binarna \eqref{que-koordynacja} ze spójnikiem \textit{que}:
+
+\begin{exe}
+\ex \label{que-koordynacja}
+{[[Arma] [virum]que]}
+\end{exe}
+
+Uznanie \textit{virumque} za jedno słowo oznaczałoby, że prawy człon koordynacji \eqref{que-koordynacja} składa się z~niecałkowitej liczby słów. Nie wiadomo, jak wielu koordynacji może dotyczyć ten problem, jednak nawet jeśli wyżej opisane zjawisko jest rzadkie, powoduje ono dojście do niedopuszczalnych wniosków. W~celu uniknięcia opisanego powyżej problemu, przez liczbę słów rozumiem liczbę wszystkich tokenów oprócz tych będących znakami interpunkcyjnymi. 
+
+\paragraph{Tokeny}
+Tokenami są wyrazy i~znaki interpunkcyjne, a także klityki, części kontrakcji i~złożeń \citep{riedl2018using}. W~Universal Dependencies reguły tokenizacji różnią się nieznacznie między językami. Interpunkcja oraz części złożeń są odrębnymi tokenami, chyba że stanowią ,,integralną część lematu'' danego słowa \citep{de2021universal}.
+
+W~zdaniu \eqref{biało-czerwona} \textit{śmy} jest klityką dołączoną do tokenu \textit{Wywiesili}, zaś przymiotnik złożony \textit{biało-czerwoną} składa się z~tokenów \textit{biało} i~\textit{czerwoną} oraz z~łącznika (który również jest osobnym tokenem).
+
+W~zdaniu \eqref{krankenhaus} \textit{ins} jest kontrakcją dwóch tokenów: \textit{in} oraz \textit{das}. Słowo \textit{Krankenhaus} (szpital), pomimo że jest złożeniem słów \textit{Kranken} (chorzy) oraz \textit{Haus} (dom), jest potraktowane jako jeden token.\footnote{Istnieją argumenty za rozdzielaniem  niemieckich czasowników złożonych na tokeny \citep{riedl2018using}, jednak autorzy standardu UD podjęli decyzję, żeby tego nie robić \citep{de2021universal}. }
+
+\begin{exe}
+\ex \label{biało-czerwona}
+Wywiesiliśmy biało-czerwoną flagę.
+\gll Wywiesili śmy biało - czerwoną flagę . \\ \\
+
+\ex \label{krankenhaus}
+Ich gehe \textbf{ins} Krankenhaus.
+\gll Ich gehe \textbf{in} \textbf{das} Krankenhaus . \\
+ja iść\textsc{.1sg.prs} do \textsc{det.sg.n.acc} szpital \\
+\glt ,,Idę do szpitala.''
+\end{exe}
+
+\paragraph{Sylaby}
+Liczba sylab w~obrębie danego członu jest sumą liczb sylab w~poszczególnych słowach wchodzących w~skład tego członu. Na potrzebę liczenia sylab przez ,,słowo'' rozumiem część zdania oddzieloną od reszty spacją. Liczba sylab w~tokenach została określona na podstawie opisanej niżej procedury.
+
+\begin{itemize}
+
+\item Algorytm sprawdza, czy słowo znajduje się na liście skrótów występujących w~danym języku. Jeśli tak, rozpatruje rozwinięcie tego skrótu.
+\item Następnie algorytm sprawdza, czy słowo lub jego część jest liczbą. Jeśli tak, zamienia ją na formę słowną, wykorzystując do tego bibliotekę \texttt{numpy}\footnote{
+Biblioteka ta nie obsługuje języka łacińskiego. Niemniej jednak prawie wszystkie (>99.5\%) liczebniki w~obrębie korpusów łaciny zapisane są słownie.}.
+\item Ostatecznie algorytm dzieli słowo na sylaby, wykorzystując następujące biblioteki języka Python:
+\subitem \texttt{loguax} dla łaciny,
+\subitem \texttt{turkishNLP} dla języka tureckiego,
+\subitem \texttt{pyphen} dla pozostałych języków.
+\end{itemize}
+
+\paragraph{Znaki}
+Długość członu wyrażona w~znakach, tj. literach, spacjach i~znakach interpunkcyjnych. 
+
+
+W~przypadku języka koreańskiego każdy znak alfabetu (\textit{jamo}) traktowany jest jak litera, zaś każdy blok znaków jako sylaba \citep{simpson2004syllable}. Przykładowo, słowo \textit{꿀벌} (pszczoła) składa się z~dwóch sylab (odpowiadających blokom \textit{꿀} i~\textit{벌}) oraz z~sześciu znaków (\textit{ㄲ}, \textit{ㅜ}, \textit{ㄹ}, \textit{ㅂ}, \textit{ㅓ} i~\textit{ㄹ})\footnote{Przykład pochodzi ze~strony \url{https://www.korean.go.kr/eng_hangeul/principle/001.html}.}.
+
+%Listy skrótów w~poszczególnych językach pochodzą z~następujących źródeł:
+
+\subsection{Koordynacje zagnieżdżone}
+
+Czasami zdarzają się sytuacje, w~których jedna koordynacja jest częścią innej. Takie koordynacje nazywają się zagnieżdżonymi.  
+
+\begin{exe}
+\ex \label{zagnieżdżona}
+\begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+\begin{deptext}[column sep=1em]
+Ania \& i~\& Tomek \& zdecydowali \& , \& nikt \& się \& nie \& sprzeciwiał \& .  \\ 
+\end{deptext}
+\depedge{4}{1}{nsubj}
+\depedge{3}{2}{cc}
+\depedge[edge style = {thick}, label style = {thick}]{1}{3}{\textbf{conj}}
+\deproot{4}{root}
+\depedge{9}{5}{punct}
+\depedge{9}{6}{nsubj}
+\depedge{9}{7}{expl:pv}
+\depedge{9}{8}{advmod:neg}
+\depedge[edge style = {thick}, label style = {thick}]{4}{9}{\textbf{conj}}
+\depedge{4}{10}{punct}
+\end{dependency}
+\end{exe}
+
+Należy traktować je jako dwie osobne konstrukcje współrzędnie złożone:
+
+\begin{exe}
+\ex \label{zagnieżdżona-1}
+{[[Ania] i~[Tomek]]}
+\ex \label{zagnieżdżona-2}
+{[[Ania i~Tomek zdecydowali], [nikt się nie sprzeciwiał]]}
+\end{exe}
+
+Jeden token może być głową lewego członu w~jednej koordynacji i~głową prawego w~drugiej:
+
+\begin{exe}
+\ex \label{wojna+pokój}
+\resizebox{\linewidth}{!}{
+\begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+\begin{deptext}[column sep=1em]
+Wolisz \& ,, \& Annę \& Kareninę \& '' \& czy \& ,, \& \textbf{Wojnę} \& i~\& pokój \& '' \& ?  \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge{3}{2}{punct}
+\depedge{1}{3}{iobj}
+\depedge{3}{4}{flat}
+\depedge{3}{5}{punct}
+\depedge{8}{6}{cc}
+\depedge{8}{7}{punct}
+\depedge[edge style = {thick}, label style = {thick}]{3}{8}{\textbf{conj}}
+\depedge{10}{9}{cc}
+\depedge[edge style = {thick}, label style = {thick}]{8}{10}{\textbf{conj}}
+\depedge{8}{11}{punct}
+\depedge[edge unit distance=2ex]{1}{12}{punct}
+\end{dependency}
+}
+\end{exe}
+
+Nie stanowi to przeszkody dla wyciągania koordynacji według wyżej opisanych zasad. Algorytm \eqref{procedura} poprawnie wykrywa obie koordynacje:
+
+\begin{exe}
+\ex \label{wojna+pokój-1} 
+{[[\textbf{Wojnę}] i~[pokój]]}
+\ex \label{wojna+pokój-2} 
+{[[,,Annę Kareninę''] czy [,,\textbf{Wojnę} i~pokój'']]}
+\end{exe}
+
+Podejście używane przez UD dopuszcza sytuacje, w~których jeden token jest głową lewego członu dwóch różnych koordynacji. W~takich sytuacjach rozdzielenie koordynacji zagnieżdżonych jest trudniejsze. Pokazuje to przykład \eqref{chaos}.
+
+\begin{exe}
+\ex \label{chaos}
+\begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+\begin{deptext}[column sep=1em]
+Porządek \& i~\& rozwój \& albo \& chaos \& i~\& degeneracja \& .  \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge{3}{2}{cc}
+\depedge[edge style = {thick}, label style = {thick}]{1}{3}{\textbf{conj}}
+\depedge{5}{4}{cc}
+\depedge[edge style = {thick}, label style = {thick}]{1}{5}{\textbf{conj}}
+\depedge{7}{6}{cc}
+\depedge[edge style = {thick}, label style = {thick}]{5}{7}{\textbf{conj}}
+\depedge{1}{8}{punct}
+\end{dependency}
+\end{exe}
+
+Według wcześniej opisanej procedury wyciągania koordynacji, zdanie \eqref{chaos} powinno zawierać następujące koordynacje:
+
+\begin{exe}
+\ex \label{chaos-źle-1}
+{*[[Porządek] i~[rozwój] albo [chaos i~degeneracja]]}
+\ex \label{chaos-źle-2}
+{[[chaos] i~[degeneracja]]}
+\end{exe}
+
+Opis ten jest niepoprawny. W~rzeczywistości  w~zdaniu \eqref{chaos} występują następujące koordynacje:
+
+\begin{exe}
+\ex \label{chaos-1}
+{[[Porządek i~rozwój] albo [chaos i~degeneracja]]}
+\ex \label{chaos-2}
+{[[Porządek] i~[rozwój]]}
+\ex \label{chaos-3}
+{[[chaos] i~[degeneracja]]}
+\end{exe}
+
+Ponieważ wyżej opisane reguły znajdowania głów członów koordynacji nie zadziałały poprawnie, należy zmodyfikować algorytm.
+
+\subsection{Procedura znajdowania koordynacji z~uwzględnieniem koordynacji zagnieżdżonych} \label{zagnieżdżone}
+
+W~celu poprawnej analizy zdań zawierających koordynacje zagnieżdżone w~procedurze znajdowania koordynacji przyjmuję następującą regułę:
+
+\begin{enumerate}
+\item[\namedlabel{H5}{H5}] % To trzeba ostrożnie sprawdzić
+Jeśli występuje sytuacja opisana w~\eqref{procedura} oraz:
+
+\begin{itemize}
+\item istnieją przynajmniej dwa spójniki i
+\item jeden ze~spójników $C_{i}$ różni się od ostatniego spójnika $C_{n}$,
+\end{itemize}
+
+to należy dodatkowo rozpatrzeć koordynację, w~której nadrzędnikiem jest $G$, głową lewego członu jest $L$, głową prawego członu $H_{i}$, a spójnikiem $C_{i}$.
+\end{enumerate}
+
+Poniższe drzewo obrazuje zastosowanie \eqref{H5} do drzewa \eqref{chaos}:
+
+\begin{exe}
+\ex \label{H5-przykład}
+\begin{dependency}[baseline=5.6ex]
+\begin{deptext}[column sep=1em, row sep=.3ex]
+Porządek \& \textcolor{red}{i} \& rozwój \& \textcolor{red}{albo} \& chaos \& i~\& degeneracja \& .  \\ 
+$L$ \& $C_{1}$ \& $H_{1}$ \& $C_{2}$ \& $H_{2}$ \\
+ \& $C_{i}$ \& $\neq$ \& $C_{n}$ \& \\
+$\blacksquare$ \& $\boxdot$ \& $\blacksquare$ \& $\square$ \& $\square$ \& $\square$ \& $\square$ \& . \\
+$\blacksquare$ \& $\square$ \& $\square$ \& $\boxdot$ \& $\blacksquare$ \& $\square$ \& $\square$ \& . \\
+\end{deptext}
+\deproot{1}{root}
+\depedge{3}{2}{cc}
+\depedge{1}{3}{conj}
+\depedge{5}{4}{cc}
+\depedge{1}{5}{conj}
+\depedge{7}{6}{cc}
+\depedge{5}{7}{conj}
+\depedge{1}{8}{punct}
+\wordgroup{4}{1}{1}{}
+\wordgroup{4}{3}{3}{}
+\wordgroup{5}{1}{3}{}
+\wordgroup{5}{5}{7}{}
+\end{dependency}
+\end{exe}
+
+Ponieważ spójniki \emph{i} oraz \emph{albo} są różne, zgodnie z~\eqref{H5} w~zdaniu występują zagnieżdżone koordynacje \eqref{chaos-2} i~\eqref{chaos-3}.
+
+W~drzewie \eqref{A+B+C} występuje podobna sytuacja, jednak wszystkie spójniki podrzędników tokenu \emph{Ania} są identyczne:
+
+\begin{exe}
+\ex \label{A+B+C}
+\begin{dependency}[baseline=2.9ex]
+\begin{deptext}[column sep=1em, row sep=.3ex]
+Ania \& \textcolor{blue}{i} \& Bartek \& \textcolor{blue}{i} \& Czarek \& .  \\ 
+$L$ \& $C_{1}$ \& $H_{1}$ \& $C_{2}$ \& $H_{2}$ \\
+ \& $C_{i}$ \& = \& $C_{n}$ \& \\
+\end{deptext}
+\deproot{1}{root}
+\depedge{3}{2}{cc}
+\depedge{1}{3}{conj}
+\depedge{5}{4}{cc}
+\depedge{1}{5}{conj}
+\depedge{1}{6}{punct}
+\end{dependency}
+\end{exe}
+
+W~związku z~tym warunki \eqref{H5} nie są spełnione. Jest to zwykła koordynacja wieloczłonowa:
+
+\begin{exe}
+\ex \label{A+B+C-koordynacja}
+{[[Ania] i~[Bartek] i~[Czarek]]}
+\end{exe}
+
+\section{Weryfikacja działania algorytmu}
+
+\subsection{Ograniczenia}
+
+Wyżej opisana procedura wyciągania koordynacji nie jest niezawodna. Jest wiele powodów, dla których koordynacje mogą być źle opisane:
+
+\begin{itemize}
+\item nieprawidłowe dane w~obrębie korpusu (np. ciągi losowych znaków, które nie są częścią języka naturalnego),
+\item nieprawidłowe drzewa zależnościowe (błędy w~automatycznym opisie lub konwersji znakowania, błędy w~ręcznym opisywaniu, błędy wynikające z~niedoskonałości standardu UD),
+\item nieprawidłowe działanie heurystyk.
+\end{itemize}
+
+Z~tych przyczyn algorytm został poddany ewaluacji. Opisana niżej procedura została opracowana na podstawie ewaluacji używanej w badaniu \cite{przepiorkowski2023conjunct} oraz replikującej je analizie \cite{przepiorkowski2024argument}.
+
+\subsection{Dobór języków}
+
+Ewaluacji zostały poddane zdania w~następujących językach:
+
+\begin{itemize}
+\item język polski -- dwóch natywnych recenzentów,
+\item język angielski -- dwóch recenzentów,
+\item język turecki -- jeden natywny recenzent.
+\end{itemize}
+
+\subsection{Losowanie wyciągniętych koordynacji}
+
+W przypadku języka polskiego i angielskiego wylosowano 300 koordynacji z~uwzględnieniem pozycji nadrzędnika -- po 100 z~nadrzędnikiem po lewej, po prawej i~bez nadrzędnika. W przypadku języka tureckiego wylosowano 60 koordynacji bez rozróżnienia na pozycję nadrzędnika.
+
+\subsection{Ocena poprawności}
+
+Dwóch recenzentów niezależnie ocenia poprawność wyciągania koordynacji na podstawie dwóch kryteriów:
+
+\begin{itemize}
+\item Lewy i~prawy człon koordynacji są \textbf{dokładnie} takie, jakie powinny być.
+\item Pozycja nadrzędnika jest poprawnie określona.
+\end{itemize}
+
+Następnie recenzenci spotykają się i~rozstrzygają konflikty. Miarą oceny algorytmu jest stosunek liczby poprawnie opisanych koordynacji do liczby wszystkich koordynacji danego typu.
+
+\subsection{Wyniki}
+
+Tabela \ref{tab:ewal} przedstawia odsetek koordynacji ocenionych jako poprawnie wyciągnięte w językach poddanych ewaluacji. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+& \multicolumn{1}{c}{Wszystkie}	& \multicolumn{2}{c}{Nadrzędnik po} 	& \multicolumn{1}{c}{Brak} \\
+\multicolumn{1}{c}{Język}	& \multicolumn{1}{c}{koordynacje}	
+& \multicolumn{1}{c}{lewej}			& \multicolumn{1}{c}{prawej}	& \multicolumn{1}{c}{nadrzędnika} \\
+\midrule
+polski		& 0.79 & 0.83 & 0.89 & 0.66 \\
+angielski	& 0.72 & 0.72 & 0.61 & 0.84 \\
+turecki		& 0.58\footnote{W korpusach języka tureckiego znajdowały się liczne zdania złożone pozbawione spójnika lub właściwej interpunkcji. Zostały one uznane za nieprawidłowe koordynacje. Jeśli przyjąć założenie,  że takie zdania tworzą poprawne koordynacje zdaniowe, wynik ewaluacji dla języka tureckiego wynosi 73\%.} &  &  &  \\
+\bottomrule
+\end{tabular}
+\caption{Poprawność ewaluacji}
+\label{tab:ewal}
+\end{table}
+
+Przed rozstrzygnięciem konfliktów współczynnik zgodności recenzentów $\kappa$ wyniósł $56\%$ dla języka polskiego i $54\%$ dla języka angielskiego.
+
+Zarówno współczynnik zgodności recenzentów, jak i~odsetek poprawnych koordynacji algorytmu mają niższe wartości niż analogiczne miary uzyskane w pracy \cite{przepiorkowski2023conjunct}. Należy jednak zwrócić uwagę, że w ich badaniu ewaluacja algorytmu polegała na sprawdzeniu wyłącznie poprawności pozycji nadrzędnika. 
+
+\cite{przepiorkowski2024argument} ewaluując swój algorytm sprawdzali zarówno pozycję nadrzędnika, jak~i~granice członów. Stosując tę metodę uzyskali dokładność równą $50.1\%$. Oznacza to, że stosowana przeze mnie procedura wyciągania koordynacji uzyskała lepsze wyniki niż algorytmy używane w poprzednich badaniach.

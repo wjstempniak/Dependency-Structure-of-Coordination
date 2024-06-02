@@ -1,0 +1,62 @@
+\usepackage{kotex} % Korean typesetting package
+\usepackage{polski}
+\usepackage{natbib} % bibliografia
+\usepackage{enumitem} % numerowanie
+\usepackage{setspace} % ustawienie interlinii
+\usepackage{xurl} % rozdzielanie url
+\usepackage[table]{xcolor} % kolor w~tabelach
+\usepackage{arydshln} % przerywane linie
+\usepackage{tikz-dependency} % drzewa
+\usepackage{stmaryrd} % rysunki do drzew
+\usepackage{gb4e} % przykłady
+\usepackage{hyperref} % referencje i~url
+\usepackage{graphicx} % pdfy
+\usepackage{float} % ruszanie obrazkow
+\usepackage{textcomp} % matematyczne minusy
+\usepackage{rotating} % obracanie wykresów
+\usepackage{amssymb} % \square
+\usepackage{multicol} % kolumny 
+\usepackage[bottom]{footmisc} % stopki
+\usepackage{tablefootnote} % przypisy w~tabelach
+\usepackage{array}
+\usepackage{amsmath} % odnośniki z nawiasami
+\usepackage{booktabs} % tabelki
+\usepackage{multirow} % scalanie komórek w~pionie
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{adjustbox}
+\usepackage{float} % wymusza lokalizację tabel\\
+\usepackage{amsmath} % ułamki
+\usepackage{underscore}
+\usepackage{tikz}
+\usepackage{xpatch}
+\usepackage{xparse}
+\usepackage{metrix} % skandowanie tekstu
+\usepackage{placeins} % blokowanie latających tabel
+
+
+\hypersetup{
+     colorlinks=true,
+     linkcolor=black,
+     citecolor=black,
+     urlcolor=black,
+     }
+     
+\makeatletter
+\def\namedlabel#1#2{\begingroup
+    #2%
+    \def\@currentlabel{#2}%
+    \phantomsection\label{#1}\endgroup
+}
+\makeatother
+
+\onehalfspacing{
+\counterwithout{footnote}{chapter}
+\autor{Wojciech Stempniak}{433855}
+\title{Struktura zależnościowa koordynacji --~analiza korpusów Universal~Dependencies}
+\kierunek{kognitywistyka}
+\opiekun{prof. dr.~hab. Adama Przepiórkowskiego\\
+Uniwersytet Warszawski}
+\date{czerwiec 2024}
+\keywords{koordynacja, struktura koordynacji, zależności składniowe, drzewa zależnościowe, Universal Dependencies (UD), Dependency Length Minimization (DLM), języki inicjalne, języki finalne, badanie korpusowe}

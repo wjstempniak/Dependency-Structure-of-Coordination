@@ -1,0 +1,110 @@
+\subsection{Języki inicjalne}
+
+W językach inicjalnych model przewiduje następujące długości relacji:
+
+\begin{table}[H]
+\begin{tabular}{lcllcl}
+
+(L-L) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\odot$\&$\square$\&a\&$\boxdot$\&$\square$\&a+b\\
+        \end{deptext}
+		\depedge{1}{2}{}
+		\depedge{1}{5}{}
+		\depedge{5}{4}{}
+		\depedge{2}{5}{}
+        \wordgroup{1}{2}{3}{L}
+        \wordgroup{1}{5}{6}{R}
+        \end{dependency}
+
+& $S=2a$ & 
+
+(L-R) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\odot$\&$\square$\&a+b\&$\boxdot$\&$\square$\&a\\
+        \end{deptext}
+		\depedge{1}{2}{}
+		\depedge{1}{5}{}
+		\depedge{5}{4}{}
+		\depedge{2}{5}{}
+		\wordgroup{1}{2}{3}{L}
+		\wordgroup{1}{5}{6}{R}
+        \end{dependency}
+        
+& $S=2a+2b$ \\ 
+
+(0-L) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\square$\&a\&$\boxdot$\&$\square$\&a+b\\
+        \end{deptext}
+		\depedge{4}{3}{}
+		\depedge{1}{4}{}
+        \wordgroup{1}{1}{2}{L}
+        \wordgroup{1}{4}{5}{R}
+        \end{dependency}
+
+& $S=a$ & 
+
+(0-R) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\square$\&a+b\&$\boxdot$\&$\square$\&a\\
+        \end{deptext}
+		\depedge{4}{3}{}
+		\depedge{1}{4}{}
+        \wordgroup{1}{1}{2}{L}
+        \wordgroup{1}{4}{5}{R}
+        \end{dependency}
+        
+& $S=a+b$ \\
+
+(R-L) &
+
+\begin{dependency}[hide label,edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\square$\&a\&$\boxdot$\&$\square$\&a+b\&$\odot$\\
+        \end{deptext}
+		\depedge{6}{1}{}
+		\depedge{6}{4}{}
+		\depedge{4}{3}{}
+		\depedge{4}{1}{}
+		\wordgroup{1}{1}{2}{L}
+		\wordgroup{1}{4}{5}{R}
+        \end{dependency}
+        
+& $S=4a+2b$ &
+
+(R-R) &
+
+\begin{dependency}[hide label, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\square$\&a+b\&$\boxdot$\&$\square$\&a\&$\odot$\\
+        \end{deptext}
+		\depedge{6}{1}{}
+		\depedge{6}{4}{}
+		\depedge{4}{3}{}
+		\depedge{4}{1}{}
+        \wordgroup{1}{1}{2}{L}
+        \wordgroup{1}{4}{5}{R}
+        \end{dependency}
+
+& $S=4a+2b$ \\
+
+\end{tabular}
+\end{table}
+
+Wraz~ze wzrostem różnicy długości członów (\emph{b}):
+\begin{itemize}
+\item odsetek koordynacji (L-L) względem wszystkich koordynacji (L) \textbf{znacznie rośnie};
+\item odsetek koordynacji (0-L) względem wszystkich koordynacji (0) \textbf{rośnie};
+\item odsetek koordynacji (R-L) względem wszystkich koordynacji (R) \textbf{nie zmienia się}.
+\end{itemize}
+
+Przewidywania modelu \eqref{ED-model} pokrywają się z tendencjami zaobserwowanymi przez \cite{przepiorkowski2023conjunct} oraz przeze mnie w~przypadku języka angielskiego i~języków słowiańskich.
