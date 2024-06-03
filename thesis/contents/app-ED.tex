@@ -1,0 +1,61 @@
+\chapter{Rozszerzone zależności składniowe}
+
+\section{Enhanced Dependencies}
+
+W niniejszej pracy analizuję relacje składniowe w~formie drzew zależnościowych. Oznacza to, że zakładam, że relacje składniowe w~zdaniach tworzą drzewa. Jest to dość powszechne w~językoznawstwie założenie, stojące u podstaw gramatyki zależnościowej. Jednak nie musi być ono prawdziwe. 
+
+Jak zauważają \cite{de2021universal}, w~języku istnieje wiele konstrukcji, w~przypadku których opis relacji zależnościowych za pomocą drzew nie jest optymalny. Należą do nich m.in. koordynacje.
+
+Z~tego powodu twórcy Universal Dependencies stworzyli rozszerzenie standardu o~nazwie Enhanced Dependencies (ED)\footnote{\url{https://universaldependencies.org/u/overview/enhanced-syntax.html}}. Przykład \eqref{UD} pokazuje drzewo zależnościowe zdania \eqref{tworzyć+konstruować} opisane według zwykłego UD. \eqref{ED} jest drzewem zdania \eqref{tworzyć+konstruować} opisanym według ED. Rozszerzone zależności zaznaczone są na niebiesko.
+
+\begin{exe}
+\ex \label{tworzyć+konstruować}
+Chcą tworzyć, konstruować.
+ 
+\ex \label{UD}
+\begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+\begin{deptext}[column sep=1em]
+Chcą \& tworzyć \& , \& konstruować \& .  \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge{1}{2}{xcomp}
+\depedge{4}{3}{punct}
+\depedge{2}{4}{conj}
+\depedge{1}{5}{punct}
+\end{dependency}
+
+\ex \label{ED}
+\begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+\begin{deptext}[column sep=1em]
+Chcą \& tworzyć \& , \& konstruować \& .  \\ 
+\end{deptext}
+\deproot{1}{root}
+\depedge{1}{2}{xcomp}
+\depedge{4}{3}{punct}
+\depedge{2}{4}{conj}
+\depedge{1}{5}{punct}
+\depedge[edge style = {blue, thick}, label style = {thick, draw=blue, text=blue}]{1}{4}{xcomp}
+\end{dependency}
+\citep{przepiorkowski2018lexical}
+\end{exe}
+
+\cite{przepiorkowski2023conjunct} zauważają, że uwzględnienie rozszerzonych relacji zależnościowych w~strukturze koordynacji zmienia przewidywania modeli dotyczące omawianych tendencji. Prezentują model struktury zależnościowej koordynacji oparty na założeniach ED:
+
+\begin{exe}
+\ex \label{ED-model}
+\begin{dependency}[theme = simple, edge unit distance=0.5ex, baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
+        \begin{deptext}
+        $\odot$ \& $\square$ \& $\boxdot$ \& $\square$\\
+            \end{deptext}
+		\depedge{1}{2}{}
+		\depedge{1}{4}{}
+		\depedge{2}{4}{}
+		\depedge{4}{3}{}
+        \end{dependency}
+\end{exe}
+
+\input{predictions/head-initial/ED}
+
+\input{predictions/head-final/ED}
+
+

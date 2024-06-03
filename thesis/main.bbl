@@ -1,9 +1,65 @@
 \begin{thebibliography}{}
 
+\bibitem[Bedir i~in., 2021]{bedir2021overcoming}
+Bedir, T., {\c{S}}ahin, K., G{\"u}ng{\"o}r, O., Uskudarli, S., {\"O}zg{\"u}r,
+  A., G{\"u}ng{\"o}r, T., i Ba{\c{s}}aran, B.~{\"O}. (2021).
+\newblock Overcoming the challenges in morphological annotation of {T}urkish in
+  {U}niversal {D}ependencies framework.
+\newblock In {\em Proceedings of The Joint 15th Linguistic Annotation Workshop
+  (LAW) and 3rd Designing Meaning Representations (DMR) Workshop}, strony
+  112--122.
+
+\bibitem[Borysiak, 2024]{borysiak2024dependency}
+Borysiak, M. (2024).
+\newblock Dependency structure of {E}nglish coordination: a surface-syntactic
+  approach.
+\newblock Praca licencjacka (nieopublikowana). Uniwersytet Warszawski, Wydział
+  Filozofii.
+
+\bibitem[Choi i Palmer, 2011]{choi2011statistical}
+Choi, J.~D. i Palmer, M. (2011).
+\newblock Statistical dependency parsing in {K}orean: {F}rom corpus generation
+  to automatic parsing.
+\newblock In {\em Proceedings of the second workshop on statistical parsing of
+  morphologically rich languages}, strony 1--11.
+
+\bibitem[Chomsky, 1956]{chomsky1956three}
+Chomsky, N. (1956).
+\newblock Three models for the description of language.
+\newblock {\em IRE Transactions on information theory}, 2(3):113--124.
+
+\bibitem[C{\"o}ltekin, 2010]{coltekin2010freely}
+C{\"o}ltekin, C. (2010).
+\newblock A freely available morphological analyzer for {T}urkish.
+\newblock In {\em LREC}, volume~2, strony 19--28.
+
 \bibitem[De~Marneffe i~in., 2021]{de2021universal}
 De~Marneffe, M.-C., Manning, C.~D., Nivre, J., i Zeman, D. (2021).
 \newblock Universal {D}ependencies.
 \newblock {\em Computational linguistics}, 47(2):255--308.
+
+\bibitem[Fenk-Oczlon, 1989]{fenk1989word}
+Fenk-Oczlon, G. (1989).
+\newblock {\em Word frequency and word order in freezes}.
+\newblock Walter de Gruyter, Berlin/Nowy Jork.
+
+\bibitem[Futrell i~in., 2015]{futrell2015large}
+Futrell, R., Mahowald, K., i Gibson, E. (2015).
+\newblock Large-scale evidence of dependency length minimization in 37
+  languages.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  112(33):10336--10341.
+
+\bibitem[Haspelmath, 2014]{haspelmath2014leipzig}
+Haspelmath, M. (2014).
+\newblock The leipzig style rules for linguistics.
+\newblock {\em Max Planck Institute for Evolutionary Anthropology, Leipzig, URL
+  http://www.uni-regensburg.de/sprache-literatur-kultur/sprache-literatur-kultur/allgemeine-vergleichende-sprachwissenschaft/medien/pdfs/haspelmath\_2014\_style\_rules\_linguistics.pdf}.
+
+\bibitem[Hoeksema, 1992]{hoeksema1992head}
+Hoeksema, J. (1992).
+\newblock The head parameter in morphology and syntax.
+\newblock {\em Language and {C}ognition}, 2:119--132.
 
 \bibitem[Kanayama i~in., 2018]{kanayama2018coordinate}
 Kanayama, H., Han, N.-R., Asahara, M., Hwang, J.~D., Miyao, Y., Choi, J.~D., i
@@ -13,11 +69,57 @@ Kanayama, H., Han, N.-R., Asahara, M., Hwang, J.~D., Miyao, Y., Choi, J.~D., i
 \newblock In {\em Proceedings of the Second Workshop on {U}niversal
   {D}ependencies (UDW 2018)}, strony 75--84.
 
-\bibitem[Przepi{\'o}rkowski i Patejuk, 2018]{przepiorkowski2018lexical}
-Przepi{\'o}rkowski, A. i Patejuk, A. (2018).
-\newblock From lexical functional grammar to enhanced universal dependencies.
-\newblock In {\em Proceedings of the Joint Workshop on Linguistic Annotation,
-  Multiword Expressions and Constructions (LAW-MWE-CxG-2018)}, strony 2--4.
+\bibitem[King i Just, 1991]{king1991individual}
+King, J. i Just, M.~A. (1991).
+\newblock Individual differences in syntactic processing: The role of working
+  memory.
+\newblock {\em Journal of {M}emory and {L}anguage}, 30(5):580--602.
+
+\bibitem[Lohmann, 2014]{lohmann2014english}
+Lohmann, A. (2014).
+\newblock {\em English coordinate constructions}.
+\newblock Cambridge University Press.
+
+\bibitem[McDonald i~in., 1993]{mcdonald1993word}
+McDonald, J.~L., Bock, K., i Kelly, M.~H. (1993).
+\newblock Word and world order: Semantic, phonological, and metrical
+  determinants of serial position.
+\newblock {\em Cognitive {P}sychology}, 25(2):188--230.
+
+\bibitem[Nivre, 2006]{nivre2006constraints}
+Nivre, J. (2006).
+\newblock Constraints on non-projective dependency parsing.
+\newblock In {\em 11th Conference of the European Chapter of the Association
+  for Computational Linguistics}, strony 73--80.
+
+\bibitem[Patejuk i Przepiórkowski, 2018]{przepiorkowski2018lexical}
+Patejuk, A. i Przepiórkowski, A. (2018).
+\newblock {\em From {L}exical {F}unctional {G}rammar to Enhanced {U}niversal
+  {D}ependencies: Linguistically informed treebanks of {P}olish}.
+\newblock Instytut Podstaw Informatyki, Polska Akademia Nauk, Warszawa.
+
+\bibitem[Polinsky, 2012]{polinsky2012headedness}
+Polinsky, M. (2012).
+\newblock Headedness, again.
+\newblock {\em UCLA Working Papers in Linguistics 17 (Theories of Everything)},
+  strony 348--359.
+
+\bibitem[Polinsky i Magyar, 2020]{polinsky2020headedness}
+Polinsky, M. i Magyar, L. (2020).
+\newblock Headedness and the lexicon: The case of verb-to-noun ratios.
+\newblock {\em Languages}, 5(1):9.
+
+\bibitem[Popel i~in., 2013]{popel2013coordination}
+Popel, M., Mare{\v{c}}ek, D., {\v{S}}t{\v{e}}p{\'a}nek, J., Zeman, D., i
+  {\v{Z}}abokrtsk{\`y}, Z. (2013).
+\newblock Coordination structures in dependency treebanks.
+\newblock In {\em Proceedings of the 51st Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, strony 517--527.
+
+\bibitem[Przepi{\'o}rkowski, 2012]{przepiorkowski2012narodowy}
+Przepi{\'o}rkowski, A. (2012).
+\newblock {\em Narodowy korpus j{\k{e}}zyka polskiego}.
+\newblock Wydawnictwo {N}aukowe PWN.
 
 \bibitem[Przepi{\'o}rkowski i Wo{\'z}niak, 2023]{przepiorkowski2023conjunct}
 Przepi{\'o}rkowski, A. i Wo{\'z}niak, M. (2023).
@@ -31,6 +133,11 @@ Przepiórkowski, A., Borysiak, M., i Głowacki, A. (2024).
 \newblock An argument for symmetric coordination from {D}ependency {L}ength
   {M}inimization: {A}~replication study.
 \newblock To appear in the proceedings of \emph{LREC-COLING 2024}.
+
+\bibitem[{R Core Team}, 2023]{R2023}
+{R Core Team} (2023).
+\newblock {\em R: A language and environment for statistical computing}.
+\newblock R Foundation for Statistical Computing, Wiedeń, Austria.
 
 \bibitem[Riedl i Biemann, 2018]{riedl2018using}
 Riedl, M. i Biemann, C. (2018).
@@ -46,5 +153,21 @@ Simpson, G.~B. i Kang, H. (2004).
 Temperley, D. (2007).
 \newblock Minimization of dependency length in written {E}nglish.
 \newblock {\em Cognition}, 105(2):300--333.
+
+\bibitem[Van~Nguyen i~in., 2021]{van2021trankit}
+Van~Nguyen, M., Lai, V.~D., Veyseh, A. P.~B., i Nguyen, T.~H. (2021).
+\newblock Trankit: A light-weight transformer-based toolkit for multilingual
+  natural language processing.
+\newblock {\em arXiv preprint arXiv:2101.03289}.
+
+\bibitem[Wright i~in., 2005]{wright2005ladies}
+Wright, S.~K., Hay, J., i Bent, T. (2005).
+\newblock Ladies first? {P}honology, frequency, and the naming conspiracy.
+
+\bibitem[Zipf, 1946]{zipf1946psychology}
+Zipf, G.~K. (1946).
+\newblock The psychology of language.
+\newblock In {\em Encyclopedia of psychology}, strony 332--341. Philosophical
+  Library.
 
 \end{thebibliography}

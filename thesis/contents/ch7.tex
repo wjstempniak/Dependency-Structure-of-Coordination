@@ -31,9 +31,9 @@ Był \& ordynatorem \& w~\& szpitalu \& .  \\
 
 W przykładzie \eqref{UD-złe} głową frazy \textit{w szpitalu} jest \textit{szpitalu}, zaś głową całego zdania (czyli korzeniem zdania) \textit{ordynatorem}. Zgodnie z teorią lingwistyczną głową frazy przyimkowej \textit{w szpitalu} powinien być przyimek \textit{w}, zaś korzeniem zdania z orzeczeniem imiennym -- łącznik \textit{Był} \citep{hoeksema1992head}. Traktowanie rzeczowników jako głów fraz przyimkowych i orzeczników jako korzeni zdań jest znamienne dla drzew UD. Efektem tych rozwiązań jest w~szczególności ,,przesuwanie'' głowy członu na jej koniec w~językach inicjalnych.
 
-Niemniej jednak efekty tych rozwiązań nie powinny być na tyle powszechne, żeby mieć znaczący wpływ na wynik mojej analizy. Powtórzona poniżej tabela \ref{tab:pozycja-głowy} pokazuje względną pozycję głów członów koordynacji w~badanych językach. Gdyby w~korpusach UD faktycznie istniała częsta tendencja do nieprawidłowego oznaczania późniejszych elementów fraz jako ich głowy, średnia pozycja głowy w~językach inicjalnych byłaby większa niż 0,5. Wobec tego należy uznać znakowanie UD za~zasadniczo poprawne.
+Niemniej jednak efekty tych rozwiązań nie powinny być na tyle powszechne, żeby mieć znaczący wpływ na wynik mojej analizy. Powtórzona poniżej Tabela \ref{tab:pozycja-głowy} pokazuje względną pozycję głów członów koordynacji w~badanych językach. Gdyby w~korpusach UD faktycznie istniała częsta tendencja do nieprawidłowego oznaczania późniejszych elementów fraz jako ich głowy, średnia pozycja głowy w~językach inicjalnych byłaby większa niż 0,5. Wobec tego należy uznać znakowanie UD za~zasadniczo poprawne.
 
-\input{results/head-pos}
+\input{results/head-pos-2}
 
 \subsection{Dependency Length Minimisation}
 
@@ -65,7 +65,8 @@ Surface Syntactic Universal Dependencies\footnote{
 \url{https://surfacesyntacticud.github.io/}
 } to projekt mający na celu stworzenie alternatywnego dla UD standardu opisu relacji zależnościowych. Jest on z założenia bardziej wierny powierzchniowym relacjom składniowym, zaś na jego wytyczne nie mają wpływ argumenty semantyczne. Dzięki temu korpusy SUD są bardziej wiarygodne, jeśli chodzi o opis relacji zależnościowych i unikają problemów obecnych w~zwykłych korpusach UD.
 
-Istnieje możliwość, że przeprowadzenie analogicznego badania na korpusach SUD pozwoliłoby uzyskać bardziej wiarygodne wyniki.
+Istnieje możliwość, że przeprowadzenie analogicznego badania na korpusach SUD pozwoliłoby uzyskać bardziej wiarygodne wyniki. Niestety niska objętość korpusów SUD nie pozwala na wykrycie istotnych statystycznie tendencji dotyczących konstrukcji współrzędnie złożonych. W celu uzyskania wystarczającej ilości danych niezbędne jest automatyczne parsowanie zdań -- takie rozwiązanie zostało zastosowane w pracy \cite{borysiak2024dependency}.
+
 
 \subsection{Analiza koordynacji różnych długości}
 

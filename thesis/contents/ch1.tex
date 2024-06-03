@@ -12,17 +12,16 @@ Rozważmy dwa zdania:
 
 W~zdaniach \eqref{gazeta+książka} i~\eqref{książka+gazeta} znajdują się koordynacje zawierające dwa człony: \emph{gazetę} oraz \emph{bardzo ciekawą książkę przygodową}. Jedyną różnicą między tymi zdaniami jest kolejność ustawienia tych członów. Człony mają podobne własności syntaktyczne i~semantyczne. W~związku z~tym można by przypuszczać, że nie ma znaczenia, który człon zostanie umieszczony w~zdaniu jako pierwszy. Niemniej jednak człony różnią się długością. Długość członu można liczyć na rozmaite sposoby -- w~słowach, tokenach, sylabach lub znakach. Na przykład, \emph{bardzo ciekawą książkę przygodową} ma 4~tokeny i~33 znaki, zaś \emph{gazetę} ma 1 token i~6 znaków. 
 
+
 Pierwszą rzeczą, jaką wykazuję, jest to, że długość członów koordynacji jest istotnym czynnikiem w~wyborze ich kolejności. Wynika to ze zjawiska znanego jako Dependency Length Minimization (DLM). Jest to uniwersalna zależność występująca w~języku naturalnym. Polega ona na tym, że słowa układane są w~zdania w~sposób minimalizujący sumę długości relacji składniowych między nimi \citep{temperley2007minimization, futrell2015large}. Ponieważ długość relacji wewnątrz członów koordynacji jest stała, jedynie ustawienie członów w~zdaniu ma wpływ na sumę długości relacji. 
 W~tej pracy badam, w~jaki sposób pozycja nadrzędnika wpływa na ustawienie kolejności członów. Pokazuję, że~w~językach inicjalnych, takich jak polski czy angielski, zdanie o strukturze takiej jak \eqref{gazeta+książka} ma większą szansę na pojawienie się w~języku naturalnym niż zdanie takie, jak \eqref{książka+gazeta}.
 
 Drugim problemem, jaki podejmuję, jest kwestia opisu relacji składniowych. Wśród lingwistów nie ma zgody co do tego, jakie dokładnie relacje zależnościowe łączą poszczególne elementy koordynacji. Istnieją cztery uznawane sposoby opisu -- model praski, londyński, stanfordzki i~moskiewski \citep{popel2013coordination, przepiorkowski2023conjunct}. Niemniej jednak, zakładając prawdziwość DLM, można wykazać, że nie wszystkie podejścia są poprawne. W~tej pracy sprawdzam, które modele tworzą drzewa zależnościowe zgodne z~przewidywaniami DLM.
 
-\cite{przepiorkowski2023conjunct} przeprowadzili analizę koordynacji w~języku angielskim. Wykazali, że modele stanfordzki i~moskiewski nie są poprawnymi metodami opisu koordynacji. Moim głównym celem jest replikacja tego badania oraz rozszerzenie go na trzynaście języków. W~ramach badania analizuję koordynacje osobno w~językach inicjalnych oraz finalnych. Wykazuję, że w~przypadku tych pierwszych krótszy jest zwykle lewy człon, zaś w~przypadku tych drugich -- prawy człon.
-
-%WYNIKI W SKRÓCIE. Napisać o UD
+\cite{przepiorkowski2023conjunct} przeprowadzili analizę koordynacji w~języku angielskim. Wykazali, że modele stanfordzki i~moskiewski nie są poprawnymi metodami opisu koordynacji. Moim głównym celem jest replikacja tego badania oraz rozszerzenie go na trzynaście języków. W~ramach badania analizuję koordynacje osobno w~językach inicjalnych oraz finalnych.
 
 W badaniu wykorzystuję korpusy zależnościowe opisane w wersji 2.14 standardu Universal Dependencies \citep{de2021universal}. Korpusy te pochodzą ze strony \url{https://universaldependencies.org/}. 
-Wszystkie wykorzystane dane oraz skrypty użyte w analizie dostępne są w~repozytorium pod adresem \url{https://github.com/wjstempniak/Dependency-Structure-of-Coordination}.
+Wszystkie skrypty użyte w analizie dostępne są w~repozytorium pod adresem \url{https://github.com/wjstempniak/Dependency-Structure-of-Coordination}.
 
 \section{Struktura pracy}
 

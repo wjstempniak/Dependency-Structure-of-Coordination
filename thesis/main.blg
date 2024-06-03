@@ -5,44 +5,46 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 The style file: apa-pl.bst
 Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: contents/references.bib
-You've used 8 entries,
+Warning--empty journal in wright2005ladies
+You've used 29 entries,
             1935 wiz_defined-function locations,
-            525 strings with 5508 characters,
-and the built_in function-call counts, 3631 in all, are:
-= -- 369
-> -- 138
-< -- 8
-+ -- 48
-- -- 46
-* -- 295
-:= -- 600
-add.period$ -- 24
-call.type$ -- 8
-change.case$ -- 63
-chr.to.int$ -- 8
-cite$ -- 8
-duplicate$ -- 144
-empty$ -- 257
-format.name$ -- 62
-if$ -- 734
+            649 strings with 9379 characters,
+and the built_in function-call counts, 11761 in all, are:
+= -- 1181
+> -- 404
+< -- 30
++ -- 142
+- -- 132
+* -- 909
+:= -- 1974
+add.period$ -- 87
+call.type$ -- 29
+change.case$ -- 206
+chr.to.int$ -- 29
+cite$ -- 30
+duplicate$ -- 499
+empty$ -- 862
+format.name$ -- 175
+if$ -- 2374
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 7
-newline$ -- 43
-num.names$ -- 24
-pop$ -- 59
+missing$ -- 30
+newline$ -- 147
+num.names$ -- 87
+pop$ -- 208
 preamble$ -- 1
-purify$ -- 63
+purify$ -- 211
 quote$ -- 0
-skip$ -- 114
+skip$ -- 393
 stack$ -- 0
-substring$ -- 286
-swap$ -- 32
-text.length$ -- 3
+substring$ -- 865
+swap$ -- 103
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
-warning$ -- 0
-while$ -- 33
+type$ -- 166
+warning$ -- 1
+while$ -- 104
 width$ -- 0
-write$ -- 105
+write$ -- 371
+(There was 1 warning)
