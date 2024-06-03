@@ -10,6 +10,8 @@
 % Zmiany 10.06.2020 by Paweł Goldstein
 %
 % Zmiany 06.03.2023 by Kamil Tomaszek (na użytek własny)
+%
+% Zmiany 04.06.2023 -- Wojciech Stempniak (na użytek własny)
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{pracamgr_Kogni}[2017/01/03 v0.7.0 Praca magisterska]
@@ -304,20 +306,20 @@
 
 	\renewenvironment{abstract}{%
 	  \titlepage
-	  \null\nobreak\vfil
+	  \null%\nobreak\vfil
 	  \@beginparpenalty\@lowpenalty
 	  \begin{center}%
 		\bfseries\large \abstractname
 		\@endparpenalty\@M
 	  \end{center}}%
 	{\par
-	  \vspace*{26pt}%
+	  \vspace*{10pt}% Adjusted space
 	  \begin{center}%
 		\bfseries\large Słowa kluczowe
 		\@endparpenalty\@M
 	  \end{center}
 	  \@keywords\par
-	  \vspace*{26pt}%
+	  \vspace*{10pt}% Adjusted space
 
 	%-------------------nowosc----------------
 	  \begin{center}%
