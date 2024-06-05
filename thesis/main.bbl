@@ -13,8 +13,8 @@ Bedir, T., {\c{S}}ahin, K., G{\"u}ng{\"o}r, O., Uskudarli, S., {\"O}zg{\"u}r,
 Borysiak, M. (2024).
 \newblock Dependency structure of {E}nglish coordination: a surface-syntactic
   approach.
-\newblock Praca licencjacka (nieopublikowana). Uniwersytet Warszawski, Wydział
-  Filozofii.
+\newblock Praca licencjacka na kierunku kognitywisyka (nieopublikowana).
+  Uniwersytet Warszawski, Wydział Filozofii.
 
 \bibitem[Choi i Palmer, 2011]{choi2011statistical}
 Choi, J.~D. i Palmer, M. (2011).
@@ -31,7 +31,7 @@ Chomsky, N. (1956).
 \bibitem[C{\"o}ltekin, 2010]{coltekin2010freely}
 C{\"o}ltekin, C. (2010).
 \newblock A freely available morphological analyzer for {T}urkish.
-\newblock In {\em LREC}, volume~2, strony 19--28.
+\newblock {\em LREC}, 2:19--28.
 
 \bibitem[De~Marneffe i~in., 2021]{de2021universal}
 De~Marneffe, M.-C., Manning, C.~D., Nivre, J., i Zeman, D. (2021).
@@ -52,7 +52,7 @@ Futrell, R., Mahowald, K., i Gibson, E. (2015).
 
 \bibitem[Haspelmath, 2014]{haspelmath2014leipzig}
 Haspelmath, M. (2014).
-\newblock The leipzig style rules for linguistics.
+\newblock The {L}eipzig style rules for linguistics.
 \newblock {\em Max Planck Institute for Evolutionary Anthropology, Leipzig, URL
   http://www.uni-regensburg.de/sprache-literatur-kultur/sprache-literatur-kultur/allgemeine-vergleichende-sprachwissenschaft/medien/pdfs/haspelmath\_2014\_style\_rules\_linguistics.pdf}.
 
@@ -96,7 +96,7 @@ Nivre, J. (2006).
 Patejuk, A. i Przepiórkowski, A. (2018).
 \newblock {\em From {L}exical {F}unctional {G}rammar to Enhanced {U}niversal
   {D}ependencies: Linguistically informed treebanks of {P}olish}.
-\newblock Instytut Podstaw Informatyki, Polska Akademia Nauk, Warszawa.
+\newblock Instytut Podstaw Informatyki Polskiej Akademii Nauk, Warszawa.
 
 \bibitem[Polinsky, 2012]{polinsky2012headedness}
 Polinsky, M. (2012).
@@ -118,8 +118,16 @@ Popel, M., Mare{\v{c}}ek, D., {\v{S}}t{\v{e}}p{\'a}nek, J., Zeman, D., i
 
 \bibitem[Przepi{\'o}rkowski, 2012]{przepiorkowski2012narodowy}
 Przepi{\'o}rkowski, A. (2012).
-\newblock {\em Narodowy korpus j{\k{e}}zyka polskiego}.
+\newblock {\em Narodowy {K}orpus {J}{\k{e}}zyka {P}olskiego}.
 \newblock Wydawnictwo {N}aukowe PWN.
+
+\bibitem[Przepi{\'o}rkowski i~in., 2024]{przepiorkowski2024argument}
+Przepi{\'o}rkowski, A., Borysiak, M., i G{\l}owacki, A. (2024).
+\newblock An argument for symmetric coordination from dependency length
+  minimization: A replication study.
+\newblock In {\em Proceedings of the 2024 Joint International Conference on
+  Computational Linguistics, Language Resources and Evaluation (LREC-COLING
+  2024)}, strony 1021--1033.
 
 \bibitem[Przepi{\'o}rkowski i Wo{\'z}niak, 2023]{przepiorkowski2023conjunct}
 Przepi{\'o}rkowski, A. i Wo{\'z}niak, M. (2023).
@@ -127,12 +135,6 @@ Przepi{\'o}rkowski, A. i Wo{\'z}niak, M. (2023).
   dependency structure of coordination.
 \newblock In {\em Proceedings of the 61st Annual Meeting of the Association for
   Computational Linguistics (Volume 1: Long Papers)}, strony 15494--15512.
-
-\bibitem[Przepiórkowski i~in., 2024]{przepiorkowski2024argument}
-Przepiórkowski, A., Borysiak, M., i Głowacki, A. (2024).
-\newblock An argument for symmetric coordination from {D}ependency {L}ength
-  {M}inimization: {A}~replication study.
-\newblock To appear in the proceedings of \emph{LREC-COLING 2024}.
 
 \bibitem[{R Core Team}, 2023]{R2023}
 {R Core Team} (2023).
@@ -153,6 +155,13 @@ Simpson, G.~B. i Kang, H. (2004).
 Temperley, D. (2007).
 \newblock Minimization of dependency length in written {E}nglish.
 \newblock {\em Cognition}, 105(2):300--333.
+
+\bibitem[T{\"u}rk i~in., 2019]{turk2019turkish}
+T{\"u}rk, U., Atmaca, F., {\"O}zate{\c{s}}, {\c{S}}.~B., K{\"o}ksal, A.,
+  Ba{\c{s}}aran, B.~{\"O}., G{\"u}ng{\"o}r, T., i {\"O}zg{\"u}r, A. (2019).
+\newblock Turkish treebanking: Unifying and constructing efforts.
+\newblock In {\em Proceedings of the 13th linguistic annotation workshop},
+  strony 166--177.
 
 \bibitem[Van~Nguyen i~in., 2021]{van2021trankit}
 Van~Nguyen, M., Lai, V.~D., Veyseh, A. P.~B., i Nguyen, T.~H. (2021).

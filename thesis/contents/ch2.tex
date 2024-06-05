@@ -104,7 +104,7 @@ W~zdaniu \eqref{uczniowie+nauczyciele} \emph{Niesforni} może opisywać zarówno
 {[Niesforni [[uczniowie] i~[nauczyciele]]] \emph{pojechali} na wycieczkę.}
 \end{exe}
 
-W~tej sytuacji prawdopodobne granice członów można wyznaczyć jedynie odwołując się do znaczeń poszczególnych słów. Zdroworozsądkowa semantyka nakazuje nam przyjąć interpretację \eqref{uczniowie+nauczyciele-dobrze}. Poniżej znajduje się drzewo zależnościowe zdania \eqref{uczniowie+nauczyciele} w interpretacji \eqref{uczniowie+nauczyciele-dobrze}, opisane w~standardzie UD, z~zaznaczonymi istotnymi elementami koordynacji.
+W~tej sytuacji prawdopodobne granice członów można wyznaczyć jedynie odwołując się do znaczeń poszczególnych słów. Zdroworozsądkowa semantyka nakazuje nam przyjąć interpretację \eqref{uczniowie+nauczyciele-dobrze}. Poniżej znajduje się drzewo zależnościowe zdania \eqref{uczniowie+nauczyciele} w~interpretacji \eqref{uczniowie+nauczyciele-dobrze}, opisane w~standardzie UD, z~zaznaczonymi istotnymi elementami koordynacji.
 
 \begin{exe}
 \ex \label{uczniowie+nauczyciele-UD}
@@ -127,15 +127,15 @@ Niesforni  \& \textbf{uczniowie} \& i~\& \textbf{nauczyciele} \& \emph{pojechali
 }
 \end{exe}
 
-Człony koordynacji często połączone są spójnikami. Przez spójnik koordynacji rozumiem właśnie ten spójnik, który łączy jej człony. Zakładam, że każda konstrukcja współrzędnie złożona ma co najwyżej jeden spójnik. W~przypadku zdań \eqref{dzieci+nauczyciele} i~\eqref{uczniowie+nauczyciele} jest to~\emph{i}.
+Człony koordynacji często połączone są spójnikami. Przez spójnik koordynacji rozumiem właśnie ten spójnik, który łączy jej człony. Zakładam, że każda konstrukcja współrzędnie złożona ma co najwyżej jeden spójnik. W~przypadku koordynacji \eqref{uczniowie+nauczyciele-dobrze} jest to~\emph{i}.
 
-Przez lewy i~prawy człon koordynacji rozumiem odpowiednio pierwszy i~ostatni człon występujący w~zdaniu (niezależnie od tego, ile jest tych członów) -- w~\eqref{dzieci+nauczyciele} są to \emph{Niesforne dzieci} oraz \emph{nauczyciele}.
+Przez lewy i~prawy człon koordynacji rozumiem odpowiednio pierwszy i~ostatni człon występujący w~zdaniu (niezależnie od tego, ile jest tych członów) -- w~\eqref{uczniowie+nauczyciele-dobrze} są to \emph{Niesforne dzieci} oraz \emph{nauczyciele}.
 
 Głową członu jest token, który nie ma nadrzędnika w~obrębie tego członu -- dla członu \emph{Niesforni uczniowie} będzie nim słowo \emph{uczniowie}.
 
-Nadrzędnik koordynacji to token, który jest najbliższym wspólnym przodkiem wszystkich członów koordynacji i~jej spójnika. W~zdaniach \eqref{dzieci+nauczyciele} i~\eqref{uczniowie+nauczyciele} będzie to słowo \emph{pojechali}.
+Nadrzędnik koordynacji to token, który jest najbliższym wspólnym przodkiem wszystkich członów koordynacji i~jej spójnika. W~koordynacji \eqref{uczniowie+nauczyciele-dobrze} będzie to słowo \emph{pojechali}.
 
-Ostatnią ważną charakterystyką konstrukcji współrzędnie złożonej jest pozycja nadrzędnika -- parametr określający umiejscowienie nadrzędnika koordynacji względem jej członów. Tabela \ref{pozycja-nadrzędnika} przedstawia możliwe pozycje nadrzędnika wraz z przykładowymi zdaniami.
+Ostatnią ważną charakterystyką konstrukcji współrzędnie złożonej jest pozycja nadrzędnika -- parametr określający umiejscowienie nadrzędnika koordynacji względem jej członów. Tabela \ref{pozycja-nadrzędnika} przedstawia możliwe pozycje nadrzędnika wraz z~przykładowymi zdaniami.
 
 \begin{table}[!h]
 \centering
@@ -143,9 +143,9 @@ Ostatnią ważną charakterystyką konstrukcji współrzędnie złożonej jest p
 \toprule
 ozn.	& pozycja			& przykład zdania								\\
 \midrule
-(L) & po lewej stronie	& Drzewo \textit{sadzą} [[Pat] i [Mat]].		\\
-(0) & brak nadrzędnika	& [[Posadzili i podlali]] drzewo.				\\
-(R) & po prawej stronie	& [[Pat] i [Mat]] \textit{posadzili} drzewo. 			\\
+(L) & po lewej stronie	& Drzewo \textit{sadzą} [[Pat] i~[Mat]].		\\
+(0) & brak nadrzędnika	& [[Posadzili] i~[podlali]] drzewo.				\\
+(R) & po prawej stronie	& [[Pat] i~[Mat]] \textit{posadzili} drzewo. 			\\
 (M) & po środku			& [[Pat] -- \textit{powtórzyłem} -- oraz [Mat]].	\\
 \bottomrule
 \end{tabular}
@@ -153,28 +153,28 @@ ozn.	& pozycja			& przykład zdania								\\
 \label{pozycja-nadrzędnika}
 \end{table}
 
-Konstrukcje współrzędnie złożone z~nadrzędnikiem po środku są bardzo rzadkie i nie występują w~wielu językach (m.in. w~języku angielskim). Oznacza to, że uzyskanie istotnych statystycznie wyników dla koordynacji (M) jest bardzo trudne. Ponadto, wstępna analiza koordynacji typu (M) w~języku polskim wykazała, że mniej niż 20\% z~nich zostało opisane w~sposób prawidłowy. W~związku z~tym w~niniejszej pracy biorę pod uwagę wyłącznie koordynacje typu (L), (0) i~(R).
+Konstrukcje współrzędnie złożone z~nadrzędnikiem po środku są bardzo rzadkie i~nie występują w~wielu językach (m.in. w~języku angielskim). Oznacza to, że uzyskanie istotnych statystycznie wyników dla koordynacji (M) jest bardzo trudne. Ponadto, wstępna analiza koordynacji typu (M) w~języku polskim wykazała, że mniej niż 20\% z~nich zostało opisane w~sposób prawidłowy. W~związku z~tym w~niniejszej pracy biorę pod uwagę wyłącznie koordynacje typu (L), (0) i~(R).
 
 \section{Dependency Length Minimization}
 
 Szyk zdania ma wiele ograniczeń. Najlepiej opisane są te dotyczące sposobu ustawienia najważniejszych części zdania, takich jak podmiot, orzeczenie i~dopełnienia. Nie mają one większego wpływu na ustawienie innych elementów zdania, takich jak między innymi umiejscowienie członów koordynacji.
 
-W~tej pracy skupiam się na zjawisku, które zdaniem wielu lingwistów istotnie wpływa na sposób układania słów w~zdaniu -- Dependency Length Minimization (DLM). W~języku występuje naturalna tendencja do jak największego skracania sumy długości relacji zależnościowych. Innymi słowy, słowa układane są w~takiej kolejności, żeby każde dwa słowa połączone bezpośrednio relacją składniową stały możliwie blisko siebie \citep{temperley2007minimization}. % więcej źródeł
+W~tej pracy skupiam się na zjawisku, które zdaniem wielu lingwistów istotnie wpływa na sposób układania słów w~zdaniu -- Dependency Length Minimization (DLM). W~języku występuje naturalna tendencja do jak największego skracania sumy długości relacji zależnościowych. Innymi słowy, słowa układane są w~takiej kolejności, żeby każde dwa słowa połączone bezpośrednio relacją składniową stały możliwie blisko siebie \citep{temperley2007minimization}.
 
 Wyjaśnienie przyczyn tego zjawiska jest dość intuicyjne. \cite{king1991individual} pokazują, że podczas składania i~odkodowywania zdań w~umysłach użytkowników powstają reprezentacje relacji składniowych. Utrzymywanie tych reprezentacji w~czasie wykorzystuje pamięć roboczą \citep[s. 596]{king1991individual}. Im dłuższa jest relacja, tym dłużej jej reprezentacja jest utrzymywana w~pamięci. Zbyt długo utrzymywane reprezentacje powodują błędy w~konstrukcji i~rozumieniu zdań. W~związku z~tym, w~celu oszczędzania pamięci roboczej i~zmniejszania liczby błędów, należy przechowywać aktywne reprezentacje zależności składniowych jak najkrócej, a co za tym idzie, minimalizować długość zależności.
 
-W badaniach nad DLM używane są rozmaite sposoby mierzenia długości zależności. Do najpopularniejszych jednostek miary należą morfemy, sylaby i fonemy \citep{lohmann2014english}. \cite{przepiorkowski2023conjunct} w swoim badaniu mierzą długość członów w słowach, sylabach i znakach. W celu replikacji badań w niniejszej analizie stosuję identyczną metodologię.
+W badaniach nad DLM używane są rozmaite sposoby mierzenia długości zależności. Do najpopularniejszych jednostek miary należą morfemy, sylaby i~fonemy \citep{lohmann2014english}. \cite{przepiorkowski2023conjunct} w~swoim badaniu mierzą długość członów w~słowach, sylabach i~znakach. W celu replikacji badań w~niniejszej analizie stosuję identyczną metodologię.
 
-\cite{lohmann2014english} wskazuje, że najlepszą metodą pomiaru długości członu jest prawdopodobnie złożoność syntaktyczna. Należy przez to rozumieć liczbę węzłów w relacjach składniowych łączących słowa wchodzące w skład członu. Większa złożoność syntaktyczna przekłada się bezpośrednio na większe zaangażowanie pamięci roboczej w przetwarzanie języka. 
+\cite{lohmann2014english} wskazuje, że najlepszą metodą pomiaru długości członu jest prawdopodobnie złożoność syntaktyczna. Należy przez to rozumieć liczbę węzłów w~relacjach składniowych łączących słowa wchodzące w~skład członu. Większa złożoność syntaktyczna przekłada się bezpośrednio na większe zaangażowanie pamięci roboczej w~przetwarzanie języka. 
 
-Spośród używanych przeze mnie miar najlepszym estymatorem złożoności syntaktycznej frazy jest liczba słów. W związku z tym, na potrzeby dyskusji wyników mojej pracy uznaję liczbę słów w członie za najpewniejszą miarę długości członu konstrukcji współrzędnie złożonej.
+Spośród używanych przeze mnie miar najlepszym estymatorem złożoności syntaktycznej frazy jest liczba słów. W związku z~tym, na potrzeby dyskusji wyników mojej pracy uznaję liczbę słów w~członie za najpewniejszą miarę długości członu konstrukcji współrzędnie złożonej.
 
 Uniwersalne występowanie DLM w~językach naturalnych jest potwierdzone w~badaniach \citep{futrell2015large}. W~tej pracy zakładam, że jest to istotny czynnik mający także wpływ na ustawienie członów koordynacji. 
 
-\section{Kolejność członów koordynacji}
+\section{Kolejność członów koordynacji} \label{kolejność}
 
 DLM nie jest jedynym czynnikiem wpływającym na kolejność ustawiania członów koordynacji.
-\cite{lohmann2014english} opisuje wiele innych zjawisk, które to robią. W niniejszym punkcie omawiam najważniejsze z nich i~opisuję ich możliwe interakcje z DLM.
+\cite{lohmann2014english} opisuje wiele innych zjawisk, które to robią. W niniejszym punkcie omawiam najważniejsze z~nich i~opisuję ich możliwe interakcje z~DLM.
 
 \paragraph{Konwencja lub następstwo czasowe}
 
@@ -190,28 +190,28 @@ Te tendencje działają jednak w~dwie strony (w tym samym oraz w~przeciwnym kier
 
 \paragraph{Czynniki pragmatyczne} 
 
-\cite{lohmann2014english} wymienia rozmaite czynniki pragmatyczne wpływające na ustawienie członów koordynacji. Wskazuje różne hipotezy, zgodnie z którymi pierwszeństwo mają człony mówiące o obiektach bliższych lub lepiej znanych nadawcy wypowiedzi. 
+\cite{lohmann2014english} wymienia rozmaite czynniki pragmatyczne wpływające na ustawienie członów koordynacji. Wskazuje różne hipotezy, zgodnie z~którymi pierwszeństwo mają człony mówiące o obiektach bliższych lub lepiej znanych nadawcy wypowiedzi. 
 
-Warto zwrócić uwagę na sytuacje, w których koordynacja wprowadza do dyskursu nowe obiekty.
+Warto zwrócić uwagę na sytuacje, w~których koordynacja wprowadza do dyskursu nowe obiekty.
 
 \begin{exe}
-\ex \label{paweł+gaweł} {[[Paweł] i [jego sąsiad Gaweł]]}
-\ex \label{gaweł+paweł} {?? [Jego sąsiad Gaweł] i [Paweł]]}
+\ex \label{paweł+gaweł} {[[Paweł] i~[jego sąsiad Gaweł]]}
+\ex \label{gaweł+paweł} {?? [Jego sąsiad Gaweł] i~[Paweł]]}
 \end{exe}
 
-W przykładzie \eqref{paweł+gaweł} treść członu \textit{[Paweł]} stanowi punkt odniesienia do wprowadzenia kolejnego obiektu, czyli treści członu \textit{[jego sąsiad Gaweł]}. W takiej sytuacji ustawienie członów w odwrotnej kolejności jest niepoprawne pragmatycznie (zob. \eqref{gaweł+paweł}). Punkty odniesienia, takie jak \textit{Paweł}, są co do zasady opisywane w krótszy sposób niż nowe obiekty, takie jak \textit{Gaweł}. Oznacza to, że w takich sytuacjach krótszy człon występuje po lewej stronie koordynacji niezależnie od DLM. Niemniej jednak, jest to sytuacja występująca relatywnie rzadko.
+W przykładzie \eqref{paweł+gaweł} treść członu \textit{[Paweł]} stanowi punkt odniesienia do wprowadzenia kolejnego obiektu, czyli treści członu \textit{[jego sąsiad Gaweł]}. W takiej sytuacji ustawienie członów w~odwrotnej kolejności jest niepoprawne pragmatycznie (zob. \eqref{gaweł+paweł}). Punkty odniesienia, takie jak \textit{Paweł}, są co do zasady opisywane w~krótszy sposób niż nowe obiekty, takie jak \textit{Gaweł}. Oznacza to, że w~takich sytuacjach krótszy człon występuje po lewej stronie koordynacji niezależnie od DLM. Niemniej jednak, jest to sytuacja występująca relatywnie rzadko.
 
 \paragraph{Częstość używania słowa}
-\cite{fenk1989word} stawia hipotezę, że człony składające się z~częściej występujących w języku słów  częściej pojawiają się jako pierwsze w konstrukcjach współrzędnie złożonych. Ponieważ w języku naturalnym krótsze słowa występują co do zasady częściej niż długie \citep{zipf1946psychology}, to zjawisko może powodować ustawianie krótszego członu na początku koordynacji \citep[s. 54]{lohmann2014english}.
+\cite{fenk1989word} stawia hipotezę, że człony składające się z~częściej występujących w~języku słów  częściej pojawiają się jako pierwsze w~konstrukcjach współrzędnie złożonych. Ponieważ w~języku naturalnym krótsze słowa występują co do zasady częściej niż długie \citep{zipf1946psychology}, to zjawisko może powodować ustawianie krótszego członu na początku koordynacji \citep[s. 54]{lohmann2014english}.
 
-Zgodnie z tą hipotezą, koordynacja \eqref{pies+hipopotam} ma większą szansę na pojawienie się w języku niż \eqref{hipopotam+pies}, ponieważ w języku polskim słowo \textit{pies} występuje częściej niż \textit{hipopotam} \citep{przepiorkowski2012narodowy}.
+Zgodnie z~tą hipotezą, koordynacja \eqref{pies+hipopotam} ma większą szansę na pojawienie się w~języku niż \eqref{hipopotam+pies}, ponieważ w~języku polskim słowo \textit{pies} występuje częściej niż \textit{hipopotam} \citep{przepiorkowski2012narodowy}.
 
 \begin{exe}
-\ex \label{pies+hipopotam} {[[Pies] i [hipopotam]]}
-\ex \label{hipopotam+pies} {[[Hipopotam] i [pies]]}
+\ex \label{pies+hipopotam} {[[Pies] i~[hipopotam]]}
+\ex \label{hipopotam+pies} {[[Hipopotam] i~[pies]]}
 \end{exe}
 
-\paragraph{Prozodia i akcent}
+\paragraph{Prozodia i~akcent}
 
 Kolejnym czynnikiem mającym duży wpływ na ustawienie członów koordynacji jest prozodia. \cite{lohmann2014english} wskazuje, że koordynacje o krótkich członach są konstruowane tak, żeby akcentowane sylaby tworzyły rytm.
 
@@ -225,13 +225,13 @@ Kolejnym czynnikiem mającym duży wpływ na ustawienie członów koordynacji je
         {[[Ma-ria] i [Jan]]}}
 \end{exe}
 
-W przykładzie \eqref{jan+maria} sylaby nieakcentowane i akcentowane występują naprzemiennie. Dzięki temu zdanie zawierające taką koordynację zawiera rytm oparty o stopy metryczne\footnote{
-Na schemacie \metricsymbols{u} oznacza sylabę krótką (nieakcentowaną), zaś \metricsymbols{_} sylabę długą (akcentowaną). Jeśli w zdaniu można wydzielić stopy, są one rozdzielone znakiem \metricsymbols{|}.  Sekwencje \metricsymbols{| u _ |} oraz \metricsymbols{| _  u |} tworzą odpowiednio jamb i~trochej -- dwie najprostsze stopy metryczne.}.
-Natomiast w przykładzie \eqref{maria+jan} sylaby nie tworzą sekwencji rytmicznej. Powoduje to, że konstrukcja \eqref{jan+maria} ma większe szanse pojawić się w języku, niż \eqref{maria+jan} \citep{mcdonald1993word}, \citealt{wright2005ladies}.
+W przykładzie \eqref{jan+maria} sylaby nieakcentowane i~akcentowane występują naprzemiennie. Dzięki temu zdanie zawierające taką koordynację zawiera rytm oparty o stopy metryczne\footnote{
+Na schemacie \metricsymbols{u} oznacza sylabę krótką (nieakcentowaną), zaś \metricsymbols{_} sylabę długą (akcentowaną). Jeśli w~zdaniu można wydzielić stopy, są one rozdzielone znakiem \metricsymbols{|}.  Sekwencje \metricsymbols{| u _ |} oraz \metricsymbols{| _  u |} tworzą odpowiednio jamb i~trochej -- dwie najprostsze stopy metryczne.}.
+Natomiast w~przykładzie \eqref{maria+jan} sylaby nie tworzą sekwencji rytmicznej. Powoduje to, że konstrukcja \eqref{jan+maria} ma większe szanse pojawić się w~języku, niż \eqref{maria+jan} (\citealt{mcdonald1993word}, \citealt{wright2005ladies}).
 
-Na ostatnie dwa czynniki (częstość występowania słowa oraz rozkład sylab akcentowanych) znaczący wpływ ma długość członów. Dotyczą one głównie koordynacji krótkich, o członach jedno- lub dwuwyrazowych i o niewielkich różnicach długości członów. Oznacza to, że mogą one w tych przypadkach wzmacniać lub osłabiać efekt DLM. Z tego powodu w niniejszym badaniu analizuję również koordynacje dłuższe i takie, w których różnica długości członów jest znaczna.
+Na ostatnie dwa czynniki (częstość występowania słowa oraz rozkład sylab akcentowanych) znaczący wpływ ma długość członów. Dotyczą one głównie koordynacji krótkich, o członach jedno- lub dwuwyrazowych i~o niewielkich różnicach długości członów. Oznacza to, że mogą one w~tych przypadkach wzmacniać lub osłabiać efekt DLM. Z tego powodu w~niniejszym badaniu analizuję również koordynacje dłuższe i~takie, w~których różnica długości członów jest znaczna.
 
-Skutki istnienia innych czynników mających wpływ na ustawienie członów koorynacji opisuję dokładniej w rozdziale \ref{ch7}. 
+Skutki istnienia innych czynników mających wpływ na ustawienie członów koorynacji opisuję dokładniej w~rozdziale \ref{ch7}. 
 
 \section{Języki inicjalne oraz finalne}
 
@@ -297,7 +297,7 @@ Poniższe schematy oparte są na schematach  z~pracy \cite{przepiorkowski2023con
 
 \input{predictions/head-initial/models}
 
-\cite{przepiorkowski2023conjunct} pokazują, że jedynie podejścia praskie oraz londyńskie mogą poprawnie opisywać strukturę zależnościową koordynacji przy założeniu o poprawności DLM. Wynika to z~dynamiki proporcji koordynacji z~krótszym lewym członem w~zależności od obecności i~pozycji nadrzędnika oraz z~założenia, że umieszczanie krótszego członu na początku koordynacji uległo gramatykalizacji. Rozumowanie to jest szczegółowo przedstawione w rozdziale \ref{ch3}.
+\cite{przepiorkowski2023conjunct} pokazują, że jedynie podejścia praskie oraz londyńskie mogą poprawnie opisywać strukturę zależnościową koordynacji przy założeniu o poprawności DLM. Wynika to z~dynamiki proporcji koordynacji z~krótszym lewym członem w~zależności od obecności i~pozycji nadrzędnika oraz z~założenia, że umieszczanie krótszego członu na początku koordynacji uległo gramatykalizacji. Rozumowanie to jest szczegółowo przedstawione w~rozdziale \ref{ch3}.
 
 \cite{przepiorkowski2023conjunct} opierają swoją analizę na dwóch istotnych założeniach. Po pierwsze, autorzy zakładają, że gramatykalizacja umieszczania krótszego członie po lewej stronie w~języku angielskim wynika z~faktu, że lewe człony są istotnie częściej krótsze niż prawe. Po drugie, głowa członu co do zasady znajduje się na początku członu. 
 

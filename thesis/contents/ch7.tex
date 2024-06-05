@@ -4,12 +4,12 @@
 
 \subsection{Korpusy zależnościowe UD}
 
-Jednym z głównych ograniczeń niniejszej pracy jest korzystanie wyłącznie z~korpusów zależnościowych Universal Dependencies. Dzięki standardowemu opisowi relacji składniowej korpusy UD umożliwiają miarodajną analizę wielu różnych języków naraz. Jednak ze względu na wymuszanie przez UD konkretnego sposobu opisu struktur, korpusy mogą tracić na jakości.
+Jednym z~głównych ograniczeń niniejszej pracy jest korzystanie wyłącznie z~korpusów zależnościowych Universal Dependencies. Dzięki standardowemu opisowi relacji składniowej korpusy UD umożliwiają miarodajną analizę wielu różnych języków naraz. Jednak ze względu na wymuszanie przez UD konkretnego sposobu opisu struktur, korpusy mogą tracić na jakości.
 
 \paragraph{Ograniczenia dla języków finalnych}
 \cite{choi2011statistical} oraz \cite{kanayama2018coordinate} wskazują, że tworzenie korpusów zależnościowych zgodnie z~narzucanym przez UD podejściem stanfordzkim tworzą drzewa niezgodne z~teorią lingwistyczną. Z~tego powodu z~japońskich korpusów Universal Dependencies zostały usunięte wszystkie koordynacje, a w~korpusach koreańskich występują równolegle dwa różne standardy opisu struktur.
 
-Powoduje to, że analiza koordynacji w korpusach japońskich jest niemożliwa, zaś w~przypadku korpusów koreańskich może być w~znacznym stopniu niemiarodajna.
+Powoduje to, że analiza koordynacji w~korpusach japońskich jest niemożliwa, zaś w~przypadku korpusów koreańskich może być w~znacznym stopniu niemiarodajna.
 
 \paragraph{Nieprawidłowy opis głów fraz}
 Standard Universal Dependencies nie jest wyłącznie standardem składniowym; przy ustalaniu relacji zależnościowych stosuje również kryteria semantyczne. Oznacza to, że według wytycznych tego standardu głową członu nie jest faktyczna, składniowa głowa członu, lecz temat lub najważniejszy semantycznie token w~obrębie frazy. 
@@ -29,7 +29,7 @@ Był \& ordynatorem \& w~\& szpitalu \& .  \\
 \label{UD-złe}
 \end{exe}
 
-W przykładzie \eqref{UD-złe} głową frazy \textit{w szpitalu} jest \textit{szpitalu}, zaś głową całego zdania (czyli korzeniem zdania) \textit{ordynatorem}. Zgodnie z teorią lingwistyczną głową frazy przyimkowej \textit{w szpitalu} powinien być przyimek \textit{w}, zaś korzeniem zdania z orzeczeniem imiennym -- łącznik \textit{Był} \citep{hoeksema1992head}. Traktowanie rzeczowników jako głów fraz przyimkowych i orzeczników jako korzeni zdań jest znamienne dla drzew UD. Efektem tych rozwiązań jest w~szczególności ,,przesuwanie'' głowy członu na jej koniec w~językach inicjalnych.
+W przykładzie \eqref{UD-złe} głową frazy \textit{w szpitalu} jest \textit{szpitalu}, zaś głową całego zdania (czyli korzeniem zdania) \textit{ordynatorem}. Zgodnie z~teorią lingwistyczną głową frazy przyimkowej \textit{w szpitalu} powinien być przyimek \textit{w}, zaś korzeniem zdania z~orzeczeniem imiennym -- łącznik \textit{Był} \citep{hoeksema1992head}. Traktowanie rzeczowników jako głów fraz przyimkowych i~orzeczników jako korzeni zdań jest znamienne dla drzew UD. Efektem tych rozwiązań jest w~szczególności ,,przesuwanie'' głowy członu na jej koniec w~językach inicjalnych.
 
 Niemniej jednak efekty tych rozwiązań nie powinny być na tyle powszechne, żeby mieć znaczący wpływ na wynik mojej analizy. Powtórzona poniżej Tabela \ref{tab:pozycja-głowy} pokazuje względną pozycję głów członów koordynacji w~badanych językach. Gdyby w~korpusach UD faktycznie istniała częsta tendencja do nieprawidłowego oznaczania późniejszych elementów fraz jako ich głowy, średnia pozycja głowy w~językach inicjalnych byłaby większa niż 0,5. Wobec tego należy uznać znakowanie UD za~zasadniczo poprawne.
 
@@ -39,23 +39,23 @@ Niemniej jednak efekty tych rozwiązań nie powinny być na tyle powszechne, że
 
 \paragraph{Założenie o monotoniczności tendencji}
 
-Badając wpływ DLM na kolejność ustawienia członów koordynacji, zakładam, że jest on wyrażony jako monotoniczna funkcja. Z tego powodu, obliczając tendencję, korzystam z dwumianowej regresji logistycznej.
+Badając wpływ DLM na kolejność ustawienia członów koordynacji, zakładam, że jest on wyrażony jako monotoniczna funkcja. Z tego powodu, obliczając tendencję, korzystam z~dwumianowej regresji logistycznej.
 
-% pomijam możliwości jego interakcji z innymi czynnikami (m.in. pragmatycznymi, psycholingwistycznymi i prozodycznymi).
+% pomijam możliwości jego interakcji z~innymi czynnikami (m.in. pragmatycznymi, psycholingwistycznymi i~prozodycznymi).
 
 Dokładniejsze zbadanie właściwości efektu DLM może pozwolić na stworzenie dokładniejszych modeli, które są w~stanie estymować proporcje ustawiania członów lepiej, niż przez samo określenie, że są one opisywane przez rosnącą, malejącą lub stałą funkcję. 
 
 \paragraph{Metoda określania złożoności}
 
-\cite{lohmann2014english} stwierdza, że najlepszym sposobem na określenie długości relacji jest złożoność syntaktyczna rozumiana jako liczba węzłów w~relacjach składnikowych łączących słowa w~frazy. Ponieważ korzystam z korpusów zależnościowych, w~analizie nie mogę obliczyć złożoności syntaktycznej. Estymacja złożoności składniowej za pomocą liczby słów nie jest idealnym rozwiązaniem i może wpłynąć na wyniki badania.
+\cite{lohmann2014english} stwierdza, że najlepszym sposobem na określenie długości relacji jest złożoność syntaktyczna rozumiana jako liczba węzłów w~relacjach składnikowych łączących słowa w~frazy. Ponieważ korzystam z~korpusów zależnościowych, w~analizie nie mogę obliczyć złożoności syntaktycznej. Estymacja złożoności składniowej za pomocą liczby słów nie jest idealnym rozwiązaniem i~może wpłynąć na wyniki badania.
 
-Jest to poważne ograniczenie badania, tym bardziej, że~w~wielu badanych przeze mnie językach wyniki dotyczące słów są istotnie inne, niż wyniki korzystające z innych miar długości.
+Jest to poważne ograniczenie badania, tym bardziej, że~w~wielu badanych przeze mnie językach wyniki dotyczące słów są istotnie inne, niż wyniki korzystające z~innych miar długości.
 
 \subsection{Ograniczenia metodologiczne}
 
-W przeprowadzonym przeze mnie badaniu analizuję koordynacje wyciągnięte automatycznie na podstawie algorytmu opartego o heurystyki. Każda z heurystyk została opracowana na podstawie wielu kompromisów i założeń oraz ze świadomością, że nie zawsze będą one działać poprawnie. Ponadto, większość heurystyk została przypisana językom bez znajomości języków, na zasadzie analogii z językiem angielskim, polskim i tureckim.
+W przeprowadzonym przeze mnie badaniu analizuję koordynacje wyciągnięte automatycznie na podstawie algorytmu opartego o heurystyki. Każda z~heurystyk została opracowana na podstawie wielu kompromisów i~założeń oraz ze świadomością, że nie zawsze będą one działać poprawnie. Ponadto, większość heurystyk została przypisana językom bez znajomości języków, na zasadzie analogii z~językiem angielskim, polskim i~tureckim.
 
-Ewaluacja losowo wyciągniętych koordynacji wykazała, że \textit{większość z nich} została wyciągnięta poprawnie. Niemniej jednak sam algorytm liczenia długości członów nie został poddany ewaluacji.
+Ewaluacja losowo wyciągniętych koordynacji wykazała, że większość z~nich została wyciągnięta poprawnie. Niemniej jednak sam algorytm liczenia długości członów nie został poddany ewaluacji.
 
 \section{Przyszłe badania}
 
@@ -63,17 +63,17 @@ Ewaluacja losowo wyciągniętych koordynacji wykazała, że \textit{większość
 
 Surface Syntactic Universal Dependencies\footnote{
 \url{https://surfacesyntacticud.github.io/}
-} to projekt mający na celu stworzenie alternatywnego dla UD standardu opisu relacji zależnościowych. Jest on z założenia bardziej wierny powierzchniowym relacjom składniowym, zaś na jego wytyczne nie mają wpływ argumenty semantyczne. Dzięki temu korpusy SUD są bardziej wiarygodne, jeśli chodzi o opis relacji zależnościowych i unikają problemów obecnych w~zwykłych korpusach UD.
+} to projekt mający na celu stworzenie alternatywnego dla UD standardu opisu relacji zależnościowych. Jest on z~założenia bardziej wierny powierzchniowym relacjom składniowym, zaś na jego wytyczne nie mają wpływ argumenty semantyczne. Dzięki temu korpusy SUD są bardziej wiarygodne, jeśli chodzi o opis relacji zależnościowych i~unikają problemów obecnych w~zwykłych korpusach UD.
 
-Istnieje możliwość, że przeprowadzenie analogicznego badania na korpusach SUD pozwoliłoby uzyskać bardziej wiarygodne wyniki. Niestety niska objętość korpusów SUD nie pozwala na wykrycie istotnych statystycznie tendencji dotyczących konstrukcji współrzędnie złożonych. W celu uzyskania wystarczającej ilości danych niezbędne jest automatyczne parsowanie zdań -- takie rozwiązanie zostało zastosowane w pracy \cite{borysiak2024dependency}.
+Istnieje możliwość, że przeprowadzenie analogicznego badania na korpusach SUD pozwoliłoby uzyskać bardziej wiarygodne wyniki. Niestety niska objętość korpusów SUD nie pozwala na wykrycie istotnych statystycznie tendencji dotyczących konstrukcji współrzędnie złożonych. W celu uzyskania wystarczającej ilości danych niezbędne jest automatyczne parsowanie zdań -- takie rozwiązanie zostało zastosowane w~pracy \cite{borysiak2024dependency}.
 
 
 \subsection{Analiza koordynacji różnych długości}
 
 \cite{przepiorkowski2024argument} pokazują, że omawiane tendencje dotyczące koordynacji w~języku angielskim mogą być niemonotoniczne. Z~ich badania wynika, że proste modele statystyczne, takie jak regresja logistyczna, mogą nie wystarczyć w~analizie tych zależności.
 
-W rozdziale \ref{ch6} przedstawiam hipotezę, zgodnie z którą uwzględnienie w~analizie tylko koordynacji o dłuższych członach może pozwolić uzyskać bardziej wiarygodne wyniki. Hipoteza ta jest zgodna z wynikami uzyskanymi w~pracy \cite{przepiorkowski2024argument}. 
+W rozdziale \ref{ch6} przedstawiam hipotezę, zgodnie z~którą uwzględnienie w~analizie tylko koordynacji o dłuższych członach może pozwolić uzyskać bardziej wiarygodne wyniki. Hipoteza ta jest zgodna z~wynikami uzyskanymi w~pracy \cite{przepiorkowski2024argument}. 
 
-Niestety, konstrukcje współrzędnie złożone dłuższych członach występują w~języku bardzo rzadko. w~przypadku analizowanych przeze mnie danych uwzględnienie w~analizie wyłącznie koordynacji, których oba człony składają się z co najmniej czterech tokenów nie pozwala na stworzenie istotnych statystycznie modeli logistycznych.
+Niestety, konstrukcje współrzędnie złożone o dłuższych członach występują w~języku naturalnym bardzo rzadko. W~przypadku analizowanych przeze mnie danych uwzględnienie w~analizie wyłącznie koordynacji, których oba człony składają się z~co najmniej czterech tokenów nie pozwala na stworzenie istotnych statystycznie modeli logistycznych.
 
 Oznacza to, że korpusy UD są zbyt małe, żeby można było przeprowadzić na nich takie badanie. Analiza koordynacji różnych długości powinna zostać przeprowadzona na korpusach zawierających miliony zdań.

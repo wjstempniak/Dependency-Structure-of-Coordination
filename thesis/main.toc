@@ -11,7 +11,7 @@
 \contentsline {paragraph}{Konwencja lub następstwo czasowe}{13}{section*.3}%
 \contentsline {paragraph}{Czynniki pragmatyczne}{13}{section*.4}%
 \contentsline {paragraph}{Częstość używania słowa}{14}{section*.5}%
-\contentsline {paragraph}{Prozodia i akcent}{14}{section*.6}%
+\contentsline {paragraph}{Prozodia i~akcent}{14}{section*.6}%
 \contentsline {section}{\numberline {2.6}Języki inicjalne oraz finalne}{15}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Struktura zależnościowa koordynacji}{16}{section.2.7}%
 \contentsline {chapter}{\numberline {3}Struktura zależnościowa koordynacji}{18}{chapter.3}%
@@ -39,7 +39,6 @@
 \contentsline {paragraph}{Podejście nadrzędnikowe (J)}{28}{section*.19}%
 \contentsline {paragraph}{Podejście (K)}{28}{section*.20}%
 \contentsline {paragraph}{Podejście (L)}{29}{section*.21}%
-\contentsline {subsection}{\numberline {3.2.5}Podsumowanie}{29}{subsection.3.2.5}%
 \contentsline {section}{\numberline {3.3}Języki mieszane}{29}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Przetwarzanie danych}{30}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Dane wejściowe}{30}{section.4.1}%
@@ -53,18 +52,18 @@
 \contentsline {paragraph}{Nadrzędnik}{35}{section*.24}%
 \contentsline {paragraph}{Spójnik}{35}{section*.25}%
 \contentsline {subsection}{\numberline {4.2.3}Wyznaczanie granic członów}{36}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Określanie pozycji nadrzędnika}{38}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.4}Określanie pozycji nadrzędnika}{39}{subsection.4.2.4}%
 \contentsline {subsection}{\numberline {4.2.5}Obliczanie długości członu}{39}{subsection.4.2.5}%
 \contentsline {paragraph}{Słowa}{39}{section*.31}%
-\contentsline {paragraph}{Tokeny}{39}{section*.32}%
+\contentsline {paragraph}{Tokeny}{40}{section*.32}%
 \contentsline {paragraph}{Sylaby}{40}{section*.33}%
-\contentsline {paragraph}{Znaki}{40}{section*.34}%
+\contentsline {paragraph}{Znaki}{41}{section*.34}%
 \contentsline {subsection}{\numberline {4.2.6}Koordynacje zagnieżdżone}{41}{subsection.4.2.6}%
 \contentsline {subsection}{\numberline {4.2.7}Procedura znajdowania koordynacji z~uwzględnieniem koordynacji zagnieżdżonych}{42}{subsection.4.2.7}%
 \contentsline {section}{\numberline {4.3}Weryfikacja działania algorytmu}{44}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Ograniczenia}{44}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Dobór języków}{44}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Losowanie wyciągniętych koordynacji}{44}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.3}Losowanie wyciągniętych koordynacji}{45}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}Ocena poprawności}{45}{subsection.4.3.4}%
 \contentsline {subsection}{\numberline {4.3.5}Wyniki}{45}{subsection.4.3.5}%
 \contentsline {chapter}{\numberline {5}Metody statystyczne}{47}{chapter.5}%

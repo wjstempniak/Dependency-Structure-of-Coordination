@@ -6,7 +6,7 @@ Analizie zostały poddane 72 korpusy zależnościowe 13 języków, spośród kor
 
 Za główne kryterium doboru języka uznano istnienie korpusu zależnościowego opisanego w~standardzie UD o objętości co najmniej 700 tysięcy tokenów.  
 
-Język arabski został wykluczony z~analizy, ponieważ znaczna część jego korpusów zawierała wyłącznie relacje zależnościowe między tokenami. W takich korpusach treść zdań została zamieniona podkreślnikami, w związku z czym policzenie długości członów w~słowach, sylabach i znakach nie była możliwa.  Korpusy języka arabskiego zawierające słowa nie przekroczyły łącznej objętości 700 tys. tokenów.
+Język arabski został wykluczony z~analizy, ponieważ znaczna część jego korpusów zawierała wyłącznie relacje zależnościowe między tokenami. W takich korpusach treść zdań została zamieniona podkreślnikami, w związku z~czym policzenie długości członów w~słowach, sylabach i~znakach nie była możliwa.  Korpusy języka arabskiego zawierające słowa nie przekroczyły łącznej objętości 700 tys. tokenów.
 
 Ze względu na fakt, że w~korpusach UD dla języka japońskiego nie występują koordynacje \citep[s. 79]{kanayama2018coordinate}, język ten również został wykluczony z~analizy.
 
@@ -217,7 +217,7 @@ Kupił \& chleb \& i~\& tuzin \& jajek \& .  \\
 
 \paragraph{Głowa lewego członu}
 
-Jeśli token jest nadrzędnikiem w~relacji \textit{conj}, to jest on głową lewego członu. W przykładzie \eqref{L} głową lewego członu jest token \textit{chleb}.
+Jeśli token jest nadrzędnikiem w~relacji \texttt{conj}, to jest on głową lewego członu. W przykładzie \eqref{L} głową lewego członu jest token \textit{chleb}.
 
 \begin{exe}
 \ex \label{L}
@@ -255,7 +255,7 @@ Kupił \& \textbf{chleb} \& i~\& tuzin \& \textbf{jajek} \& .  \\
 \end{dependency}
 \end{exe}
 
-Jeśli natomiast głowa lewego członu ma kilka podrzędników z~relacjami \texttt{conj}, jest to koordynacja wieloczłonowa. Podrzędniki tych relacji to głowy pozostałych członów. Głowa, która występuje w~zdaniu jako ostatnia, jest głową prawego członu. W zdaniu \eqref{wieloczłonowa} \textit{chleb}, \textit{mleko} i~\textit{jajek} są głowami członów jednej konstrukcji współrzędnie złożonej. \textit{Chleb} jest głową lewego, zaś \textit{jajek} prawego członu koordynacji.
+Jeśli natomiast głowa lewego członu ma kilka podrzędników z~relacjami \texttt{conj}, jest to koordynacja wieloczłonowa. Podrzędniki tych relacji to głowy pozostałych członów. Głowa, która występuje w~zdaniu jako ostatnia, jest głową prawego członu. W zdaniu \eqref{wieloczłonowa} tokeny \textit{chleb}, \textit{mleko} i~\textit{jajek} są głowami członów jednej konstrukcji współrzędnie złożonej. \textit{Chleb} jest głową lewego, zaś \textit{jajek} prawego członu koordynacji.
 
 \begin{exe}
 \ex \label{wieloczłonowa}
@@ -270,13 +270,12 @@ Kupił \& \textbf{chleb} \& , \& \textbf{mleko} \& i~\& tuzin \& \textbf{jajek} 
 \depedge[edge style = {thick}, label style = {thick}]{2}{4}{\textbf{conj}}
 \depedge{7}{5}{cc}
 \depedge{7}{6}{amod}
-\depedge{2}{7}[edge style = {red, thick}, label style = {thick, draw=red, text=red}]{\textbf{conj}}
+\depedge[edge style = {red, thick}, label style = {thick, draw=red, text=red}]{2}{7}{\textbf{conj}}
 \depedge{1}{8}{punct}
 \end{dependency}
 \end{exe}
 
-Ponieważ w analizie każda koordynacja traktowana jest jako binarna, środkowe człony (\textit{mleko} w przykładzie \eqref{wieloczłonowa}) są ignorowane.
-
+Ponieważ w analizie każda koordynacja traktowana jest jako binarna, środkowe człony (takie jak \textit{mleko} w przykładzie \eqref{wieloczłonowa}) są ignorowane.
 
 \paragraph{Nadrzędnik}
 
@@ -332,11 +331,11 @@ Jeśli $L$ ma $n>0$ podrzędników z~relacją \texttt{conj} oraz:
 \item opcjonalne podrzędniki $H_{1}, \ldots , H_{n}$ z~relacją \texttt{cc} to spójniki -- oznaczane odpowiednio $C_{1}, \ldots , C_{n}$,
 \end{itemize}
 
-to należy rozpatrzeć taką koordynację, w~której nadrzędnikiem jest $G$, głową lewego członu jest $L$, głową prawego członu $H_{n}$, a spójnikiem $C_{n}$.
+to należy rozpatrzeć taką koordynację, w~której nadrzędnikiem jest $G$, spójnikiem $C_{n}$, a głowami członów są $L$ oraz $H_{1}, \ldots , H_{n}$ (przy czym głową lewego członu jest $L$, a~głową prawego członu $H_{n}$).
 \end{exe}
 
-$H_{i}$ i $C_{i}$ dla $i<n$ to odpowiednio pozostałe głowy i spójniki. Są one co do zasady pomijane w analizie\footnote{
-Niektóre z heurystyk opisywanych w~punktach \ref{heurystyki} oraz \ref{zagnieżdżone} mogą brać pod uwagę istnienie lub treść środkowych członów i pozostałych spójników. Odnoszę się do tego faktu przy omawianiu tych heurystyk.}.
+$H_{i}$ i~$C_{i}$ dla $i<n$ to odpowiednio pozostałe głowy i~spójniki. Są one co do zasady pomijane w analizie\footnote{
+Niektóre z~heurystyk opisywanych w~punktach \ref{heurystyki} oraz \ref{zagnieżdżone} mogą brać pod uwagę istnienie lub treść środkowych członów i~pozostałych spójników. Odnoszę się do tego faktu przy omawianiu tych heurystyk.}.
 
 \subsection{Wyznaczanie granic członów} \label{heurystyki}
 
@@ -361,7 +360,7 @@ W~celu automatycznego określenia granicy członu należy wziąć pod uwagę wsz
 
 W zdaniu \eqref{potomkowie} potomkami głowy lewego członu \textit{chleb} są \textit{i}, \textit{tuzin} i~\textit{jajek}, zaś potomkami głowy prawego członu \textit{i} oraz \textit{tuzin}.
 
-Spośród podrzędników głowy lewego członu należy wykluczyć głowy pozostałych członów oraz wraz z~ich podrzędnikami.
+Spośród podrzędników głowy lewego członu należy wykluczyć głowy pozostałych członów ($H_{1}, \ldots , H_{n}$) oraz wraz z~ich podrzędnikami.
 
 W ten sposób otrzymujemy wstępnie określone granice członów, co pokazuje przykład \eqref{granice}:
 
@@ -369,7 +368,7 @@ W ten sposób otrzymujemy wstępnie określone granice członów, co pokazuje pr
 \ex \label{granice}
 \begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
 \begin{deptext}[column sep=1em, row sep=.1ex]
-\emph{Kupił} \& \textbf{chleb} \& i \& tuzin \& \textbf{jajek} \& .  \\ 
+\emph{Kupił} \& \textbf{chleb} \& i~\& tuzin \& \textbf{jajek} \& .  \\ 
 \end{deptext}
 \deproot{1}{root}
 \depedge{1}{2}{obj}
@@ -408,7 +407,7 @@ Człon nie może zaczynać się od spójnika (słowa, które jest połączone z~
 
 \begin{enumerate}
 \item[\namedlabel{H2}{(H2)}]
-Człon nie może zaczynać się od znaku interpunkcyjnego (dokładniej rzecz ujmując, od przecinka, średnika, dwukropka, ani myślnika).
+Człon nie może zaczynać się od znaku interpunkcyjnego (dokładniej rzecz ujmując, od przecinka, średnika, dwukropka ani myślnika).
 \end{enumerate}
 
 \begin{exe}
@@ -432,7 +431,7 @@ Człon nie może zaczynać się od znaku interpunkcyjnego (dokładniej rzecz ujm
 Potomkowie głowy lewego członu znajdujący się na prawo od prawego członu nie wchodzą w~skład lewego członu.
 \end{enumerate}
 
-W rzeczywistości tokeny, o których mowa w~\ref{H3} są współdzielone przez oba człony, czyli należą do ich obu. Ponieważ interesuje mnie różnica długości członów, dla przejrzystości wykluczam ich wspólną część.
+W rzeczywistości tokeny, o których mowa w~\ref{H3} są współdzielone przez oba człony, czyli należą do ich obu. Ponieważ interesuje mnie różnica długości członów, dla przejrzystości wykluczam ich wspólną część. W~przykładzie \eqref{H3-przykład} fraza \textit{moją opowieść} jest wykluczona z~lewego członu na podstawie \eqref{H3}.
 
 \begin{exe}
 \ex \label{H3-przykład}
@@ -468,7 +467,7 @@ Geçit töreni yok ve hiç olmadı.
 \begin{dependency}
 \begin{deptext}[column sep=1em]
 \textcolor{red}{Geçit} \& \textcolor{red}{tören-i} \& \textbf{yok} \& ve \& hiç \& \textbf{ol-madı} \& .  \\ 
-przejście \& uroczystość-\textsc{3sg} \& być-\textsc{neg} \& i \& zawsze \& być-\textsc{neg.pst.3sg} \&  \\ 
+przejście \& uroczystość-\textsc{3sg} \& być-\textsc{neg} \& i~\& zawsze \& być-\textsc{neg.pst.3sg} \&  \\ 
 \end{deptext}
 \depedge{2}{1}{nmod:poss}
 \depedge{6}{2}{nsubj}
@@ -481,7 +480,8 @@ przejście \& uroczystość-\textsc{3sg} \& być-\textsc{neg} \& i \& zawsze \& 
 \wordgroup[inner sep=-.2ex]{1}{5}{6}{R}
 \end{dependency}
 }
-,,Nie ma parady i nigdy nie było.''
+,,Nie ma parady i~nigdy nie było.''
+\citep{turk2019turkish}
 \end{exe}
 
 \begin{enumerate}
@@ -491,7 +491,7 @@ Podrzędnik głowy lewego członu po jego lewej stronie nie jest częścią lewe
 Na potrzeby tej heurystyki etykiety \texttt{subj} i~\texttt{subj:pass} oraz \texttt{nummod} i~\texttt{nummod:gov} uznaję za identyczne.
 \end{enumerate}
 
-W przykładzie \eqref{H4-przykład} tokeny \textcolor{blue}{\textit{szybko}} i~\textcolor{blue}{\textit{radośnie}} są połączone z~głowami członów identycznymi etykietami \textcolor{blue}{\texttt{advmod}}. Z~tego powodu są potraktowane jako prywatne modyfikatory swoich nadrzędników. Token \textcolor{red}{\textit{Jan}} jest podrzędnikiem relacji o unikalnej etykiecie \textcolor{red}{\texttt{nsubj}}, więc jest uznany za element obu członów.
+W przykładzie \eqref{H5-przykład} tokeny \textcolor{blue}{\textit{szybko}} i~\textcolor{blue}{\textit{radośnie}} są połączone z~głowami członów identycznymi etykietami \textcolor{blue}{\texttt{advmod}}. Z~tego powodu są potraktowane jako prywatne modyfikatory swoich nadrzędników. Token \textcolor{red}{\textit{Jan}} jest podrzędnikiem relacji o unikalnej etykiecie \textcolor{red}{\texttt{nsubj}}, więc jest uznany za element obu członów.
 
 \begin{exe}
 \ex \label{H5-przykład}
@@ -517,7 +517,7 @@ W przykładzie \eqref{H4-przykład} tokeny \textcolor{blue}{\textit{szybko}} i~\
 }
 \end{exe}
 
-Celem reguły \ref{H5} jest rozróżnienie elementów ,,prywatnych'' dla danego członu, takich jak okoliczniki \emph{radośnie} i~\emph{szybko} w~\eqref{H4-przykład}, od elementów ,,wspólnych'' dla obu członów, takich jak podmiot \emph{Jan} w~\eqref{H4-przykład} czy dopełnienie \emph{moją opowieść} w~\eqref{H3-przykład}. 
+Celem reguły \ref{H5} jest rozróżnienie elementów ,,prywatnych'' dla danego członu, takich jak okoliczniki \emph{radośnie} i~\emph{szybko} w~\eqref{H5-przykład}, od elementów ,,wspólnych'' dla obu członów, takich jak podmiot \emph{Jan} w~\eqref{H5-przykład}. 
 
 Niemniej jednak rozróżnienie to nie zawsze działa prawidłowo. Przykładowo, zastosowanie \ref{H5} do powtórzonego poniżej zdania \eqref{uczniowie+nauczyciele} powoduje, że \emph{Niesforni} zostaje uznane za element wspólny i~prowadzi do interpretacji innej od tej, która wynika z~semantyki.
 
@@ -525,7 +525,7 @@ Niemniej jednak rozróżnienie to nie zawsze działa prawidłowo. Przykładowo, 
 \setcounter{xnumi}{7}
 \ex Niesforni uczniowie i~nauczyciele pojechali na wycieczkę.
 
-\setcounter{xnumi}{33}
+\setcounter{xnumi}{41}
 \ex \label{H4-uczniowie+nauczyciele}
 \resizebox{\linewidth}{!}{
 \begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
@@ -550,7 +550,7 @@ Zasady \ref{H1}~i~\ref{H2} niemalże zawsze działają prawidłowo. Heurystyki \
 
 \subsection{Określanie pozycji nadrzędnika}
 
-Na potrzeby przetwarzania korpusów UD (korzystających z podejścia stanfordzkiego) pozycja nadrzędnika koordynacji określana jest w następujący sposób:
+Na potrzeby przetwarzania korpusów UD (korzystających z~podejścia stanfordzkiego) pozycja nadrzędnika koordynacji określana jest w następujący sposób:
 
 \begin{table}[!h]
 \resizebox{\linewidth}{!}{
@@ -558,16 +558,16 @@ Na potrzeby przetwarzania korpusów UD (korzystających z podejścia stanfordzki
 \toprule
 ozn. & pozycja nadrzędnika	& definicja (zakładająca opis w stylu UD)	& przykład koordynacji							\\
 \midrule
-(L) & po lewej stronie	& przed początkiem pierwszego członu			& Drzewo \textit{sadzą} [[Pat] i [Mat]].			\\
-(0) & brak nadrzędnika	& głowa lewego członu jest korzeniem zdania	& [[Posadzili] i [podlali]] drzewo.				\\
-(R) & po prawej stronie	& po końcu ostatniego członu					& [[Pat] i [Mat]] \textit{posadzili} drzewo.		\\
+(L) & po lewej stronie	& przed początkiem pierwszego członu			& Drzewo \textit{sadzą} [[Pat] i~[Mat]].			\\
+(0) & brak nadrzędnika	& głowa lewego członu jest korzeniem zdania	& [[Posadzili] i~[podlali]] drzewo.				\\
+(R) & po prawej stronie	& po końcu ostatniego członu					& [[Pat] i~[Mat]] \textit{posadzili} drzewo.		\\
 (M) & po środku			& pozostałe przypadki						& [[Pat] -- \textit{powtórzyłem} -- oraz [Mat]].	\\
 \bottomrule
 \end{tabular}
 }
 \end{table}
 
-Ze względu na małą liczbę koordynacji (M) oraz częste błędy w drzewach zdań zawierających koordynacje z nadrzędnikiem po środku w badaniu nie przeprowadzam osobnych analiz dla koordynacji (M).
+Ze względu na małą liczbę koordynacji (M) oraz częste błędy w drzewach zdań zawierających koordynacje z~nadrzędnikiem po środku w badaniu nie przeprowadzam osobnych analiz dla koordynacji (M).
 
 \subsection{Obliczanie długości członu}
 
@@ -576,14 +576,14 @@ Drugą ważną z~perspektywy analizy statystycznej cechą konstrukcji współrz�
 Długość członu określana jest na cztery sposoby: jako liczba \textbf{słów}, \textbf{tokenów}, \textbf{sylab} i~\textbf{znaków}.
 
 \paragraph{Słowa}
-Właściwym podejściem jest traktowanie słów jako podciągów tekstu rozdzielonych spacjami. Przyjęcie takiego rozwiązania skutkuje brakiem możliwości obliczenia długości członu, gdy jedynie część danego słowa należy do tego członu.
+Właściwym podejściem jest traktowanie słów jako podciągów tekstu rozdzielonych spacjami. Przyjęcie takiego rozwiązania skutkuje brakiem możliwości obliczenia długości członu, gdy jedynie część danego słowa należy do tego członu. Pokazuje to poniższy przykład:
 
 \begin{exe}
 \ex  \label{que}
 Arma virumque canō.\footnote{Publiusz Wergiliusz Maro, \textit{Eneida},
 \url{https://www.thelatinlibrary.com/vergil/aen1.shtml}. W analizie morfologicznej użyto narzędzia Collatinus web (\url{https://outils.biblissima.fr/en/collatinus-web/}).}
 \gll Arma vir-um que canō . \\
-broń\textsc{.acc.pl} mąż\textsc{-acc.sg} i śpiewać\textsc{.prs.ind.act.1sg} \\
+broń\textsc{.acc.pl} mąż\textsc{-acc.sg} i~śpiewać\textsc{.prs.ind.act.1sg} \\
 \glt ,,Śpiewam o broni i~mężu.''
 \end{exe}
 
@@ -703,7 +703,7 @@ Nie stanowi to przeszkody dla wyciągania koordynacji według wyżej opisanych z
 {[[,,Annę Kareninę''] czy [,,\textbf{Wojnę} i~pokój'']]}
 \end{exe}
 
-Podejście używane przez UD dopuszcza sytuacje, w~których jeden token jest głową lewego członu dwóch różnych koordynacji. W~takich sytuacjach rozdzielenie koordynacji zagnieżdżonych jest trudniejsze. Pokazuje to przykład zdania \eqref{chaos} i jego drzewa \eqref{chaos-drzewo}.
+Podejście używane przez UD dopuszcza sytuacje, w~których jeden token jest głową lewego członu dwóch różnych koordynacji. W~takich sytuacjach rozdzielenie koordynacji zagnieżdżonych jest trudniejsze. Pokazuje to przykład zdania \eqref{chaos} i~jego drzewa \eqref{chaos-drzewo}.
 
 \begin{exe}
 \ex \label{chaos}
@@ -759,10 +759,16 @@ Jeśli występuje sytuacja opisana w~\eqref{procedura} oraz:
 \item jeden ze~spójników $C_{i}$ różni się od ostatniego spójnika $C_{n}$,
 \end{itemize}
 
-to należy dodatkowo rozpatrzeć koordynację, w~której nadrzędnikiem jest $G$, głową lewego członu jest $L$, głową prawego członu $H_{i}$, a spójnikiem $C_{i}$.
+to należy rozpatrzyć dwie koordynacje:
+
+\begin{itemize}
+\item taką, w~której nadrzędnikiem jest $G$, spójnikiem $C_{i}$, a głowami członów są $L$ oraz $H_{1}, \ldots , H_{i}$ (przy czym głową lewego członu jest $L$, a~głową prawego członu $H_{i}$);
+\item taką, w~której nadrzędnikiem jest $G$, spójnikiem $C_{n}$, a głowami członów są $L$ oraz $H_{i+1}, \ldots , H_{n}$ (przy czym głową lewego członu jest $L$, a~głową prawego członu $H_{n}$).
+\item
+\end{itemize} 
 \end{enumerate}
 
-Poniższe drzewo obrazuje zastosowanie \ref{H6} do drzewa \eqref{chaos}:
+Schemat \eqref{H6-przykład} obrazuje zastosowanie \ref{H6} do drzewa \eqref{chaos-drzewo} zdania \eqref{chaos}:
 
 \begin{exe}
 \ex \label{H6-przykład}
@@ -789,15 +795,17 @@ $\blacksquare$ \& $\square$ \& $\square$ \& $\boxdot$ \& $\blacksquare$ \& $\squ
 \end{dependency}
 \end{exe}
 
-W pierwszej kolejności algorytm \eqref{procedura} rozpatruje token \textit{Porządek}. Ponieważ wśród jego podrzędników znajdują się relacje \texttt{conj}, zostaje wykryta jedna z koordynacji. Nie posiada ona nadrzędnika, głową jej lewego członu jest token \textit{Porządek}, głową prawego członu \textit{chaos}, zaś spójnikiem token \textit{albo}. Po zastosowaniu reguł \ref{H1}--\ref{H5} do wykrytej koordynacji zostaje ona opisana jako \textit{[[Porządek i rozwój] albo [chaos i degeneracja]]}. W ten sposób procedura opisała koordynację \eqref{chaos-1}. 
+W pierwszej kolejności algorytm \eqref{procedura} rozpatruje token \textit{Porządek}. Ponieważ wśród jego podrzędników znajdują się relacje \texttt{conj}, zostaje wykryta przynajmniej jedna koordynacja. Ponieważ spójniki \emph{i} oraz \emph{albo} są różne, zgodnie z~\ref{H6} algorytm rozpatruje dwie koordynacje.
 
-Ponieważ spójniki \emph{i} oraz \emph{albo} są różne, zgodnie z \ref{H6} algorytm rozpatruje drugą koordynację. Nie ma ona nadrzędnika, głową jej lewego członu jest token \textit{Porządek}, głową prawego członu \textit{rozwój}, zaś spójnikiem token \textit{i}. Jest to koordynacja \eqref{chaos-2}, czyli \textit{[[Porządek] i [rozwój]]}.
+Pierwsza koordynacja nie ma nadrzędnika, głową jej lewego członu jest token \textit{Porządek}, głową prawego członu \textit{rozwój}, zaś spójnikiem token \textit{i}. Jest to koordynacja \eqref{chaos-2}, czyli \textit{[[Porządek] i~[rozwój]]}.
 
-Następnie algorytm rozpatruje pozostałe tokeny w poszukiwaniu krawędzi \texttt{conj}. Token \textit{chaos} posiada podrzędnik \textit{degeneracja} z taką relacją. Zgodnie z procedurą \eqref{procedura} znaleziona zostaje koordynacja, której nadrzędnikiem jest \textit{Porządek}, głową lewego członu \textit{chaos}, głową prawego członu \textit{degeneracja}, a~spójnikiem \textit{i}. W ten sposób algorytm opisuje koordynację \eqref{chaos-3}, czyli \textit{[[chaos] i [degeneracja]]}. W tej koordynacji występuje tylko jeden spójnik, więc reguła \ref{H5} nie jest stosowana.
+Druga koordynacja również nie posiada nadrzędnika. Głową jej lewego członu jest token \textit{Porządek}, głową prawego członu \textit{chaos}, zaś spójnikiem token \textit{albo}. Zgodnie z~\ref{H6} token \textit{rozwój} nie jest traktowany jako głowa członu w~tej koordynacji. Dzięki temu po zastosowaniu reguł \ref{H1}--\ref{H5} do wykrytej koordynacji zostaje ona poprawnie opisana jako \textit{[[Porządek i~rozwój] albo [chaos i~degeneracja]]}. W ten sposób procedura opisała koordynację \eqref{chaos-1}. 
 
-W zdaniu nie występuje więcej tokenów posiadających podrzędniki \texttt{conj}, w związku z czym algorytm kończy rozpatrywanie zdania i zwraca prawidłowo trzy koordynacje: \eqref{chaos-1}, \eqref{chaos-2} i~\eqref{chaos-3}.
+Następnie algorytm rozpatruje pozostałe tokeny w~poszukiwaniu krawędzi \texttt{conj}. Token \textit{chaos} posiada podrzędnik \textit{degeneracja} z~taką relacją. Zgodnie z~procedurą \eqref{procedura} znaleziona zostaje koordynacja, której nadrzędnikiem jest \textit{Porządek}, głową lewego członu \textit{chaos}, głową prawego członu \textit{degeneracja}, a~spójnikiem \textit{i}. W ten sposób algorytm opisuje koordynację \eqref{chaos-3}, czyli \textit{[[chaos] i~[degeneracja]]}. W tej koordynacji występuje tylko jeden spójnik, więc reguła \ref{H5} nie jest stosowana.
 
-W~przykładzie \eqref{A+B+C} występuje podobna sytuacja, co w \eqref{chaos}. Tym razem jednak wszystkie spójniki podrzędników tokenu \emph{Ania} są identyczne:
+W zdaniu nie występuje więcej tokenów posiadających podrzędniki \texttt{conj}, w~związku z~czym algorytm kończy rozpatrywanie zdania i~zwraca prawidłowo trzy koordynacje: \eqref{chaos-1}, \eqref{chaos-2} i~\eqref{chaos-3}.
+
+W~przykładzie \eqref{A+B+C} występuje podobna sytuacja, co w~\eqref{chaos-drzewo}. Tym razem jednak wszystkie spójniki podrzędników tokenu \emph{Ania} są identyczne:
 
 \begin{exe}
 \ex \label{A+B+C}
@@ -835,7 +843,7 @@ Wyżej opisana procedura wyciągania koordynacji nie jest niezawodna. Jest wiele
 \item nieprawidłowe działanie heurystyk.
 \end{itemize}
 
-Z~tych przyczyn algorytm został poddany ewaluacji. Opisana niżej procedura została opracowana na podstawie ewaluacji używanej w badaniu \cite{przepiorkowski2023conjunct} oraz replikującej je analizie \cite{przepiorkowski2024argument}.
+Z~tych przyczyn algorytm został poddany ewaluacji. Opisana niżej procedura została opracowana na podstawie ewaluacji używanej w~badaniu \cite{przepiorkowski2023conjunct} oraz replikującej je analizie \cite{przepiorkowski2024argument}.
 
 \subsection{Dobór języków}
 
@@ -849,14 +857,15 @@ Ewaluacji zostały poddane zdania w~następujących językach:
 
 \subsection{Losowanie wyciągniętych koordynacji}
 
-W przypadku języka polskiego i angielskiego wylosowano 300 koordynacji z~uwzględnieniem pozycji nadrzędnika -- po 100 z~nadrzędnikiem po lewej, po prawej i~bez nadrzędnika. W przypadku języka tureckiego wylosowano 60 koordynacji bez rozróżnienia na pozycję nadrzędnika.
+W przypadku języka polskiego i~angielskiego wylosowano 300 koordynacji z~uwzględnieniem pozycji nadrzędnika -- po 100 z~nadrzędnikiem po lewej, po prawej i~bez nadrzędnika. W przypadku języka tureckiego wylosowano 60 koordynacji bez rozróżnienia na pozycję nadrzędnika.
 
 \subsection{Ocena poprawności}
 
 Dwóch recenzentów niezależnie ocenia poprawność wyciągania koordynacji na podstawie dwóch kryteriów:
 
 \begin{itemize}
-\item Lewy i~prawy człon koordynacji są \textbf{dokładnie} takie, jakie powinny być.
+\item Lewy i~prawy człon koordynacji są \textbf{dokładnie}\footnote{
+Pomijano jedynie błędy dotyczące znaków interpunkcyjnych, ponieważ nie mają one wpływu na długość członów w~słowach.} takie, jakie powinny być.
 \item Pozycja nadrzędnika jest poprawnie określona.
 \end{itemize}
 
@@ -864,7 +873,7 @@ Następnie recenzenci spotykają się i~rozstrzygają konflikty. Miarą oceny al
 
 \subsection{Wyniki}
 
-Tabela \ref{tab:ewal} przedstawia odsetek koordynacji ocenionych jako poprawnie wyciągnięte w językach poddanych ewaluacji. 
+Tabela \ref{tab:ewal} przedstawia odsetek koordynacji ocenionych jako poprawnie wyciągnięte w~językach poddanych ewaluacji. 
 
 \begin{table}[H]
 \centering
@@ -876,17 +885,19 @@ Tabela \ref{tab:ewal} przedstawia odsetek koordynacji ocenionych jako poprawnie 
 \midrule
 polski		& 0,79 & 0,83 & 0,89 & 0,66 \\
 angielski	& 0,72 & 0,72 & 0,61 & 0,84 \\
-turecki		& 0,58\footnote{W korpusach języka tureckiego znajdowały się liczne zdania złożone pozbawione spójnika lub właściwej interpunkcji. Zostały one uznane za nieprawidłowe koordynacje. Jeśli przyjąć założenie,  że takie zdania tworzą poprawne koordynacje zdaniowe, wynik ewaluacji dla języka tureckiego wynosi 73\%.} &  &  &  \\
+turecki		& 0,58 &  &  &  \\
 \bottomrule
 \end{tabular}
 \caption{Poprawność ewaluacji}
 \label{tab:ewal}
 \end{table}
 
-Przed rozstrzygnięciem konfliktów współczynnik zgodności recenzentów $\kappa$ wyniósł $56\%$ dla języka polskiego i $54\%$ dla języka angielskiego.
+Przed rozstrzygnięciem konfliktów współczynnik zgodności recenzentów $\kappa$ wyniósł $56\%$ dla języka polskiego i~$54\%$ dla języka angielskiego.
 
-Zarówno współczynnik zgodności recenzentów, jak i~odsetek poprawnych koordynacji algorytmu mają niższe wartości niż analogiczne miary uzyskane w pracy \cite{przepiorkowski2023conjunct}. Należy jednak zwrócić uwagę, że w ich badaniu ewaluacja algorytmu polegała na sprawdzeniu wyłącznie poprawności pozycji nadrzędnika. 
+W korpusach języka tureckiego znajdowały się liczne zdania złożone pozbawione spójnika lub właściwej interpunkcji. Zostały one uznane za nieprawidłowe koordynacje. Jeśli przyjąć założenie,  że takie zdania tworzą poprawne koordynacje zdaniowe, wynik ewaluacji dla języka tureckiego wynosi 73\%.
 
-\cite{przepiorkowski2024argument} ewaluując swój algorytm sprawdzali zarówno pozycję nadrzędnika, jak~i~granice członów. Stosując tę metodę uzyskali dokładność równą $50,1\%$. Niemniej jednak nie można porównywać tego wyniku do uzyskanych w moim badaniu wskaźników z powodu dwóch istotnych różnic metodologicznych. Po pierwsze, \cite{przepiorkowski2024argument} korzystali z danych gorszej jakości, ponieważ analizowali drzewa zależnościowe uzyskane za pomocą automatycznego parsowania zdań. Po drugie, stosowali oni bardziej rygorystyczną procedurę ewaluacji, losując więcej koordynacji z dłuższą różnicą długości członów niż wynikało to z proporcji występujących w języku.
+Zarówno współczynnik zgodności recenzentów, jak i~odsetek poprawnych koordynacji algorytmu mają niższe wartości niż analogiczne miary uzyskane w~pracy \cite{przepiorkowski2023conjunct}. Należy jednak zwrócić uwagę, że w~ich badaniu ewaluacja algorytmu polegała na sprawdzeniu wyłącznie poprawności pozycji nadrzędnika. 
 
-Podsumowując, wyniki ewaluacji wskazują na to, że opisana w niniejszym rozdziale procedura wyciągania koordynacji działa dobrze. Nie można jednak porównywać tych wyników do wyników ewaluacji w innych badaniach, ponieważ poprzednie analizy w tym zakresie stosowały inną metodologię.
+\cite{przepiorkowski2024argument} ewaluując swój algorytm sprawdzali zarówno pozycję nadrzędnika, jak~i~granice członów. Stosując tę metodę uzyskali dokładność równą $50,1\%$. Niemniej jednak nie można porównywać tego wyniku do uzyskanych w~moim badaniu wskaźników z~powodu dwóch istotnych różnic metodologicznych. Po pierwsze, \cite{przepiorkowski2024argument} korzystali z~danych gorszej jakości, ponieważ analizowali drzewa zależnościowe uzyskane za pomocą automatycznego parsowania zdań. Po drugie, stosowali oni bardziej rygorystyczną procedurę ewaluacji, losując więcej koordynacji z~dłuższą różnicą długości członów, niż wynikało to z~proporcji występujących w~języku.
+
+Podsumowując, wyniki ewaluacji wskazują na to, że opisana w~niniejszym rozdziale procedura wyciągania koordynacji działa dobrze. Nie można jednak porównywać tych wyników do wyników ewaluacji w~innych badaniach, ponieważ poprzednie analizy w~tym zakresie stosowały inną metodologię.

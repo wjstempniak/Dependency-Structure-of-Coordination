@@ -14,7 +14,7 @@ Analiza dotyczy wyłącznie koordynacji binarnych, tj. posiadających dwa człon
 Przy założonej pozycji nadrzędnika, w~języku naturalnym wraz ze~wzrostem różnicy długości członów koordynacji coraz częściej pojawiają się zdania tego typu, dla którego suma długości relacji zależnościowych jest mniejsza. W~związku z~tym, każdy z~modeli przewiduje, czy wraz ze~wzrostem różnicy długości członów koordynacji:
 \begin{itemize}
 \item odsetek koordynacji (L-L) względem wszystkich koordynacji (L)\footnote{
-Tj. procent koordynacji o krótszym pierwszym (lewym) członie wśród koordynacji z nadrzędnikiem po lewej stronie.}
+Tj. procent koordynacji o krótszym pierwszym (lewym) członie wśród koordynacji z~nadrzędnikiem po lewej stronie.}
 rośnie, czy spada;
 \item odsetek koordynacji (0-L) względem wszystkich koordynacji (0) rośnie, czy spada;
 \item odsetek koordynacji (R-L) względem wszystkich koordynacji (R) rośnie, czy spada.
@@ -39,7 +39,7 @@ Analiza wykazała, że wraz~ze wzrostem różnicy długości członów:
 \item \textbf{nie ma istotnej statystycznie tendencji} dotyczącej zmiany odsetka koordynacji (R) względem wszystkich koordynacji (R).
 \end{itemize}
 
-Pierwsze dwie z opisywanych tendencji uzyskały wysoką istotność statystyczną ($p<0,001$). Nieznacznie malejąca prawidłowość opisująca koordynacje (R) nie była istotna statystycznie ($p = 0,921$). Niemniej jednak \cite{przepiorkowski2023conjunct} wskazują, że tendencja dotycząca koordynacji z nadrzędnikiem po prawej stronie jest istotnie inna od pozostałych dwóch zależności. 
+Pierwsze dwie z~opisywanych tendencji uzyskały wysoką istotność statystyczną ($p<0,001$). Nieznacznie malejąca prawidłowość opisująca koordynacje (R) nie była istotna statystycznie ($p = 0,921$). Niemniej jednak \cite{przepiorkowski2023conjunct} wskazują, że tendencja dotycząca koordynacji z~nadrzędnikiem po prawej stronie jest istotnie inna od pozostałych dwóch zależności. 
 
 Wykres przedstawiający modele regresji logistycznych opisujących wyżej omówione zależności stanowi dodatek \ref{dod:PW23} do niniejszej pracy.
 
@@ -73,7 +73,7 @@ Dla analizy struktury zależnościowej koordynacji binarnej (zarówno w~językac
 \item[$\boxdot$] spójnik, 
 \item[$\square$] głowa ostatniego członu. 
 \end{itemize}
-W~celu uproszczenia na poniższych schematach posługuję się tymi symbolami. W analizie uwzględniam koordynacje wieloczłonowe, jednak uwzględniam tylko ich pierwszy (lewy) i ostatni (prawy) człon.
+W~celu uproszczenia na poniższych schematach posługuję się tymi symbolami. W analizie uwzględniam koordynacje wieloczłonowe, jednak uwzględniam tylko ich pierwszy (lewy) i~ostatni (prawy) człon.
 
 Istnieje 16 sposobów narysowania drzewa dla linearnie uporządkowanego ciągu czterech wierzchołków z~wyróżnionym korzeniem:
 
@@ -94,16 +94,16 @@ Powyższe modele należy interpretować w~następujący sposób:
 \item[(M)--(P)]  Podejścia zakładające występowanie krawędzi nieprojektywnych w~strukturze koordynacji.
 \end{enumerate}
 
-Podejścia (M)--(P) zakładają, że w strukturze zależnościowej koordynacji znajdują się krawędzie nieprojektywne, tj. przecinające się. W języku naturalnym projektywność relacji zależnościowych uznawana jest za normę, zaś relacje nieprojektywne występują tylko w niektórych strukturach gramatycznych \citep{nivre2006constraints}. W~związku z~tym nie należy zakładać, że istnienie krawędzi nieprojektywnych w~strukturze koordynacji jest regułą. Wobec tego w~niniejszej pracy odrzucam podejścia (M)--(P) i zajmuję się predykcjami modeli (A)--(L).
+Podejścia (M)--(P) zakładają, że w~strukturze zależnościowej koordynacji znajdują się krawędzie nieprojektywne, tj. przecinające się z~innymi. W języku naturalnym projektywność relacji zależnościowych uznawana jest za normę, zaś relacje nieprojektywne występują tylko w~niektórych strukturach gramatycznych. Koordynacja nie należy do tego typu struktur \citep{nivre2006constraints}. W~związku z~tym nie należy zakładać, że istnienie krawędzi nieprojektywnych w~strukturze koordynacji jest regułą. Wobec tego w~niniejszej pracy odrzucam podejścia (M)--(P) i~zajmuję się predykcjami modeli (A)--(L).
 
 \subsection{Metody}
 
 Dla każdego z~12 podejść rozważam sześć sytuacji na wzór analizy z~pracy \cite{przepiorkowski2023conjunct}. Ponieważ analizuję korpusy języków finalnych, zakładam, że głowa członu (oznaczona tutaj $\blacksquare$) znajduje się na jego końcu\footnote{
-Jest to pewnego rodzaju uproszczenie, ponieważ w językach finalnych głowa nie zawsze znajduje się na samym końcu frazy. Niemniej jednak dla opisywanych przeze mnie tendencji istotne jest to, z której strony głowy członu częściej pojawiają się dodatkowe podrzędniki głowy. W przypadku języków finalnych zakładam, że człon częściej ,,rośnie'' w lewą stronę od głowy.}:
+Jest to pewnego rodzaju uproszczenie, ponieważ w~językach finalnych głowa nie zawsze znajduje się na samym końcu frazy. Niemniej jednak dla opisywanych przeze mnie tendencji istotne jest to, z~której strony głowy członu częściej pojawiają się dodatkowe podrzędniki głowy. W przypadku języków finalnych zakładam, że człon częściej ,,rośnie'' w~lewą stronę od głowy.}:
 
 \input{predictions/head-final/template-long}
 
-Wszystkie poniższe obliczenia dotyczą liczby tokenów w koordynacji. Przez $a$ rozumiem długość krótszego członu, przez $b$ -- różnicę długości członów, zaś przez $S$ -- sumę długości relacji w obrębie koordynacji\footnote{Dokładniej jest to suma długości relacji, na które ma wpływ długość członów koordynacji.}. Na potrzeby obliczeń w~schematach tokeny wchodzące w~skład członu zamieniam na długość członu:
+Wszystkie poniższe obliczenia dotyczą liczby tokenów w~koordynacji. Przez $a$ rozumiem długość krótszego członu, przez $b$ -- różnicę długości członów, zaś przez $S$ -- sumę długości relacji w~obrębie koordynacji\footnote{Dokładniej jest to suma długości relacji, na które ma wpływ długość członów koordynacji.}. Na potrzeby obliczeń w~schematach tokeny wchodzące w~skład członu zamieniam na długość członu:
 
 \input{predictions/head-final/template}
 
@@ -122,13 +122,11 @@ Wszystkie poniższe obliczenia dotyczą liczby tokenów w koordynacji. Przez $a$
 \input{predictions/head-final/K}
 \input{predictions/head-final/L}
 
-\subsection{Podsumowanie}
-
-W~dalszej części pracy przedstawiam analizę danych w~poszukiwaniu wyżej opisanych tendencji. Pokazuję, że w językach finalnych występuje tendencja wzrostowa do zmiany odsetka występowania koordynacji (R-L) względem wszystkich koordynacji (R). Zależność ta nie jest przewidywana przez żaden z~modeli struktury zależnościowej koordynacji.
+W~dalszej części pracy przedstawiam analizę danych w~poszukiwaniu wyżej opisanych tendencji. Pokazuję, że w~językach finalnych występuje tendencja wzrostowa do zmiany odsetka występowania koordynacji (R-L) względem wszystkich koordynacji (R). Zależność ta nie jest przewidywana przez żaden z~modeli struktury zależnościowej koordynacji.
 
 
 \section{Języki mieszane}
 
-Językami mieszanymi nazywam te, w przypadku których nie ma wyraźniej tendencji do umieszczania głowy na początku lub na końcu fraz. Należą do nich m.in. niemiecczyzna i łacina \citep{polinsky2020headedness}.
+Językami mieszanymi nazywam te, w~przypadku których nie ma wyraźniej tendencji do umieszczania głowy na początku lub na końcu fraz. Należą do nich m.in. niemiecczyzna i~łacina \citep{polinsky2020headedness}.
 
-W~niniejszej pracy obliczam opisywane powyżej tendencje w języku niemieckim i łacińskim. Ponieważ jednak w językach mieszanych nie sposób ustalić, z której strony członu znajduje się zwykle głowa i z której strony głowy zwykle pojawiają się jej podrzędniki, nie przedstawiam przewidywań modeli struktury zależnościowej koordynacji co do tych tendencji. 
+W~niniejszej pracy obliczam opisywane powyżej tendencje w~języku niemieckim i~łacińskim. Ponieważ jednak w~językach mieszanych nie sposób ustalić, z~której strony członu znajduje się zwykle głowa i~z której strony głowy zwykle pojawiają się jej podrzędniki, nie przedstawiam przewidywań modeli struktury zależnościowej koordynacji co do tych tendencji. 

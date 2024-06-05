@@ -6,7 +6,7 @@ W niniejszej pracy analizuję relacje składniowe w~formie drzew zależnościowy
 
 Jak zauważają \cite{de2021universal}, w~języku istnieje wiele konstrukcji, w~przypadku których opis relacji zależnościowych za pomocą drzew nie jest optymalny. Należą do nich m.in. koordynacje.
 
-Z~tego powodu twórcy Universal Dependencies stworzyli rozszerzenie standardu o~nazwie Enhanced Dependencies (ED)\footnote{\url{https://universaldependencies.org/u/overview/enhanced-syntax.html}}. Przykład \eqref{UD} pokazuje drzewo zależnościowe zdania \eqref{tworzyć+konstruować} opisane według zwykłego UD. \eqref{ED} jest drzewem zdania \eqref{tworzyć+konstruować} opisanym według ED. Rozszerzone zależności zaznaczone są na niebiesko.
+Z~tego powodu twórcy Universal Dependencies stworzyli rozszerzenie standardu o~nazwie Enhanced Dependencies (ED)\footnote{\url{https://universaldependencies.org/u/overview/enhanced-syntax.html}}. Przykład \eqref{UD} pokazuje drzewo zależnościowe zdania \eqref{tworzyć+konstruować} opisane według zwykłego UD. \eqref{ED} jest drzewem zdania \eqref{tworzyć+konstruować} opisanym według ED. Rozszerzona zależność \texttt{xcomp} została wyróżniona.
 
 \begin{exe}
 \ex \label{tworzyć+konstruować}
@@ -34,7 +34,7 @@ Chcą \& tworzyć \& , \& konstruować \& .  \\
 \depedge{4}{3}{punct}
 \depedge{2}{4}{conj}
 \depedge{1}{5}{punct}
-\depedge[edge style = {blue, thick}, label style = {thick, draw=blue, text=blue}]{1}{4}{xcomp}
+\depedge[edge style = {blue, thick}, label style = {thick, draw=blue, text=blue}]{1}{4}{\textbf{xcomp}}
 \end{dependency}
 \citep{przepiorkowski2018lexical}
 \end{exe}

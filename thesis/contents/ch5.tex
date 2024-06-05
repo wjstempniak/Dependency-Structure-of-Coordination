@@ -4,19 +4,19 @@
 
 \input{results/head-pos}
 
-Tabela \ref{tab:pozycja-głowy} przedstawia rozkład względnej pozycji głowy członów w obrębie prawych i~lewych członów w różnych językach. Pod uwagę brane są człony, których głowa nie jest jedynym elementem (tj. takie, które mają przynajmniej dwa tokeny). Pozycja głowy członu ustalana jest na podstawie następującego wzoru:
+Tabela \ref{tab:pozycja-głowy} przedstawia rozkład względnej pozycji głowy członów w~obrębie prawych i~lewych członów w~różnych językach. Pod uwagę brane są człony, których głowa nie jest jedynym elementem (tj. takie, które mają przynajmniej dwa tokeny). Pozycja głowy członu ustalana jest na podstawie następującego wzoru:
 
 \[
 P = \frac{H-1}{N-1} \text{ dla } N\geq2, \text{ gdzie:}
 \]
 
 \begin{itemize}
-\item $P$ oznacza względną pozycję głowy członu w członie;
-\item $H$ oznacza pozycję głowy członu w członie;
-\item $N$ oznacza długość członu w tokenach.
+\item $P$ oznacza względną pozycję głowy członu w~członie;
+\item $H$ oznacza pozycję głowy członu w~członie;
+\item $N$ oznacza długość członu w~tokenach.
 \end{itemize}
 
-W przykładzie \eqref{numery} głowa lewego członu \textit{Sąd} znajduje się na samym początku członu, czyli w pozycji $P=\frac{1-1}{2-1}=0$, zaś głowa prawego członu \textit{Izba} na jego środku, czyli w pozycji $P=\frac{2-1}{3-1}=0,5$.
+W przykładzie \eqref{numery} głowa lewego członu \textit{Urząd} znajduje się na samym początku członu, czyli w~pozycji $P=\frac{1-1}{2-1}=0$, zaś głowa prawego członu \textit{Izba} na jego środku, czyli w~pozycji $P=\frac{2-1}{3-1}=0{,}5$.
 
 \begin{exe}
 \ex \label{numery}
@@ -30,31 +30,32 @@ W przykładzie \eqref{numery} głowa lewego członu \textit{Sąd} znajduje się 
 \end{dependency}
 \end{exe}
 
-W~językach inicjalnych głowa członu występuje znacznie częściej na początku członu ($<0,5$), zaś w językach inicjalnych częściej na jego końcu ($>0,5$). Dotyczy to zarówno lewych, jak i~prawych członów koordynacji.
+W~językach inicjalnych głowa członu występuje znacznie częściej na początku członu ($<0{,}5$), zaś w~językach inicjalnych częściej na jego końcu ($>0{,}5$). Dotyczy to zarówno lewych, jak i~prawych członów koordynacji.
 
-W przypadku języków mieszanych nie można zaobserwować wyraźnej prawidłowości. W~łacinie głowy lewych członów znajdują się częściej bliżej początku członu, zaś głowy prawych członów bliżej końca członu. W~języku niemieckim głowy członów są w okolicach środka członu. Z tego powodu w dyskusji wyników nie interpretuję wyników dla języków mieszanych w kontekście przewidywań dotyczących struktury zależnościowej koordynacji.
+W przypadku języków mieszanych nie można zaobserwować wyraźnej prawidłowości. W~łacinie głowy lewych członów znajdują się częściej bliżej początku członu, zaś głowy prawych członów bliżej środka członu. W~języku niemieckim głowy członów są w~okolicach środka członu. Z tego powodu w~dyskusji wyników nie interpretuję wyników dla języków mieszanych w~kontekście przewidywań dotyczących struktury zależnościowej koordynacji.
 
-Istotność statystyczna uzyskanych wyników jest potwierdzona testem t-Studenta sprawdzającym różność pozycji głowy od $0,5$, czyli środka członu.
+Istotność statystyczna uzyskanych wyników jest potwierdzona testem t-Studenta sprawdzającym różność pozycji głowy od $0{,}5$, czyli środka członu\footnote{
+Do analizy statystycznej użyto funkcji \texttt{t.test} języka R. Ilekroć w~niniejszej pracy występuje p = 0, przez 0 należy rozumieć liczbę dodatnią mniejszą od \texttt{Mashine\$double.xmin} $\approx 5e-324$ \citep{R2023}.}.
 
 \section{Pozycja nadrzędnika}
 
 Tabela \ref{tab:pozycja-nadrzędnika} pokazuje rozkład występowania koordynacji o różnych pozycjach nadrzędnika w~zależności od języka\footnote{
-Do wszystkich koordynacji należą również te z nadrzędnikiem po środku (M).}.
+Do wszystkich koordynacji należą również te z~nadrzędnikiem po środku (M).}.
 
 \input{results/gov-pos}
 
 Widoczne są trzy grupy językowe, pokrywające się z~podziałem zaproponowanym w~pracy \cite{polinsky2012headedness}.
 
-W~językach inicjalnych nadrzędnik występuje znacznie częściej po lewej stronie (ok. 60\% koordynacji) niż po prawej (poniżej 10\% przypadków).
+W~językach inicjalnych nadrzędnik występuje znacznie częściej po lewej stronie (ok. 60\% koordynacji) niż po prawej (ok. 10\% przypadków).
 
 W~językach mieszanych (niemiecki i~łacina) nadrzędnik również występuje najczęściej po lewej stronie (ok. 50\% koordynacji). Jednak koordynacje z~nadrzędnikiem po prawej stronie są o wiele częstsze niż w~przypadku języków inicjalnych (występują w~ok. 25\% przypadków).
 
-Natomiast w~przypadku języków finalnych (koreańskiego i~tureckiego) występują tendencje przeciwne do tych zaobserwowanych w~językach inicjalnych. Nadrzędnik występuje najczęściej po prawej stronie (ok. 60\% koordynacji) i~najrzadziej po lewej stronie (ok. 10\% przypadków). 
+Natomiast w~przypadku języków finalnych (koreańskiego i~tureckiego) występują tendencje przeciwne do tych zaobserwowanych w~językach inicjalnych. Nadrzędnik występuje najczęściej po prawej stronie (ok. 60\% koordynacji) i~najrzadziej po lewej stronie (poniżej 10\% przypadków). 
 
-W prawie wszystkich językach konstrukcje współrzędnie złożone pozbawione nadrzędnika stanowią 22--39\% koordynacji.  Wyjątkiem jest język islandzki, w~przypadku którego najczęstsze (54\%) są koordynacje bez nadrzędnika. Jednak gdy w~koordynacji występuje nadrzędnik, pojawia się on zdecydowanie częściej po lewej stronie (39\%), niż po prawej (7\%).
+W prawie wszystkich językach konstrukcje współrzędnie złożone pozbawione nadrzędnika stanowią 22--39\% koordynacji.  Wyjątkiem jest język islandzki, w~przypadku którego koordynacje bez nadrzędnika są najczęstsze (54\%). Jednak gdy w~koordynacji występuje nadrzędnik, pojawia się on zdecydowanie częściej po lewej stronie (39\%), niż po prawej (7\%).
 
 Istotność statystyczna różnic częstości występowania koordynacji o~różnych pozycjach nadrzędnika została  potwierdzona przy użyciu testu Wilcoxona. Wielkość statystyk testowych i~ich istotność statystyczną pokazuje Tabela \ref{tab:stat}\footnote{
-Do analizy statystycznej użyto funkcji \texttt{wilcox.test} języka R. Ilekroć w~tabeli występuje p = 0, przez 0 należy rozumieć liczbę dodatnią mniejszą od \texttt{Mashine\$double.xmin} $\approx 5e-324$ \citep{R2023}.}.
+Do analizy statystycznej użyto funkcji \texttt{wilcox.test} języka R.}.
 
 \input{results/gov-pos-stats}
 
@@ -82,9 +83,9 @@ Do analizy statystycznej użyto funkcji \texttt{wilcox.test} języka R. Ilekroć
 
 \section{Długość członów koordynacji}
 
-Tabele \ref{tab:czeski+angielski} i~\ref{tab:niemiecki+koreański} przedstawia średnią oraz medianę długości prawych i~lewych członów koordynacji w~zależności od pozycji nadrzędnika w~przykładowych językach. 
+Tabele \ref{tab:czeski+angielski} i~\ref{tab:niemiecki+koreański} przedstawiają średnią oraz medianę długości prawych i~lewych członów koordynacji w~zależności od pozycji nadrzędnika w~przykładowych językach. 
 
-Wybrano dwa języki inicjalne (czeski i~angielski) oraz po jednym języku mieszanym (niemiecki) i~finalnym (koreański) o~największej łącznej objętości korpusów. Tabele przedstawiające długości członów we wszystkich badanych językach oraz statystyki testowe stanowią dodatek \ref{dod:tabele} do niniejszej pracy.
+Wybrano dwa języki inicjalne (czeski i~angielski) oraz po jednym języku mieszanym (niemiecki) i~finalnym (koreański) o~największej łącznej objętości korpusów. Tabele przedstawiające długości członów we wszystkich badanych językach oraz statystyki testowe stanowią Dodatek \ref{dod:tabele} do niniejszej pracy.
 
 Dane potwierdzają zaobserwowaną w~pracy \cite{przepiorkowski2023conjunct} tendencję do umieszczania krótszych członów po lewej stronie konstrukcji współrzędnie złożonych w~języku angielskim. To zjawisko pojawia się niezależnie od pozycji nadrzędnika.
 
@@ -94,16 +95,16 @@ Tendencja ta jest obecna również w~innych językach inicjalnych, a~także w~j�
 
 W~celu replikacji badania z~pracy \cite{przepiorkowski2023conjunct} i~weryfikacji tendencji przewidywanych przez różne modele struktury składniowej koordynacji należy zbadać zależność między pozycją krótszego członu a różnicą długości członów koordynacji.
 
-Rysunki \ref{fig:czeski} -- \ref{fig:koreański} pokazują tę relację w~przykładowych językach. Pozostałe wykresy przedstawiające tę zależność znajdują się w~dodatku \ref{dod:wykresy}\footnote{
-Wszystkie wykresy w ninejszej pracy zostały utworzone przy pomocy biblioteki \texttt{Cairo} języka R \citep{R2023}. W obliczeniach użyto skryptów zastosowanych w pracy \cite{przepiorkowski2023conjunct}.}.
+Rysunki \ref{fig:angielski}--\ref{fig:koreański} pokazują tę relację w~przykładowych językach. Pozostałe wykresy przedstawiające tę zależność znajdują się w~dodatku \ref{dod:wykresy}\footnote{
+Wszystkie wykresy w~ninejszej pracy zostały utworzone przy pomocy biblioteki \texttt{Cairo} języka R \citep{R2023}. W obliczeniach użyto skryptów zastosowanych w~pracy \cite{przepiorkowski2023conjunct}.}.
 
 Wykresy przedstawiają modele regresji logistycznej dopasowane do danych pogrupowanych w~podzbiory. Podgrupy dla wykresów dotyczących długości mierzonej w~słowach zostały określone na podstawie wartości granicznych ze zbioru \{$1, 2, 3, 6, 18$\}. Dla pozostałych wykresów wartości te są przeskalowane przez 2 w~przypadku sylab i~6 w~przypadku znaków. Jest to podejście analogiczne do zastosowanego w~pracy \cite{przepiorkowski2023conjunct} ze zmianami wartości wynikającymi z~konieczności utworzenia odpowiednio dużych podgrup. Wartości graniczne są zaznaczone na wykresach. 
 
-Na wszystkich wykresach widoczna jest pozytywna relacja między wzrostem różnicy długości członów a tendencją do umieszczania krótszego członu po lewej stronie w~przypadkach, gdy nadrzędnik jest po lewej stronie. Ta relacja nie jest zależna od tego, czy język jest inicjalny, finalny czy mieszany. Taką samą zależność można zaobserwować w~przypadku koordynacji pozbawionych nadrzędnika. Wszystkie te relacje są istotne statystycznie, przy czym w~większości przypadków istotność jest znaczna ($p<0,001$).
+Na wszystkich wykresach widoczna jest pozytywna relacja między wzrostem różnicy długości członów a tendencją do umieszczania krótszego członu po lewej stronie w~przypadkach, gdy nadrzędnik jest po lewej stronie. Ta relacja nie jest zależna od tego, czy język jest inicjalny, mieszany czy finalny. Taką samą zależność można zaobserwować w~przypadku koordynacji pozbawionych nadrzędnika. Wszystkie te relacje są istotne statystycznie, przy czym w~większości przypadków istotność jest znaczna ($p<0{,}001$).
 
-Natomiast w~przypadku konstrukcji współrzędnie złożonych z~nadrzędnikiem po prawej stronie zaobserwowane tendencje są różne. W języku niemieckim, koreańskim i~tureckim opisywana tendencja jest pozytywna. To samo dotyczy wielu języków inicjalnych (m.in. języków romańskich: włoskiego,  portugalskiego i hiszpańskiego). Jednak w~przypadku języka angielskiego i~łaciny, gdy długość członów liczona jest~w słowach, widoczna jest tendencja spadkowa. W inicjalnych językach słowiańskich tendencja jest spadkowa (język czeski) lub nie jest istotna statystycznie (język polski i rosyjski). 
+Natomiast w~przypadku konstrukcji współrzędnie złożonych z~nadrzędnikiem po prawej stronie zaobserwowane tendencje są różne. W języku niemieckim, koreańskim i~tureckim opisywana tendencja jest pozytywna. To samo dotyczy wielu języków inicjalnych (m.in. języków romańskich: włoskiego,  portugalskiego i~hiszpańskiego). Jednak w~przypadku języka angielskiego i~łaciny, gdy długość członów liczona jest~w słowach, widoczna jest tendencja spadkowa. W inicjalnych językach słowiańskich tendencja jest spadkowa (język czeski) lub nie jest istotna statystycznie (język polski i~rosyjski). 
 
-W następnym rozdziale omawiam dokładnie uzyskane wyniki, kładąc szczególny nacisk na zaobserwowane różnice dotyczące koordynacji z nadrzędnikiem po prawej stronie.
+W następnym rozdziale omawiam dokładnie uzyskane wyniki, kładąc szczególny nacisk na zaobserwowane różnice dotyczące koordynacji z~nadrzędnikiem po prawej stronie.
 
 \graphicspath{{results/plots}}
 
