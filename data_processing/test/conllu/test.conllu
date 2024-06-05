@@ -1,0 +1,8 @@
+1	Porządek	porządek	NOUN	subst:sg:nom:m3	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing	0	root	_	_
+2	i	i	CCONJ	conj	_	3	cc	_	_
+3	rozwój	rozwój	NOUN	subst:sg:nom:m3	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing	1	conj	_	_
+4	albo	albo	CCONJ	conj	_	5	cc	_	_
+5	chaos	chaos	NOUN	subst:sg:nom:m3	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing	1	conj	_	_
+6	i	i	CCONJ	conj	_	7	cc	_	_
+7	degeneracja	degeneracja	NOUN	subst:sg:nom:f	Case=Nom|Gender=Fem|Number=Sing	5	conj	_	_
+8	.	.	PUNCT	interp	PunctType=Peri	1	punct	_	_

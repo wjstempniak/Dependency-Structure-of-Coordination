@@ -422,5 +422,5 @@ def main(folder, languages=None):
             print(f'Time: {time} s.')
 
 
-main("C:/Users/wojte/OneDrive/Documents/Dependency Structure of Coordination/corpora",
+main("path/to/folder/corpora",
      languages=None) # None = all languages
