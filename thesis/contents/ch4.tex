@@ -270,7 +270,7 @@ Kupił \& \textbf{chleb} \& , \& \textbf{mleko} \& i~\& tuzin \& \textbf{jajek} 
 \depedge[edge style = {thick}, label style = {thick}]{2}{4}{\textbf{conj}}
 \depedge{7}{5}{cc}
 \depedge{7}{6}{amod}
-\depedge[edge style = {red, thick}, label style = {thick, draw=red, text=red}]{2}{7}{\textbf{conj}}
+\depedge[edge style = {thick}, label style = {thick}]{2}{7}{\textbf{conj}}
 \depedge{1}{8}{punct}
 \end{dependency}
 \end{exe}
@@ -431,7 +431,7 @@ Człon nie może zaczynać się od znaku interpunkcyjnego (dokładniej rzecz ujm
 Potomkowie głowy lewego członu znajdujący się na prawo od prawego członu nie wchodzą w~skład lewego członu.
 \end{enumerate}
 
-W rzeczywistości tokeny, o których mowa w~\ref{H3} są współdzielone przez oba człony, czyli należą do ich obu. Ponieważ interesuje mnie różnica długości członów, dla przejrzystości wykluczam ich wspólną część. W~przykładzie \eqref{H3-przykład} fraza \textit{moją opowieść} jest wykluczona z~lewego członu na podstawie \eqref{H3}.
+W rzeczywistości tokeny, o których mowa w~\ref{H3} są współdzielone przez oba człony, czyli należą do ich obu. Ponieważ interesuje mnie różnica długości członów, dla przejrzystości wykluczam ich wspólną część. W~przykładzie \eqref{H3-przykład} fraza \textit{moją opowieść} jest wykluczona z~lewego członu na podstawie \ref{H3}.
 
 \begin{exe}
 \ex \label{H3-przykład}
@@ -525,7 +525,7 @@ Niemniej jednak rozróżnienie to nie zawsze działa prawidłowo. Przykładowo, 
 \setcounter{xnumi}{7}
 \ex Niesforni uczniowie i~nauczyciele pojechali na wycieczkę.
 
-\setcounter{xnumi}{41}
+\setcounter{xnumi}{40}
 \ex \label{H4-uczniowie+nauczyciele}
 \resizebox{\linewidth}{!}{
 \begin{dependency}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax]
@@ -764,7 +764,6 @@ to należy rozpatrzyć dwie koordynacje:
 \begin{itemize}
 \item taką, w~której nadrzędnikiem jest $G$, spójnikiem $C_{i}$, a głowami członów są $L$ oraz $H_{1}, \ldots , H_{i}$ (przy czym głową lewego członu jest $L$, a~głową prawego członu $H_{i}$);
 \item taką, w~której nadrzędnikiem jest $G$, spójnikiem $C_{n}$, a głowami członów są $L$ oraz $H_{i+1}, \ldots , H_{n}$ (przy czym głową lewego członu jest $L$, a~głową prawego członu $H_{n}$).
-\item
 \end{itemize} 
 \end{enumerate}
 
@@ -801,7 +800,7 @@ Pierwsza koordynacja nie ma nadrzędnika, głową jej lewego członu jest token 
 
 Druga koordynacja również nie posiada nadrzędnika. Głową jej lewego członu jest token \textit{Porządek}, głową prawego członu \textit{chaos}, zaś spójnikiem token \textit{albo}. Zgodnie z~\ref{H6} token \textit{rozwój} nie jest traktowany jako głowa członu w~tej koordynacji. Dzięki temu po zastosowaniu reguł \ref{H1}--\ref{H5} do wykrytej koordynacji zostaje ona poprawnie opisana jako \textit{[[Porządek i~rozwój] albo [chaos i~degeneracja]]}. W ten sposób procedura opisała koordynację \eqref{chaos-1}. 
 
-Następnie algorytm rozpatruje pozostałe tokeny w~poszukiwaniu krawędzi \texttt{conj}. Token \textit{chaos} posiada podrzędnik \textit{degeneracja} z~taką relacją. Zgodnie z~procedurą \eqref{procedura} znaleziona zostaje koordynacja, której nadrzędnikiem jest \textit{Porządek}, głową lewego członu \textit{chaos}, głową prawego członu \textit{degeneracja}, a~spójnikiem \textit{i}. W ten sposób algorytm opisuje koordynację \eqref{chaos-3}, czyli \textit{[[chaos] i~[degeneracja]]}. W tej koordynacji występuje tylko jeden spójnik, więc reguła \ref{H5} nie jest stosowana.
+Następnie algorytm rozpatruje pozostałe tokeny w~poszukiwaniu krawędzi \texttt{conj}. Token \textit{chaos} posiada podrzędnik \textit{degeneracja} z~taką relacją. Zgodnie z~procedurą \eqref{procedura} znaleziona zostaje koordynacja, której nadrzędnikiem jest \textit{Porządek}, głową lewego członu \textit{chaos}, głową prawego członu \textit{degeneracja}, a~spójnikiem \textit{i}. W ten sposób algorytm opisuje koordynację \eqref{chaos-3}, czyli \textit{[[chaos] i~[degeneracja]]}. W tej koordynacji występuje tylko jeden spójnik, więc reguła \ref{H6} nie jest stosowana.
 
 W zdaniu nie występuje więcej tokenów posiadających podrzędniki \texttt{conj}, w~związku z~czym algorytm kończy rozpatrywanie zdania i~zwraca prawidłowo trzy koordynacje: \eqref{chaos-1}, \eqref{chaos-2} i~\eqref{chaos-3}.
 
@@ -824,7 +823,7 @@ $L$ \& $C_{1}$ \& $H_{1}$ \& $C_{2}$ \& $H_{2}$ \\
 \end{dependency}
 \end{exe}
 
-W~związku z~tym warunki \ref{H5} nie są spełnione. Algorytm \eqref{procedura} rozpatruje zdanie \eqref{A+B+C} jako zwykłą koordynację wieloczłonową:
+W~związku z~tym warunki \ref{H6} nie są spełnione. Algorytm \eqref{procedura} rozpatruje zdanie \eqref{A+B+C} jako zwykłą koordynację wieloczłonową:
 
 \begin{exe}
 \ex \label{A+B+C-koordynacja}
@@ -898,6 +897,6 @@ W korpusach języka tureckiego znajdowały się liczne zdania złożone pozbawio
 
 Zarówno współczynnik zgodności recenzentów, jak i~odsetek poprawnych koordynacji algorytmu mają niższe wartości niż analogiczne miary uzyskane w~pracy \cite{przepiorkowski2023conjunct}. Należy jednak zwrócić uwagę, że w~ich badaniu ewaluacja algorytmu polegała na sprawdzeniu wyłącznie poprawności pozycji nadrzędnika. 
 
-\cite{przepiorkowski2024argument} ewaluując swój algorytm sprawdzali zarówno pozycję nadrzędnika, jak~i~granice członów. Stosując tę metodę uzyskali dokładność równą $50,1\%$. Niemniej jednak nie można porównywać tego wyniku do uzyskanych w~moim badaniu wskaźników z~powodu dwóch istotnych różnic metodologicznych. Po pierwsze, \cite{przepiorkowski2024argument} korzystali z~danych gorszej jakości, ponieważ analizowali drzewa zależnościowe uzyskane za pomocą automatycznego parsowania zdań. Po drugie, stosowali oni bardziej rygorystyczną procedurę ewaluacji, losując więcej koordynacji z~dłuższą różnicą długości członów, niż wynikało to z~proporcji występujących w~języku.
+\cite{przepiorkowski2024argument} ewaluując swój algorytm sprawdzali zarówno pozycję nadrzędnika, jak~i~granice członów. Stosując tę metodę uzyskali dokładność równą $50{,}1\%$. Niemniej jednak nie można porównywać tego wyniku do uzyskanych w~moim badaniu wskaźników z~powodu dwóch istotnych różnic metodologicznych. Po pierwsze, \cite{przepiorkowski2024argument} korzystali z~danych gorszej jakości, ponieważ analizowali drzewa zależnościowe uzyskane za pomocą automatycznego parsowania zdań. Po drugie, stosowali oni bardziej rygorystyczną procedurę ewaluacji, losując więcej koordynacji z~dłuższą różnicą długości członów, niż wynikało to z~proporcji występujących w~języku.
 
 Podsumowując, wyniki ewaluacji wskazują na to, że opisana w~niniejszym rozdziale procedura wyciągania koordynacji działa dobrze. Nie można jednak porównywać tych wyników do wyników ewaluacji w~innych badaniach, ponieważ poprzednie analizy w~tym zakresie stosowały inną metodologię.
