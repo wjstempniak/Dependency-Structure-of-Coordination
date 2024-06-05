@@ -5,7 +5,7 @@ library(dplyr)
 library(tidyverse)
 library(psych)
 
-path <- 'C:/Users/wojte/OneDrive/Documents/Dependency Structure of Coordination'
+path <- 'path/to/folder'
 language <- 'English'
 rat <- c("WS", "OP") # raters' initials
 

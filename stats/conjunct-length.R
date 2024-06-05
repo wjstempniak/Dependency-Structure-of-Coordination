@@ -10,8 +10,8 @@ library(lmtest)
 
 save <- TRUE
 
-in_path <- "C:/Users/wojte/OneDrive/Documents/Dependency Structure of Coordination/corpora"
-out_path <- "C:/Users/wojte/OneDrive/Documents/Dependency Structure of Coordination/thesis/results"
+in_path <- "path/to/folder/corpora"
+out_path <- "path/to/folder/thesis/results"
 
 # Table 1 - Governor position
 

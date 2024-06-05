@@ -13,7 +13,10 @@ options(
     xtable.booktabs=TRUE,
     xtable.scalebox="0.8")
 
-setwd("C:/Users/wojte/OneDrive/Documents/Dependency Structure of Coordination/PW23/ptb_coordinations_acl2023_data")
+in_path = "path/to/folder/PW23/ptb_coordinations_acl2023_data"
+out_path = "path/to/folder/thesis/results"
+
+setwd(in_path)
 
 xx <- read.table(file="ptb_coordinations_acl2023.csv", header=TRUE, sep="\t", quote="", comment.char="", stringsAsFactors=TRUE)
 xx$governor <- factor(xx$governor, levels=levels(xx$governor)[c(2,1,3)])  ## order of levels: L, 0, R
@@ -326,8 +329,10 @@ for (d in 1:length(differences)) {
 
 ## Visualize the results as Figure 1:
 
+setwd(out_path)
+
 library(Cairo)
-CairoPDF(file = "diff_buckets.pdf", width = 15, height = 11)
+CairoPDF(file = "PW23.pdf", width = 15, height = 11)
 tps <- list(par.xlab.text = list(cex=0.8),
             par.ylab.text = list(cex=0.75),
             par.main.text = list(cex=.95))

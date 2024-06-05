@@ -18,8 +18,8 @@ options(
   xtable.booktabs=TRUE,
   xtable.scalebox="0.8") # 0.8 to fit in a column
 
-in_path = "C:/Users/wojte/OneDrive/Documents/Dependency Structure of Coordination/corpora"
-out_path = "C:/Users/wojte/OneDrive/Documents/Dependency Structure of Coordination/thesis/results"
+in_path = "path/to/folder/corpora"
+out_path = "path/to/folder/thesis/results"
 
 setwd(in_path)
 

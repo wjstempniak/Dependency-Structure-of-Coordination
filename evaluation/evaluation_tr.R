@@ -3,7 +3,7 @@
 library(dplyr)
 library(tidyverse)
 
-path <- 'C:/Users/wojte/OneDrive/Documents/Dependency Structure of Coordination'
+path <- 'path/to/folder'
 language <- 'Turkish'
 
 n = c(60, 0)

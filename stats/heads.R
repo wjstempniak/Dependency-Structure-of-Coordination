@@ -8,8 +8,8 @@ library(tidyverse)
 library(xtable)
 library(lmtest)
 
-in_path <- "C:/Users/wojte/OneDrive/Documents/Dependency Structure of Coordination/corpora"
-out_path <- "C:/Users/wojte/OneDrive/Documents/Dependency Structure of Coordination/thesis/results"
+in_path <- "path/to/folder/corpora"
+out_path <- "path/to/folder/thesis/results"
 
 languages <- c("Czech", "English", "German", "Icelandic", "Italian", "Korean", "Latin",
                "Polish", "Portuguese", "Romanian", "Russian", "Spanish", "Turkish")
@@ -22,7 +22,7 @@ heads <- function(data, language){
   L <- data$L.head.rel.pos
   R <- data$R.head.rel.pos
   testL <- t.test(L, mu = 0.5)
-  testR <- t.test(L, mu = 0.5)
+  testR <- t.test(R, mu = 0.5)
   
   tab <- data.frame(
     sum(!is.na(L)), format(mean(L, na.rm = T), digits=2), format(testL$stat, digits = 2), format(testL$p.val, digits = 3),
