@@ -1,6 +1,6 @@
 ## Dependency Structure of Coordination - an Analysis of Universal Dependencies Corpora
 
-The project is a cross-linguistic analysis of UD corpora. Its main goal is to replicate and extent a study done by Przepiórkowski and Woźniak (2023). 
+A cross-linguistic analysis of UD corpora. The main goal of the project is to replicate and extent a study done by Przepiórkowski and Woźniak (2023). 
 It consists of:
 - finding and extracting coordinations in order to examine tendencies to put the shorter conjunct at the begining of coordination,
 - a comparison of coordinations in different languages focused on their head-directionality, and
